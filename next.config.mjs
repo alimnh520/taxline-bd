@@ -7,8 +7,12 @@ const withPWA = withPWAInit({
   disable: process.env.NODE_ENV === "development",
 });
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+
+  // ✔ Fix: Turbopack must be an object, not boolean
+  turbopack: {},
 
   images: {
     remotePatterns: [
@@ -19,9 +23,8 @@ const nextConfig = {
     ],
   },
 
-  // ❌ WARNING FIXED — "turbo" removed (not allowed in Next.js 16)
   experimental: {
-    proxyTimeout: 10000, // এটুকু allowed
+    proxyTimeout: 10000,
   },
 };
 
