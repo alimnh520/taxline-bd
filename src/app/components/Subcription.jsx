@@ -87,7 +87,7 @@ const plans = [
     },
     {
         name: 'Premium',
-        price: '৳৫০০০',
+        price: '৳১৫০০০',
         features: [
             'COMPANY REGISTRATION',
             'TRADE LICENSE & TRADEMARK',
@@ -165,8 +165,9 @@ export function Subscription() {
                             >
                                 <div className="w-full px-5 flex flex-col items-start justify-center">
                                     <div className="mt-4 flex items-baseline text-5xl drop-shadow-2xl font-extrabold">
-                                        {plan.price}
+                                        <p>{plan.price}</p>
                                     </div>
+                                    {index === 2 && <p className="mt-4 ml-2">Starting from</p>}
                                 </div>
 
                                 <div

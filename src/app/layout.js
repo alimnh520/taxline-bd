@@ -73,7 +73,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/logo.jpg",
+        url: "https://taxline-bd.vercel.app/logo.jpg",
         width: 600,
         height: 600,
         alt: "TaxLine BD Logo",
@@ -87,7 +87,7 @@ export const metadata = {
     title: "TaxLine BD – Professional Tax & VAT Service",
     description:
       "TIN, BIN, VAT, RJSC, Company Registration & Accounting Service in Bangladesh.",
-    images: ["/logo.jpg"],
+    images: ["https://taxline-bd.vercel.app/logo.jpg"],
   },
 
   // ⭐ Google Fonts (Next.js 16 way)
@@ -113,7 +113,7 @@ export default function RootLayout({ children }) {
               "@type": "Organization",
               name: "TaxLine BD",
               url: "https://taxline-bd.vercel.app/",
-              logo: "/logo.jpg",
+              logo: "https://taxline-bd.vercel.app/logo.jpg",
               description:
                 "Professional Tax, VAT, RJSC & Company Registration Services in Bangladesh.",
               service: featureKeywords.map((kw) => ({
