@@ -29,7 +29,7 @@ export default function CourseDetails() {
 
     return (
         <div className="bg-gray-50 min-h-screen px-3 md:px-10">
-            <div className="flex flex-col w-full gap-y-2 h-40 bg-gray-100 items-center justify-center">
+            <div className="flex flex-col w-full gap-y-2 h-32 sm:h-40 bg-gray-100 items-center justify-center">
                 <div className="text-xs text-gray-600">
                     <span className="text-green-600 font-semibold">হোম</span> &gt;{" "}
                     <span className="uppercase">২০২৫-২৬: প্রাইভেট চাকুরিজীবীর রিটার্ন প্রস্তুতি</span>

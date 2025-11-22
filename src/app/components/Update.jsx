@@ -3,8 +3,8 @@ import Link from "next/link"
 
 export const Update = () => {
     return (
-        <div className="w-full h-auto px-5 mt-8  flex items-start justify-between gap-x-7">
-            <div className="w-[400px] h-auto flex flex-col justify-start">
+        <div className="w-full h-auto px-5 mt-8 flex flex-col sm:flex-row items-center sm:justify-start justify-between gap-x-7 gap-y-5 sm:gap-y-0">
+            <div className="sm:w-[400px] w-[95%] h-auto flex flex-col justify-start">
                 <div className="ribbon2 text-center py-2 text-[#172d13] hover:text-white text-lg font-semibold rounded-md shadow-sm"><p>সর্বশেষ আপডেট</p></div>
                 <div className="w-full h-96 border border-[#172d13] mt-5 overflow-hidden relative group">
                     <div className="marquee-container">
@@ -210,7 +210,7 @@ export const Update = () => {
             </div>
             <div className="flex-1 h-auto">
                 <div className="ribbon2 text-center py-2 text-black text-lg font-semibold rounded-md shadow-sm"><p>উৎসে কর কর্তন সংক্রান্ত</p></div>
-                <div className="mt-9 w-full h-[410px] grid grid-cols-2 grid-rows-3 gap-x-6 gap-y-3">
+                <div className="mt-5 sm:mt-9 w-full sm:h-[410px] h-auto grid sm:grid-cols-2 sm:grid-rows-3 gap-x-6 gap-y-3 grid-cols-1">
                     <Link href="" className="shadow-[0_0_30px_rgba(0,0,0,0.2)] bg-white rounded-md flex items-center justify-start relative overflow-hidden group">
                         <div className="absolute w-full h-full opacity-0 group-hover:opacity-100 transition-all duration-500 bg-[#172d13b7] text-white flex flex-col items-start justify-start z-10 gap-y-4 px-4 py-5">
                             <p className="text-xl text-white italic">সরবরাহকারীর কর কর্তন</p>
@@ -219,10 +219,10 @@ export const Update = () => {
                                 <button className="text-white flex items-center justify-start underline w-40 mb-1 ml-5 text-[13px]">আরো দেখুন <span className="text-white text-4xl"><RiArrowRightSLine /></span> </button>
                             </div>
                         </div>
-                        <div className="w-full h-full flex items-center justify-start px-10 pb-5 gap-x-4 relative">
+                        <div className="w-full h-full flex items-center justify-start px-10 py-3 sm:pb-5 gap-x-4 relative">
                             <img src="/logo/green-check.png" className="w-12" alt="" />
                             <p className="text-[#172d13]">সরবরাহকারীর কর কর্তন</p>
-                            <span className="absolute text-5xl bottom-5 right-5"><RiArrowRightSLine /></span>
+                            <span className="absolute text-5xl sm:bottom-5 bottom-3 sm:right-5 right-3"><RiArrowRightSLine /></span>
                         </div>
                     </Link>
                     <Link href="" className="shadow-[0_0_30px_rgba(0,0,0,0.2)] bg-white rounded-md flex items-center justify-start relative overflow-hidden group">
@@ -233,10 +233,10 @@ export const Update = () => {
                                 <button className="text-white flex items-center justify-start underline w-40 mb-1 ml-5 text-[13px]">আরো দেখুন <span className="text-white text-4xl"><RiArrowRightSLine /></span> </button>
                             </div>
                         </div>
-                        <div className="w-full h-full flex items-center justify-start px-10 pb-5 gap-x-4 relative">
+                        <div className="w-full h-full flex items-center justify-start px-10 py-3 sm:pb-5 gap-x-4 relative">
                             <img src="/logo/green-check.png" className="w-12" alt="" />
                             <p className="text-[#172d13]">সেবার বিপরীতে কর কর্তন</p>
-                            <span className="absolute text-5xl bottom-5 right-5"><RiArrowRightSLine /></span>
+                            <span className="absolute text-5xl sm:bottom-5 bottom-3 sm:right-5 right-3"><RiArrowRightSLine /></span>
                         </div>
 
                     </Link>
@@ -248,10 +248,10 @@ export const Update = () => {
                                 <button className="text-white flex items-center justify-start underline w-40 mb-1 ml-5 text-[13px]">আরো দেখুন <span className="text-white text-4xl"><RiArrowRightSLine /></span> </button>
                             </div>
                         </div>
-                        <div className="w-full h-full flex items-center justify-start px-10 pb-5 gap-x-4 relative">
+                        <div className="w-full h-full flex items-center justify-start px-10 py-3 sm:pb-5 gap-x-4 relative">
                             <img src="/logo/green-check.png" className="w-12" alt="" />
                             <p className="text-[#172d13]">উৎসে কর কর্তনের ধারাসমূহ</p>
-                            <span className="absolute text-5xl bottom-5 right-5"><RiArrowRightSLine /></span>
+                            <span className="absolute text-5xl sm:bottom-5 bottom-3 sm:right-5 right-3"><RiArrowRightSLine /></span>
                         </div>
 
                     </Link>
@@ -263,10 +263,10 @@ export const Update = () => {
                                 <button className="text-white flex items-center justify-start underline w-40 mb-1 ml-5 text-[13px]">আরো দেখুন <span className="text-white text-4xl"><RiArrowRightSLine /></span> </button>
                             </div>
                         </div>
-                        <div className="w-full h-full flex items-center justify-start px-10 pb-5 gap-x-4 relative">
+                        <div className="w-full h-full flex items-center justify-start px-10 py-3 sm:pb-5 gap-x-4 relative">
                             <img src="/logo/green-check.png" className="w-12" alt="" />
                             <p className="text-[#172d13]">উৎসে কর কর্তনের অধিক্ষেত্র</p>
-                            <span className="absolute text-5xl bottom-5 right-5"><RiArrowRightSLine /></span>
+                            <span className="absolute text-5xl sm:bottom-5 bottom-3 sm:right-5 right-3"><RiArrowRightSLine /></span>
                         </div>
 
                     </Link>
@@ -278,10 +278,10 @@ export const Update = () => {
                                 <button className="text-white flex items-center justify-start underline w-40 mb-1 ml-5 text-[13px]">আরো দেখুন <span className="text-white text-4xl"><RiArrowRightSLine /></span> </button>
                             </div>
                         </div>
-                        <div className="w-full h-full flex items-center justify-start px-10 pb-5 gap-x-4 relative">
+                        <div className="w-full h-full flex items-center justify-start px-10 py-3 sm:pb-5 gap-x-4 relative">
                             <img src="/logo/green-check.png" className="w-12" alt="" />
                             <p className="text-[#172d13]">ধারা অনুযায়ী উৎসে কর কর্তনের পরিমান</p>
-                            <span className="absolute text-5xl bottom-5 right-5"><RiArrowRightSLine /></span>
+                            <span className="absolute text-5xl sm:bottom-5 bottom-3 sm:right-5 right-3"><RiArrowRightSLine /></span>
                         </div>
 
                     </Link>
@@ -293,10 +293,10 @@ export const Update = () => {
                                 <button className="text-white flex items-center justify-start underline w-40 mb-1 ml-5 text-[13px]">আরো দেখুন <span className="text-white text-4xl"><RiArrowRightSLine /></span> </button>
                             </div>
                         </div>
-                        <div className="w-full h-full flex items-center justify-start px-10 pb-5 gap-x-4 relative">
+                        <div className="w-full h-full flex items-center justify-start px-10 py-3 sm:pb-5 gap-x-4 relative">
                             <img src="/logo/green-check.png" className="w-12" alt="" />
                             <p className="text-[#172d13]">সর্বাধিক পরিচিত উৎসেকর কর্তনের খাতসমূহ</p>
-                            <span className="absolute text-5xl bottom-5 right-5"><RiArrowRightSLine /></span>
+                            <span className="absolute text-5xl sm:bottom-5 bottom-3 sm:right-5 right-3"><RiArrowRightSLine /></span>
                         </div>
                     </Link>
                 </div>

@@ -7,7 +7,7 @@ export default function AllCourses() {
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col items-start">
             {/* Breadcrumb */}
-            <div className="flex flex-col w-full gap-y-2 h-40 bg-gray-100 items-center justify-center">
+            <div className="flex flex-col w-full gap-y-2 h-32 sm:h-40 bg-gray-100 items-center justify-center">
                 <div className="text-xs text-gray-600">
                     <span className="text-green-600 font-semibold">হোম</span> &gt;{" "}
                     <span className="uppercase">All Courses</span>
@@ -18,8 +18,8 @@ export default function AllCourses() {
             </div>
 
             {/* Course Card */}
-            <div className="w-10/12 mx-auto flex flex-col items-start justify-start">
-                <div className="mt-10 w-96 bg-white shadow p-3 border border-gray-100 hover:shadow-lg transition">
+            <div className="w-10/12 mx-auto flex flex-col items-center sm:items-start justify-start">
+                <div className="mt-10 w-[95%] sm:w-96 bg-white shadow p-3 border border-gray-100 hover:shadow-lg transition">
                     <div className="relative">
                         <Image
                             src="/course-thumb.jpg" // 👉 এখানে নিজের ইমেজ দিন (public/course-thumb.jpg)

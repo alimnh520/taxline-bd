@@ -27,14 +27,14 @@ export const personalTaxLinks = [
 
 export const Ereturn = () => {
     return (
-        <div className="w-full h-auto px-5 mt-10 flex flex-col items-center gap-y-4">
+        <div className="w-full h-auto px-4 md:px-5 mt-3 sm:mt-8 flex flex-col items-center gap-y-1 sm:gap-y-4">
 
-            <div className="ribbon text-2xl font-bold text-white tracking-wide pb-5 drop-shadow-2xl">
+            <div className="ribbon text-xl md:text-2xl font-bold text-white tracking-wide pb-4 drop-shadow-2xl">
                 ই-রিটার্ন কর্ণার
             </div>
 
             {/* Top Grid */}
-            <div className="grid w-full h-52 grid-cols-4 gap-6 py-6">
+            <div className="grid w-full h-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 py-4">
                 {[
                     "আইটি খাতের আয় ই-রিটার্ন সিস্টেমে কিভাবে ইনপুট করবেন",
                     "জিপিএফ সুদ বাবদ আয় ই-রিটার্ন সিস্টেমে কিভাবে দেখাতে হবে",
@@ -43,37 +43,39 @@ export const Ereturn = () => {
                 ].map((text, i) => (
                     <div
                         key={i}
-                        className="w-full h-full flex border border-[#172d13] rounded-xl bg-[#172d13] shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex-col items-start"
+                        className="w-full h-48 md:h-52 flex border border-[#172d13] rounded-xl bg-[#172d13] shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex-col"
                     >
-                        <div className="h-40 w-full bg-gradient-to-br from-orange-100 to-blue-100 rounded-t-xl"></div>
-                        <p className="flex-1 flex items-center justify-start text-sm px-3 py-2 text-white font-medium">{text}</p>
+                        <div className="h-32 md:h-40 w-full bg-gradient-to-br from-orange-100 to-blue-100 rounded-t-xl"></div>
+                        <p className="flex-1 flex items-center text-sm px-3 py-2 text-white font-medium">
+                            {text}
+                        </p>
                     </div>
                 ))}
             </div>
 
             <Link
                 href=""
-                className="px-4 py-2.5 mt-10 self-end font-semibold text-sm bg-linear-to-r from-[#172d13] to-[#172d13b7] hover:shadow-2xl hover:bg-[#172d13] rounded-lg shadow text-white transition-all duration-300"
+                className="px-3 md:px-4 py-2 md:py-2.5 mt-4 md:mt-6 self-end font-semibold text-sm bg-[#172d13] hover:shadow-2xl hover:bg-[#172d13d1] rounded-lg shadow text-white transition-all duration-300"
             >
                 View More
             </Link>
 
-            <div className="w-full h-auto flex flex-col lg:flex-row items-start justify-between gap-7 mt-6">
+            <div className="w-full h-auto flex flex-col lg:flex-row sm:items-start items-center justify-between gap-6 mt-8">
 
                 {/* Left side links */}
-                <div className="w-full lg:w-[330px] h-auto flex flex-col justify-start">
+                <div className="w-full lg:w-[330px] flex flex-col">
 
                     <div className="ribbon2 text-center py-2 text-white text-lg font-semibold rounded-md shadow-sm">
                         <p>প্রয়োজনীয় সরকারি লিংক</p>
                     </div>
 
-                    <div className="w-full h-auto flex flex-col gap-y-2 mt-4">
+                    <div className="flex flex-col gap-y-2 mt-4">
                         {govLinks.map((item, i) => (
                             <Link
                                 key={i}
                                 href={item.link}
                                 target="_blank"
-                                className="bg-[#172d13] text-white border border-[#172d13] text-start px-3 py-2.5 flex items-center gap-x-2 text-[15px] hover:scale-[1.02] hover:shadow-md transition-all duration-300 rounded-full"
+                                className="bg-[#172d13] text-white border border-[#172d13] px-3 py-2.5 flex items-center gap-x-2 text-[15px] hover:scale-[1.02] hover:shadow-md transition-all duration-300 rounded-full"
                             >
                                 <img src="/logo/green-check.png" alt="" className="w-5 opacity-80" />
                                 {item.title}
@@ -89,16 +91,16 @@ export const Ereturn = () => {
                         <p>ব্যক্তি করদাতার জন্য প্রযোজ্য</p>
                     </div>
 
-                    <div className="w-full h-72 mt-5 grid items-center justify-center grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 px-6">
+                    <div className="w-full mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 px-2 md:px-6">
                         {personalTaxLinks.map((item, i) => (
                             <Link
                                 key={i}
                                 href={item.link}
-                                className="bg-[#172d13b7] h-full w-full rounded-t-xl rounded-b-[20px] hover:scale-105 hover:shadow-xl border border-blue-100 transition-all duration-300 flex flex-col items-center justify-center overflow-hidden"
+                                className="bg-[#172d13b7] h-32 sm:h-36 w-full rounded-t-xl rounded-b-[20px] hover:scale-105 hover:shadow-xl border border-blue-100 transition-all duration-300 flex flex-col items-center justify-between overflow-hidden"
                             >
-                                <div className="flex-1 px-1 text-center flex flex-col gap-y-6 items-center justify-center">
+                                <div className="flex-1 px-1 text-center flex flex-col gap-y-4 items-center justify-center">
                                     <img src="/logo/green-check.png" className="w-6 opacity-80" alt="" />
-                                    <p className="text-white font-medium">{item.title}</p>
+                                    <p className="text-white text-sm font-medium">{item.title}</p>
                                 </div>
                                 <p className="text-[11px] bg-[#172d13] py-0.5 text-white w-full text-center font-semibold">
                                     BDTaxation

@@ -2,13 +2,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram, FaYoutube, FaUser } from "react-icons/fa6";
-import { Feature } from "../components/Feature";
-import { Animations } from "../components/Animations";
+import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram, FaYoutube, FaUser, FaBars, FaX, FaXmark } from "react-icons/fa6";
 
 export default function Header() {
     const [clickUser, setClickUser] = useState(false);
     const [userInfo, setUserInfo] = useState("");
+    const [mobileMenu, setMobileMenu] = useState(false);
     const path = usePathname();
 
     useEffect(() => {
@@ -25,55 +24,68 @@ export default function Header() {
     }, []);
 
     return (
-        <header className="w-[87%] mx-auto flex flex-col mt-5 ">
-            <div className="w-full flex justify-between items-center px-4 my-font">
+        <header className="md:w-[87%] w-full mx-auto flex flex-col sm:mt-5 my-font">
+            <div className="w-full flex justify-between items-center px-4 shadow md:shadow-none ">
 
-                {/* Menu Section */}
-                <div className="flex items-center justify-center gap-x-3">
-                    <nav className="hidden md:flex space-x-3 font-semibold text-green-800">
-                        <Link href="/" className={`hover:bg-[#172d13] ${path === '/' ? 'bg-[#172d13] text-white' : ''} hover:text-white px-3 py-2 rounded hover:rounded-none hover:rounded-tl-md hover:rounded-tr-md text-[14px]`}>HOME</Link>
-                        <Link href="/components/course" className={`hover:bg-[#172d13] ${path === '/components/course' ? 'bg-[#172d13] text-white' : ''} ${path === '/components/course/course-details' ? 'bg-[#172d13] text-white' : ''} hover:text-white px-3 py-2 rounded hover:rounded-none hover:rounded-tl-md hover:rounded-tr-md text-[14px]`}>COURSES</Link>
-                        <Link href="/components/services" className={`hover:bg-[#172d13] ${path === '/components/services' ? 'bg-[#172d13] text-white' : ''} hover:text-white px-3 py-2 rounded hover:rounded-none hover:rounded-tl-md hover:rounded-tr-md text-[14px]`}>SERVICES</Link>
-                        <Link href="/components/package" className={`hover:bg-[#172d13] ${path === '/components/package' ? 'bg-[#172d13] text-white' : ''} hover:text-white px-3 py-2 rounded hover:rounded-none hover:rounded-tl-md hover:rounded-tr-md text-[14px]`}>PACKAGE</Link>
-                        <Link href="" className={`hover:bg-[#172d13] ${path === '/rgre' ? 'bg-[#172d13] text-white' : ''} hover:text-white px-3 py-2 rounded hover:rounded-none hover:rounded-tl-md hover:rounded-tr-md text-[14px]`}>BLOG</Link>
-                        {!userInfo && (<Link href="/components/login" className={`hover:bg-[#172d13] ${path === '/components/login' ? 'bg-[#172d13] text-white' : ''} hover:text-white px-3 py-2 underline rounded hover:rounded-none hover:rounded-tl-md hover:rounded-tr-md text-[14px]`}>SIGNIN</Link>)}
-                        {!userInfo && (<Link href="/components/registration" className={`hover:bg-[#172d13] ${path === '/components/registration' ? 'bg-[#172d13] text-white' : ''} hover:text-white px-3 py-2 underline rounded hover:rounded-none hover:rounded-tl-md hover:rounded-tr-md text-[14px]`}>REGISTER</Link>)}
-                        {userInfo && (<Link href="/components/user/dashboard" className={`hover:bg-[#172d13] ${path === '/components/user/dashboard' ? 'bg-[#172d13] text-white' : ''} hover:text-white px-3 py-2 rounded hover:rounded-none hover:rounded-tl-md hover:rounded-tr-md text-[14px]`}>DASHBOARD</Link>)}
-
-                    </nav>
-
-                    {/* Right Side Section */}
-                    <div className="hidden md:flex items-center space-x-3 text-sm">
-
-
-                        {/* Social Icons */}
-                        <div className="flex space-x-4 text-gray-700 ">
-                            <Link href='https://www.facebook.com/share/1GzXZFbCGk/' className="shadow-sm shadow-gray-500 hover:bg-blue-700 hover:text-white transition-all duration-200 p-2 rounded-full">
-                                <FaFacebookF />
-                            </Link>
-                            <Link href='' className="shadow-sm shadow-gray-500 hover:bg-black hover:text-white transition-all duration-200 p-2 rounded-full">
-                                <FaXTwitter />
-                            </Link>
-                            <Link href='' className="shadow-sm shadow-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-200 p-2 rounded-full">
-                                <FaLinkedinIn />
-                            </Link>
-                            <Link href='' className="shadow-sm shadow-gray-500 hover:bg-rose-400 hover:text-white transition-all duration-200 p-2 rounded-full">
-                                <FaInstagram />
-                            </Link>
-                            <Link href='https://www.youtube.com/@TaxLineBD' className="shadow-sm shadow-gray-500 hover:bg-red-600 hover:text-white transition-all duration-200 p-2 rounded-full">
-                                <FaYoutube />
-                            </Link>
-                        </div>
-                    </div>
+                {/* Logo */}
+                <div className="flex items-center">
+                    <img src="/logo.jpg" alt="BDTaxation Logo" className="md:h-28 h-[70px] object-contain" />
                 </div>
 
-                <div className="">
-                    <img src="/logo.jpg" alt="BDTaxation Logo" className="h-28 w-32 bg-contain" />
+                {/* Desktop Menu */}
+                <nav className="hidden md:flex space-x-3 font-semibold text-green-800">
+                    <Link href="/" className={`${path === '/' ? 'bg-[#172d13] text-white' : ''} hover:bg-[#172d13] hover:text-white px-3 py-2 rounded text-[14px]`}>HOME</Link>
+                    <Link href="/components/course" className={`${path.startsWith('/components/course') ? 'bg-[#172d13] text-white' : ''} hover:bg-[#172d13] hover:text-white px-3 py-2 rounded text-[14px]`}>COURSES</Link>
+                    <Link href="/components/services" className={`${path === '/components/services' ? 'bg-[#172d13] text-white' : ''} hover:bg-[#172d13] hover:text-white px-3 py-2 rounded text-[14px]`}>SERVICES</Link>
+                    <Link href="/components/package" className={`${path === '/components/package' ? 'bg-[#172d13] text-white' : ''} hover:bg-[#172d13] hover:text-white px-3 py-2 rounded text-[14px]`}>PACKAGE</Link>
+                    <Link href="" className={`${path === '/rgre' ? 'bg-[#172d13] text-white' : ''} hover:bg-[#172d13] hover:text-white px-3 py-2 rounded text-[14px]`}>BLOG</Link>
+                    {!userInfo && <Link href="/components/login" className={`${path === '/components/login' ? 'bg-[#172d13] text-white' : ''} hover:underline px-3 py-2 rounded text-[14px]`}>SIGNIN</Link>}
+                    {!userInfo && <Link href="/components/registration" className={`${path === '/components/registration' ? 'bg-[#172d13] text-white' : ''} hover:underline px-3 py-2 rounded text-[14px]`}>REGISTER</Link>}
+                    {userInfo && <Link href="/components/user/dashboard" className={`${path === '/components/user/dashboard' ? 'bg-[#172d13] text-white' : ''} hover:bg-[#172d13] hover:text-white px-3 py-2 rounded text-[14px]`}>DASHBOARD</Link>}
+                </nav>
+
+                <div className="md:flex justify-center space-x-3 hidden text-gray-700">
+                    <Link href='https://www.facebook.com/share/1GzXZFbCGk/' className="p-2 rounded-full bg-gray-100 hover:bg-blue-700 hover:text-white"><FaFacebookF /></Link>
+                    <Link href='' className="p-2 rounded-full bg-gray-100 hover:bg-black hover:text-white"><FaXTwitter /></Link>
+                    <Link href='' className="p-2 rounded-full bg-gray-100 hover:bg-blue-600 hover:text-white"><FaLinkedinIn /></Link>
+                    <Link href='' className="p-2 rounded-full bg-gray-100 hover:bg-rose-400 hover:text-white"><FaInstagram /></Link>
+                    <Link href='https://www.youtube.com/@TaxLineBD' className="p-2 rounded-full bg-gray-100 hover:bg-red-600 hover:text-white"><FaYoutube /></Link>
+                </div>
+
+                {/* Mobile Menu Button */}
+                <div className="md:hidden flex items-center">
+                    <button onClick={() => setMobileMenu(!mobileMenu)} className="text-green-800">
+                        {mobileMenu ? <FaXmark size={28}/> : <FaBars size={24} />}
+                    </button>
                 </div>
 
             </div>
-            {/* <Animations />
-            <Feature /> */}
+
+            {/* Mobile Menu */}
+            {/* {mobileMenu && (
+               
+            )} */}
+
+            <div className={`flex flex-col ${mobileMenu ? 'h-[300px]' : 'h-0'} transition-all duration-300 bg-white mt-2 px-2 overflow-y-hidden shadow-lg rounded-md`}>
+                <Link href="/" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#172d13] hover:text-white rounded" onClick={() => setMobileMenu(false)}>HOME</Link>
+                <Link href="/components/course" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#172d13] hover:text-white rounded" onClick={() => setMobileMenu(false)}>COURSES</Link>
+                <Link href="/components/services" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#172d13] hover:text-white rounded" onClick={() => setMobileMenu(false)}>SERVICES</Link>
+                <Link href="/components/package" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#172d13] hover:text-white rounded" onClick={() => setMobileMenu(false)}>PACKAGE</Link>
+                <Link href="" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#172d13] hover:text-white rounded" onClick={() => setMobileMenu(false)}>BLOG</Link>
+                {!userInfo && <Link href="/components/login" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#172d13] hover:text-white rounded" onClick={() => setMobileMenu(false)}>SIGNIN</Link>}
+                {!userInfo && <Link href="/components/registration" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#172d13] hover:text-white rounded" onClick={() => setMobileMenu(false)}>REGISTER</Link>}
+                {userInfo && <Link href="/components/user/dashboard" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#172d13] hover:text-white rounded" onClick={() => setMobileMenu(false)}>DASHBOARD</Link>}
+
+                {/* Social Icons */}
+                <div className="flex justify-center space-x-3 mt-2 text-gray-700 border-t border-t-gray-300 pt-3">
+                    <Link href='https://www.facebook.com/share/1GzXZFbCGk/' className="p-2 rounded-full bg-gray-100 hover:bg-blue-700 hover:text-white"><FaFacebookF /></Link>
+                    <Link href='' className="p-2 rounded-full bg-gray-100 hover:bg-black hover:text-white"><FaXTwitter /></Link>
+                    <Link href='' className="p-2 rounded-full bg-gray-100 hover:bg-blue-600 hover:text-white"><FaLinkedinIn /></Link>
+                    <Link href='' className="p-2 rounded-full bg-gray-100 hover:bg-rose-400 hover:text-white"><FaInstagram /></Link>
+                    <Link href='https://www.youtube.com/@TaxLineBD' className="p-2 rounded-full bg-gray-100 hover:bg-red-600 hover:text-white"><FaYoutube /></Link>
+                </div>
+            </div>
+
         </header>
     );
 }

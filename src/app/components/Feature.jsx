@@ -20,15 +20,15 @@ export const Feature = () => {
         { text: "অর্থ আইন", link: "finance-act" },
     ];
 
-
     return (
-        <div className="mx-auto flex mt-10 gap-y-10 flex-col items-center justify-center flex-wrap">
-            <div className="ribbon text-2xl font-bold text-white tracking-wide pb-5 drop-shadow-2xl">
+        <div className="mx-auto flex mt-10 gap-y-10 flex-col items-center justify-center flex-wrap px-2">
+
+            <div className="ribbon text-xl md:text-2xl font-bold text-white tracking-wide pb-2 md:pb-5 drop-shadow-2xl">
                 আমাদের জনপ্রিয় ফিচারসমূহ
             </div>
 
-            {/* Diamond Links */}
-            <div className="w-full flex flex-wrap items-center justify-center gap-x-5 text-white border-b border-b-gray-200 pb-8">
+            <div className="w-full flex flex-wrap items-center justify-center gap-5 md:gap-x-5 text-white border-b border-b-gray-200 pb-6 md:pb-8">
+
                 {diamondLinks.map((item, idx) => {
                     const scaleClass =
                         hoveredIdx === null
@@ -38,11 +38,19 @@ export const Feature = () => {
                                 : "scale-90";
 
                     return (
-                        <Link href={`/components/tax-act/${item.link}`}
+                        <Link
+                            href={`/components/tax-act/${item.link}`}
                             key={idx}
                             onMouseEnter={() => setHoveredIdx(idx)}
                             onMouseLeave={() => setHoveredIdx(null)}
-                            className={`w-[105px] h-[105px] border-[10px] border-[#d9ffd38f] rotate-45 bg-[#11270de8] rounded-4xl flex items-center justify-center transform transition-transform duration-300 ${scaleClass} cursor-pointer`}
+                            className={`w-[95px] h-[95px] 
+                               md:w-[105px] md:h-[105px]
+                                border-[6px] md:border-[10px]
+                                border-[#d9ffd38f] rotate-45 bg-[#11270de8]
+                                rounded-4xl flex items-center justify-center
+                                transform transition-transform duration-300 ${scaleClass}
+                                cursor-pointer
+                            `}
                         >
                             <p className="-rotate-45 text-[13px] text-center text-white transition-colors duration-300 hover:text-[#ffe8c4]">
                                 {item.text}
@@ -51,7 +59,6 @@ export const Feature = () => {
                     );
                 })}
             </div>
-
 
             {/* <button
                 onClick={() => {
@@ -64,7 +71,6 @@ export const Feature = () => {
             >
                 PDF ডাউনলোড করো
             </button> */}
-
 
         </div>
     );

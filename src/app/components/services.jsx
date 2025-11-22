@@ -17,14 +17,14 @@ function ServiceCard({ title, desc, icon }) {
 
 export default function BDTaxationPage() {
     return (
-        <div className="mt-10 py-8">
+        <div className="mt-5 sm:mt-10 sm:py-8 py-4">
             <main>
 
                 {/* SERVICES SECTION */}
-                <section id="services" className="max-w-6xl mx-auto space-y-10 px-6 mt-5">
+                <section id="services" className="max-w-6xl mx-auto space-y-6 sm:space-y-10 px-6 sm:mt-5">
 
                     <div className="w-full flex justify-center">
-                        <div className="ribbon text-2xl font-bold text-white tracking-wide pb-5 drop-shadow-2xl px-12">BDTaxation — এর প্রধান সেবা</div>
+                        <div className="ribbon text-lg md:text-2xl font-bold text-white tracking-wide pb-2 md:pb-5 drop-shadow-2xl">BDTaxation — এর প্রধান সেবা</div>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-6">

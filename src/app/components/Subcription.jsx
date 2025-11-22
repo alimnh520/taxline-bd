@@ -123,16 +123,18 @@ export function Subscription() {
     const [expandedIndex, setExpandedIndex] = useState(null);
 
     return (
-        <div className="w-10/12 mx-auto px-4 sm:px-6 lg:px-8 space-y-16 py-16">
+        <div className="sm:w-10/12 w-full mx-auto px-4 sm:px-6 lg:px-8 md:space-y-16 space-y-10 py-6 md:py-16">
 
             {/* Grid Links */}
-            <div className="h-48 w-full grid grid-cols-3 grid-rows-3 gap-6">
+            <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4 sm:gap-6">
                 {gridLinks.map((item, idx) => (
-                    <Link href={`/components/tax-act/${item.link}`}
+                    <Link
                         key={idx}
-                        className="bg-[#172d13] rounded-lg flex items-center justify-center shadow-2xl transition-all duration-300 transform hover:bg-[#172d13b7] hover:scale-105 border border-transparent hover:border-[#172d13] cursor-pointer"
+                        href={`/components/tax-act/${item.link}`}
+                        className="bg-[#172d13] rounded-lg flex items-center text-center p-3 justify-center 
+                        shadow-xl transition-all duration-300 hover:bg-[#1c3b15] hover:scale-105"
                     >
-                        <span className="text-white transition-colors duration-300 hover:text-[#ffe8c4] font-bold">
+                        <span className="text-white font-semibold text-sm sm:text-base">
                             {item.text}
                         </span>
                     </Link>
@@ -140,10 +142,10 @@ export function Subscription() {
             </div>
 
             <div className="w-full flex justify-center">
-                <div className="ribbon text-2xl font-bold text-white tracking-wide pb-5 drop-shadow-2xl">আমাদের প্যাকেজসমূহ</div>
+                <div className="ribbon text-xl md:text-2xl font-bold text-white tracking-wide pb-2 md:pb-5 drop-shadow-2xl">আমাদের প্যাকেজসমূহ</div>
             </div>
 
-            <div className="mt-10 flex items-start justify-between gap-8">
+            <div className="mt-10 flex flex-col sm:flex-row items-start justify-between gap-5 sm:gap-8">
                 {plans.map((plan, index) => {
                     const [hover, setHover] = useState(false);
 
@@ -157,41 +159,46 @@ export function Subscription() {
                     return (
                         <div
                             key={plan.name}
-                            className={`w-full h-[540px] flex flex-col ${(index === 2 && expandedIndex === 2) && 'h-auto'} ${index === 1 && 'scale-110 hover:scale-[120%] z-10'} my-font rounded-lg shadow-lg overflow-hidden hover:scale-105 hover:shadow-2xl transition-all duration-300 bg-white`}
+                            className={`w-full h-[400px] sm:h-[540px] flex flex-col ${(index === 2 && expandedIndex === 2) && 'h-auto sm:h-auto'} ${index === 1 && 'sm:scale-110 hover:scale-[120%] z-10'} my-font rounded-lg shadow-lg overflow-hidden hover:scale-105 hover:shadow-2xl transition-all duration-300 bg-white`}
                         >
                             <div
-                                className="py-6 h-44 text-white relative"
+                                className="py-4 sm:py-6 h-32 sm:h-44 text-white relative"
                                 style={{ backgroundColor: lightenColor(plan.accent, 20) }}
                             >
-                                <div className="w-full px-5 flex flex-col items-start justify-center">
-                                    <div className="mt-4 flex items-baseline text-5xl drop-shadow-2xl font-extrabold">
+                                <div className="w-full px-4 sm:px-5 flex flex-col items-start justify-center">
+                                    <div className="mt-2 sm:mt-4 flex items-baseline text-3xl sm:text-5xl drop-shadow-2xl font-extrabold">
                                         <p>{plan.price}</p>
                                     </div>
-                                    {index === 2 && <p className="mt-4 ml-2">Starting from</p>}
+                                    {index === 2 && <p className="mt-2 sm:mt-4 ml-1 sm:ml-2 text-sm sm:text-base">Starting from</p>}
                                 </div>
 
                                 <div
-                                    className="w-full h-12 -right-20 top-0 absolute rotate-45 flex items-center justify-center"
+                                    className="
+                            w-full h-10 sm:h-12 
+                            -right-16 sm:-right-20 
+                            top-0 absolute rotate-45 flex items-center justify-center"
                                     style={{ backgroundColor: plan.accent }}
                                 >
-                                    <h3 className="text-2xl font-semibold ml-24">{plan.name}</h3>
+                                    <h3 className="text-lg sm:text-2xl font-semibold ml-20 sm:ml-24">
+                                        {plan.name}
+                                    </h3>
                                 </div>
 
-                                <div className="-mt-5">{svgColor(plan.accent)}</div>
+                                <div className="-mt-4 sm:-mt-5">{svgColor(plan.accent)}</div>
                                 <div
-                                    className="w-full h-44 absolute"
+                                    className="w-full h-36 sm:h-44 absolute"
                                     style={{
                                         background: `linear-gradient(to bottom, ${lightenColor(plan.accent, 0)}, #ffffff)`
                                     }}
                                 ></div>
                             </div>
 
-                            <div className="flex-1 px-6 py-8 z-20">
-                                <ul className="space-y-4">
+                            <div className="flex-1 px-4 sm:px-6 py-5 sm:py-8 z-20">
+                                <ul className="space-y-3 sm:space-y-4">
                                     {visibleFeatures.map((feature, i) => (
                                         <li
                                             key={i}
-                                            className="text-black font-semibold flex items-center justify-start gap-x-2"
+                                            className="text-black font-semibold text-sm sm:text-base flex items-center justify-start gap-x-2"
                                         >
                                             <span
                                                 style={{
@@ -199,6 +206,7 @@ export function Subscription() {
                                                     color: 'white',
                                                     borderRadius: "100%"
                                                 }}
+                                                className="text-lg sm:text-xl"
                                             >
                                                 <IoCheckmarkCircleOutline />
                                             </span>
@@ -206,10 +214,9 @@ export function Subscription() {
                                         </li>
                                     ))}
 
-                                    {/* See More for index === 2 only */}
                                     {index === 2 && plan.features.length > 5 && (
                                         <button
-                                            className="text-blue-600 font-semibold text-sm hover:underline cursor-pointer"
+                                            className="font-semibold text-xs sm:text-sm hover:underline cursor-pointer"
                                             onClick={() =>
                                                 setExpandedIndex(expandedIndex === 2 ? null : 2)
                                             }
@@ -221,10 +228,10 @@ export function Subscription() {
                                 </ul>
                             </div>
 
-                            <div className="px-6 pb-8 bg-white">
+                            <div className="px-4 sm:px-6 pb-6 bg-white">
                                 <button
                                     type="button"
-                                    className="w-full relative overflow-hidden py-3 text-white font-semibold rounded-full transition-all duration-300"
+                                    className="w-full relative overflow-hidden py-2 sm:py-3 text-white font-semibold text-sm sm:text-base rounded-full transition-all duration-300"
                                     style={{
                                         backgroundColor: hover
                                             ? lightenColor(plan.accent, -10)
@@ -240,6 +247,7 @@ export function Subscription() {
                     );
                 })}
             </div>
+
         </div>
     );
 }

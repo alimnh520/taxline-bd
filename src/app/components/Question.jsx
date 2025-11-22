@@ -14,11 +14,11 @@ export const Question = () => {
     const [question8, setQuestion8] = useState(false);
 
     return (
-        <div className="w-full flex flex-col items-center px-5 mt-8 ">
+        <div className="w-full flex flex-col items-center px-5 mt-8">
 
-            <div className="ribbon text-2xl font-bold my-5 text-white tracking-wide pb-5 drop-shadow-2xl">Frequently Ask Question</div>
+            <div className="ribbon text-xl md:text-2xl font-bold text-white tracking-wide pb-2 md:pb-5 drop-shadow-2xl">Frequently Ask Question</div>
 
-            <div className="w-full flex items-start justify-between gap-x-5">
+            <div className="w-full flex flex-col sm:flex-row items-start justify-between gap-x-5">
                 <div className="w-full h-auto mt-5 flex flex-col gap-y-1.5">
                     <div className="w-full flex flex-col border border-gray-200 overflow-hidden rounded-md ">
                         <button className="bg-white hover:bg-[#172d13b7] text-black hover:text-white text-Orange-800 cursor-pointer w-full py-2.5 relative flex items-center justify-start px-3" onClick={() => {
@@ -30,8 +30,8 @@ export const Question = () => {
                             setQuestion6(false);
                             setQuestion7(false);
                             setQuestion8(false);
-                        }}>কর রেয়াত কি এবং পরিগণনার পদ্ধতি কি? <span className={`text-3xl absolute ${question1 ? 'rotate-180' : 'rotate-0'} transition-all duration-300 right-5`}><RiArrowDownSLine /></span> </button>
-                        <div className={`w-full flex flex-col gap-y-6 text-[15px] ${question1 ? 'h-[800px] py-5 px-3 border-t' : 'h-0'} border-t-gray-200 transition-all duration-300 `}>
+                        }}>কর রেয়াত কি এবং পরিগণনার পদ্ধতি কি? <span className={`text-3xl absolute ${question1 ? 'rotate-180' : 'rotate-0'} transition-all duration-300 right-2 sm:right-5`}><RiArrowDownSLine /></span> </button>
+                        <div className={`w-full flex flex-col gap-y-6 text-[15px] ${question1 ? 'h-[1100px] sm:h-[800px] py-5 px-3 border-t' : 'h-0'} border-t-gray-200 transition-all duration-300 `}>
                             <p className="">কর রেয়াত কি?</p>
                             <p className="">একজন করদাতা তার বাৎসরিক আয়ের উপর কর প্রদান করে থাকেন। প্রদেয় কর হতে একটি অঙ্ক করদাতা কম পরিশোধ করতে পারেন। করদাতা যে পরিমাণ অঙ্ক কর কম প্রদান করেন তাই কর রেয়াত। তবে কর রেয়াত পেতে হলে করদাতাকে অবশ্যই সরকার অনুমোদিত যেসকল খাতে বিনিয়োগ করলে কর রেয়াত পাওয়া যায় সেসকল খাতে বিনিয়োগ করতে হবে।</p>
                             <p className="">কর রেয়াত পরিগণনার পদ্ধতি কি?</p>
@@ -58,8 +58,8 @@ export const Question = () => {
                             setQuestion8(false);
                         }}>
                             শেয়ার বা ইউনিট হস্তান্তর হতে অর্জিত আয় করমুক্ত কিনা?
-                            <span className={`text-3xl absolute ${question2 ? 'rotate-180' : 'rotate-0'} transition-all duration-300 right-5`}><RiArrowDownSLine /></span> </button>
-                        <div className={`w-full flex flex-col gap-y-6 text-[15px] ${question2 ? 'h-[180px] py-5 px-3 border-t' : 'h-0'} border-t-gray-200 transition-all duration-300 `}>
+                            <span className={`text-3xl absolute ${question2 ? 'rotate-180' : 'rotate-0'} transition-all duration-300 right-2 sm:right-5`}><RiArrowDownSLine /></span> </button>
+                        <div className={`w-full flex flex-col gap-y-6 text-[15px] ${question2 ? 'h-[280px] sm:h-[180px] py-5 px-3 border-t' : 'h-0'} border-t-gray-200 transition-all duration-300 `}>
                             <p className="">আয়কর আইন, ২০২৩ এর <Link href="/tax-act-section/435" className="text-green-800 hover:underline decoration-green-800">ষষ্ঠ তফসীল, অংশ-১</Link> এর ৩৬(ক) অনুযায়ী কোন স্বাভাবিক ব্যক্তি কর্তৃক স্টক এক্সচেঞ্জে তালিকাভুক্ত সিকিউরিটিজ লেনদনে হতে কোন আয় অর্জিত হলে উক্ত আয়ের ৫০ লক্ষ টাকা করমুক্ত। তবে এর অধিক গৃহীত হলে উক্ত আয়ের উপর ১৫% হারে কর প্রদান করতে হবে।&nbsp;</p>
                             <p className="">তবে কোনো কোম্পানি বা তহবিলের স্পন্সর, ডিরেক্টর বা প্লেসমেন্ট শেয়ার বা ইউনিটের ক্ষেত্রে এই করমুক্তির বিধান প্রযোজ্য হবে ।</p>
                         </div>
@@ -77,8 +77,8 @@ export const Question = () => {
                             setQuestion8(false);
                         }}>
                             রেমিটেন্স আয়ের বিপরীতে কোন কর দিতে হবে কিনা?
-                            <span className={`text-3xl absolute ${question3 ? 'rotate-180' : 'rotate-0'} transition-all duration-300 right-5`}><RiArrowDownSLine /></span> </button>
-                        <div className={`w-full flex flex-col gap-y-6 text-[15px] ${question3 ? 'h-[110px] py-5 px-3 border-t' : 'h-0'} border-t-gray-200 transition-all duration-300 `}>
+                            <span className={`text-3xl absolute ${question3 ? 'rotate-180' : 'rotate-0'} transition-all duration-300 right-2 sm:right-5`}><RiArrowDownSLine /></span> </button>
+                        <div className={`w-full flex flex-col gap-y-6 text-[15px] ${question3 ? 'h-[150px] sm:h-[110px] py-5 px-3 border-t' : 'h-0'} border-t-gray-200 transition-all duration-300 `}>
                             <p className="">আয়কর আইন, ২০২৩ এর ষষ্ঠ তফসীল অংশ-১ এর দফা (১৭) অনুযায়ী কোন করদাতা কর্তৃক বিদেশে উপার্জিত কোন আয় যা তিনি বৈদেশিক রেমিটেন্স সম্পর্কিত বিদ্যমান আইন অনুসারে এনেছেন, উক্ত আয়ের উপর কোন কর দিতে হবে না।</p>
                         </div>
                     </div>
@@ -95,8 +95,8 @@ export const Question = () => {
                             setQuestion8(false);
                         }}>
                             ব্যক্তি বলতে কি বুঝায়?
-                            <span className={`text-3xl absolute ${question4 ? 'rotate-180' : 'rotate-0'} transition-all duration-300 right-5`}><RiArrowDownSLine /></span> </button>
-                        <div className={`w-full flex flex-col gap-y-6 text-[15px] ${question4 ? 'h-[480px] py-5 px-3 border-t' : 'h-0'} border-t-gray-200 transition-all duration-300 `}>
+                            <span className={`text-3xl absolute ${question4 ? 'rotate-180' : 'rotate-0'} transition-all duration-300 right-2 sm:right-5`}><RiArrowDownSLine /></span> </button>
+                        <div className={`w-full flex flex-col gap-y-6 text-[15px] ${question4 ? 'h-[680px] sm:h-[480px] py-5 px-3 border-t' : 'h-0'} border-t-gray-200 transition-all duration-300 `}>
                             <p className="">আয়কর আইন, ২০২৩ এর <Link href="/tax-act-section/185" className="text-green-800 hover:underline decoration-green-800">ধারা ১৪০</Link> অনুযায়ী&nbsp; “নির্দিষ্ট ব্যক্তি” অর্থ-</p>
                             <p className="pl-12">(ক) কোনো কোম্পানি, ফার্ম, ব্যক্তিসংঘ, ট্রাস্ট বা তহবিল;</p>
                             <p className="pl-12">(খ) পাবলিক-প্রাইভেট পার্টনারশীপ;</p>
@@ -125,8 +125,8 @@ export const Question = () => {
                             setQuestion4(false);
                         }}>
                             কোন খাতের আয়ের উপর বিনিয়োগজনিত কর রেয়াত দাবী করা যাবে?
-                            <span className={`text-3xl absolute ${question5 ? 'rotate-180' : 'rotate-0'} transition-all duration-300 right-5`}><RiArrowDownSLine /></span> </button>
-                        <div className={`w-full flex flex-col gap-y-6 text-[15px] ${question5 ? 'h-[120px] py-5 px-3 border-t' : 'h-0'} border-t-gray-200 transition-all duration-300 `}>
+                            <span className={`text-3xl absolute ${question5 ? 'rotate-180' : 'rotate-0'} transition-all duration-300 right-2 sm:right-5`}><RiArrowDownSLine /></span> </button>
+                        <div className={`w-full flex flex-col gap-y-6 text-[15px] ${question5 ? 'h-[150px] sm:h-[120px] py-5 px-3 border-t' : 'h-0'} border-t-gray-200 transition-all duration-300 `}>
                             <p className="">নিয়মিত উৎসের আয়ের উপর কর রেয়াত দাবী করা যাবে। কর অব্যাহতি প্রাপ্ত আয়, হ্রাসকৃত করহার প্রযোজ্য আয়, অংশীদারী ফার্ম বা ব্যক্তিসংঘ হতে আয় এবং চূড়ান্ত করদায় প্রযোজ্য হয় এরূপ আয়ের বিপরীতে সৃষ্ট করদায়ের বিপরীতে বিনিয়োগজনিত কর রেয়াত দাবী করা যাবে না।</p>
                         </div>
                     </div>
@@ -143,8 +143,8 @@ export const Question = () => {
                             setQuestion4(false);
                         }}>
                             চাকুরী ক্ষেত্রে মোটরগাড়ী সুবিধা প্রাপ্ত হলে কত টাকা আয় হবে?
-                            <span className={`text-3xl absolute ${question6 ? 'rotate-180' : 'rotate-0'} transition-all duration-300 right-5`}><RiArrowDownSLine /></span> </button>
-                        <div className={`w-full flex flex-col gap-y-6 text-[15px] ${question6 ? 'h-[280px] py-5 px-3 border-t' : 'h-0'} border-t-gray-200 transition-all duration-300 `}>
+                            <span className={`text-3xl absolute ${question6 ? 'rotate-180' : 'rotate-0'} transition-all duration-300 right-2 sm:right-5`}><RiArrowDownSLine /></span> </button>
+                        <div className={`w-full flex flex-col gap-y-6 text-[15px] ${question6 ? 'h-[380px] sm:h-[280px] py-5 px-3 border-t' : 'h-0'} border-t-gray-200 transition-all duration-300 `}>
                             <p className="">কোন বেতনভোগী করদাতা যদি প্রতিষ্ঠান হতে মোটরগাড়ী সুবিধা পেয়ে থাকেন তাহলে একটি অঙ্ক আয় হিসেবে যোগ হবে। যা নিম্নরূপঃ</p>
                             <p className="">১। ১৫০০ সিসি পর্যন্ত গাড়ীর বিপরীতে প্রতি মাসে ১৫ (পনের) হাজার টাকা।&nbsp;</p>
                             <p className="">২। ১৫০০ সিসির অধিক কিন্ত ২০০০ সিসি পর্যন্ত গাড়ীর বিপরীতে প্রতি মাসে ২০ (বিশ) হাজার টাকা।&nbsp;</p>
@@ -165,8 +165,8 @@ export const Question = () => {
                             setQuestion4(false);
                         }}>
                             ২০২৫-২০২৬ করবর্ষে মহিলা করদাতার কর হার কত?
-                            <span className={`text-3xl absolute ${question7 ? 'rotate-180' : 'rotate-0'} transition-all duration-300 right-5`}><RiArrowDownSLine /></span> </button>
-                        <div className={`w-full flex flex-col gap-y-6 text-[15px] ${question7 ? 'h-[630px] py-5 px-3 border-t' : 'h-0'} border-t-gray-200 transition-all duration-300 `}>
+                            <span className={`text-3xl absolute ${question7 ? 'rotate-180' : 'rotate-0'} transition-all duration-300 right-2 sm:right-5`}><RiArrowDownSLine /></span> </button>
+                        <div className={`w-full flex flex-col gap-y-6 text-[15px] ${question7 ? 'h-[900px] sm:h-[630px] py-5 px-3 border-t' : 'h-0'} border-t-gray-200 transition-all duration-300 `}>
                             <div className="m-0 text-justify">
                                 <p className="text-center mb-3">
                                     মহিলা করদাতাদের করহার (২০২৫-২০২৬ করবর্ষ)
@@ -258,8 +258,8 @@ export const Question = () => {
 
                             আইটি খাতে আয়ের ক্ষেত্রে কি কোন কর প্রদান করতে হবে?
 
-                            <span className={`text-3xl absolute ${question8 ? 'rotate-180' : 'rotate-0'} transition-all duration-300 right-5`}><RiArrowDownSLine /></span> </button>
-                        <div className={`w-full flex flex-col gap-y-6 text-[15px] ${question8 ? 'h-[1080px] py-5 px-3 border-t' : 'h-0'} border-t-gray-200 transition-all duration-300 `}>
+                            <span className={`text-3xl absolute ${question8 ? 'rotate-180' : 'rotate-0'} transition-all duration-300 right-2 sm:right-5`}><RiArrowDownSLine /></span> </button>
+                        <div className={`w-full flex flex-col gap-y-6 text-[15px] ${question8 ? 'h-[1380px] sm:h-[1080px] py-5 px-3 border-t' : 'h-0'} border-t-gray-200 transition-all duration-300 `}>
                             <div>
                                 <div className="">অর্থ আইন, ২০২৪ এর মাধ্যমে আইটি সেক্টরের বিভিন্ন খাতের আয়কে ১, জুলাই ২০২৪ হইতে ৩০ জুন, ২০২৭ পর্যন্ত করমুক্ত সুবিধা প্রদান করা হয়েছে। খাতগুলি নিম্নরূপঃ</div>
                                 <div className="">&nbsp;</div>
