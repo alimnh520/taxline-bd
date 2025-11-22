@@ -145,7 +145,7 @@ export function Subscription() {
                 <div className="ribbon text-xl md:text-2xl font-bold text-white tracking-wide pb-2 md:pb-5 drop-shadow-2xl">আমাদের প্যাকেজসমূহ</div>
             </div>
 
-            <div className="mt-10 flex flex-col sm:flex-row items-start justify-between gap-5 sm:gap-8">
+            <div className="mt-10 flex flex-col sm:flex-row px-5 sm:px-0 items-start justify-between gap-5 sm:gap-8">
                 {plans.map((plan, index) => {
                     const [hover, setHover] = useState(false);
 
