@@ -66,7 +66,7 @@ export default function Header() {
                
             )} */}
 
-            <div className={`flex flex-col ${mobileMenu ? 'h-[300px]' : 'h-0'} ${(mobileMenu && userInfo) ? 'h-[310px]' : 'h-0'} transition-all duration-300 bg-white mt-2 px-2 overflow-y-hidden shadow-lg rounded-md`}>
+            <div className={`flex flex-col ${mobileMenu ? 'h-[350px]' : 'h-0'} ${(mobileMenu && userInfo) ? 'h-[310px]' : 'h-0'} transition-all duration-300 bg-white mt-2 px-2 overflow-y-hidden shadow-lg rounded-md`}>
                 <Link href="/" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#172d13] hover:text-white rounded" onClick={() => setMobileMenu(false)}>HOME</Link>
                 <Link href="/components/course" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#172d13] hover:text-white rounded" onClick={() => setMobileMenu(false)}>COURSES</Link>
                 <Link href="/components/services" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#172d13] hover:text-white rounded" onClick={() => setMobileMenu(false)}>SERVICES</Link>
