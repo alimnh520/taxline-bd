@@ -43,10 +43,10 @@ export const Ereturn = () => {
                 ].map((text, i) => (
                     <div
                         key={i}
-                        className="w-full h-48 md:h-52 flex border border-[#172d13] rounded-xl bg-[#172d13] shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex-col"
+                        className="w-full h-48 md:h-52 flex border border-[#dff3e9] rounded-xl bg-[#dff3e9] shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex-col"
                     >
-                        <div className="h-32 md:h-40 w-full bg-gradient-to-br from-orange-100 to-blue-100 rounded-t-xl"></div>
-                        <p className="flex-1 flex items-center text-sm px-3 py-2 text-white font-medium">
+                        <div className="h-32 md:h-40 w-full bg-white rounded-t-xl"></div>
+                        <p className="flex-1 flex items-center text-sm px-3 py-2 text-[#00440c] font-medium">
                             {text}
                         </p>
                     </div>
@@ -55,9 +55,10 @@ export const Ereturn = () => {
 
             <Link
                 href=""
-                className="px-3 md:px-4 py-2 md:py-2.5 mt-4 md:mt-6 self-end font-semibold text-sm bg-[#172d13] hover:shadow-2xl hover:bg-[#172d13d1] rounded-lg shadow text-white transition-all duration-300"
+                className="px-3 md:px-4 py-2 md:py-2.5 mt-4 md:mt-6 self-end font-semibold text-sm bg-[#17982f] hover:shadow-2xl rounded-lg shadow text-white transition-all group flex items-center justify-center duration-300 relative overflow-hidden"
             >
-                View More
+                <span className="bg-[#005a11] rounded-full size-0 group-hover:size-28 transition-all duration-700 absolute button-effect"></span>
+                <span className="z-10">View More</span>
             </Link>
 
             <div className="w-full h-auto flex flex-col lg:flex-row sm:items-start items-center justify-between gap-6 mt-8">
@@ -65,7 +66,7 @@ export const Ereturn = () => {
                 {/* Left side links */}
                 <div className="w-full lg:w-[330px] flex flex-col">
 
-                    <div className="ribbon2 text-center py-2 text-white text-lg font-semibold rounded-md shadow-sm">
+                    <div className="ribbon2 text-center py-2 text-[#17982f] text-lg font-semibold rounded-md shadow-sm">
                         <p>প্রয়োজনীয় সরকারি লিংক</p>
                     </div>
 
@@ -75,7 +76,7 @@ export const Ereturn = () => {
                                 key={i}
                                 href={item.link}
                                 target="_blank"
-                                className="bg-[#172d13] text-white border border-[#172d13] px-3 py-2.5 flex items-center gap-x-2 text-[15px] hover:scale-[1.02] hover:shadow-md transition-all duration-300 rounded-full"
+                                className="bg-[#dff3e9] text-[#ff0000] border border-[#17982f] px-3 py-2.5 flex items-center gap-x-2 text-[15px] hover:scale-[1.02] hover:shadow-md transition-all duration-300 rounded-full"
                             >
                                 <img src="/logo/green-check.png" alt="" className="w-5 opacity-80" />
                                 {item.title}
@@ -87,7 +88,7 @@ export const Ereturn = () => {
                 {/* Right side cards */}
                 <div className="flex-1 h-auto">
 
-                    <div className="ribbon2 text-center py-2 text-white text-lg font-semibold rounded-md shadow-sm">
+                    <div className="ribbon2 text-center py-2 text-[#17982f] text-lg font-semibold rounded-md shadow-sm">
                         <p>ব্যক্তি করদাতার জন্য প্রযোজ্য</p>
                     </div>
 
@@ -96,14 +97,14 @@ export const Ereturn = () => {
                             <Link
                                 key={i}
                                 href={item.link}
-                                className="bg-[#172d13b7] h-32 sm:h-36 w-full rounded-t-xl rounded-b-[20px] hover:scale-105 hover:shadow-xl border border-blue-100 transition-all duration-300 flex flex-col items-center justify-between overflow-hidden"
+                                className="bg-[#dff3e9] h-32 sm:h-36 w-full rounded-t-xl rounded-b-[20px] hover:scale-105 hover:shadow-xl border border-blue-100 transition-all duration-300 flex flex-col items-center justify-between overflow-hidden"
                             >
                                 <div className="flex-1 px-1 text-center flex flex-col gap-y-4 items-center justify-center">
                                     <img src="/logo/green-check.png" className="w-6 opacity-80" alt="" />
-                                    <p className="text-white text-sm font-medium">{item.title}</p>
+                                    <p className="text-[#ff0000] text-sm font-medium">{item.title}</p>
                                 </div>
-                                <p className="text-[11px] bg-[#172d13] py-0.5 text-white w-full text-center font-semibold">
-                                    BDTaxation
+                                <p className="text-[11px] bg-[#17982f] py-0.5 text-white w-full text-center font-semibold">
+                                    TaxLine BD
                                 </p>
                             </Link>
                         ))}

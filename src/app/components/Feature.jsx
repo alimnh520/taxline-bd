@@ -45,10 +45,10 @@ export const Feature = () => {
                             onMouseLeave={() => setHoveredIdx(null)}
                             className={`w-[95px] h-[95px] 
                                md:w-[105px] md:h-[105px]
-                                border-[6px] md:border-[10px]
-                                border-[#d9ffd38f] rotate-45 bg-[#11270de8]
+                                border-[6px] md:border-[10px] hover:border-[#ffd0d0] transition-all duration-300
+                                border-[#d4edd5] rotate-45 bg-[#ff0000]
                                 rounded-4xl flex items-center justify-center
-                                transform transition-transform duration-300 ${scaleClass}
+                                transform duration-300 ${scaleClass}
                                 cursor-pointer
                             `}
                         >

@@ -19,7 +19,7 @@ export const Animations = () => {
                 <SwiperSlide className='bg-blue-500'>Slide 3</SwiperSlide>
             </Swiper>
 
-            <div className="w-full md:w-[350px] h-40 md:h-full bg-blue-600 shadow-[0px_5px_10px_rgba(0,0,0,0.5)]"></div>
+            <div className="w-full md:w-[350px] h-40 md:h-full bg-blue-600 hidden sm:block shadow-[0px_5px_10px_rgba(0,0,0,0.5)]"></div>
         </div>
     )
 }

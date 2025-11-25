@@ -71,7 +71,8 @@ const plans = [
         name: 'Basic',
         price: '৳২০০০',
         features: ['TIN REGISTRATION', 'INDIVIDUAL TAX', 'CORPORATE TAX', 'TAX RETURN', 'TAX ADVISORY'],
-        accent: '#4b0082',
+        accent: '#32b44a',
+        link: '/components/package/basic'
     },
     {
         name: 'Standard',
@@ -83,7 +84,8 @@ const plans = [
             'VAT AUDIT',
             'VAT CONSULTANCY'
         ],
-        accent: '#008080',
+        accent: '#ff0000',
+        link: '/components/package/standard'
     },
     {
         name: 'Premium',
@@ -103,7 +105,8 @@ const plans = [
             'REFUND ADJUSTMENT',
             'TAX APPEAL & TRIBUNAL',
         ],
-        accent: '#ffa500',
+        accent: '#17982f',
+        link: '/components/package/premium'
     },
 ];
 
@@ -131,10 +134,11 @@ export function Subscription() {
                     <Link
                         key={idx}
                         href={`/components/tax-act/${item.link}`}
-                        className="bg-[#172d13] rounded-lg flex items-center text-center p-3 justify-center 
-                        shadow-xl transition-all duration-300 hover:bg-[#1c3b15] hover:scale-105"
+                        className="bg-[#32b44a] rounded-lg flex items-center text-center p-3 justify-center 
+                        shadow-xl transition-all relative duration-300 group overflow-hidden hover:scale-105"
                     >
-                        <span className="text-white font-semibold text-sm sm:text-base">
+                        <span className="bg-[#17982f] rounded-full size-0 group-hover:size-80 transition-all duration-700 absolute button-effect" ></span>
+                        <span className="text-white font-semibold text-sm z-10 sm:text-base">
                             {item.text}
                         </span>
                     </Link>
@@ -169,7 +173,9 @@ export function Subscription() {
                                     <div className="mt-2 sm:mt-4 flex items-baseline text-3xl sm:text-5xl drop-shadow-2xl font-extrabold">
                                         <p>{plan.price}</p>
                                     </div>
-                                    {index === 2 && <p className="mt-2 sm:mt-4 ml-1 sm:ml-2 text-sm sm:text-base">Starting from</p>}
+                                    {index === 2 && <p className="mt-2 sm:mt-4 ml-1 px-2 rounded-full sm:ml-2 sm:text-base" style={{
+                                            backgroundColor: lightenColor(plan.accent, -10)
+                                        }}>Starting from</p>}
                                 </div>
 
                                 <div
@@ -228,20 +234,23 @@ export function Subscription() {
                                 </ul>
                             </div>
 
-                            <div className="px-4 sm:px-6 pb-6 bg-white">
-                                <button
-                                    type="button"
-                                    className="w-full relative overflow-hidden py-2 sm:py-3 text-white font-semibold text-sm sm:text-base rounded-full transition-all duration-300"
-                                    style={{
-                                        backgroundColor: hover
-                                            ? lightenColor(plan.accent, -10)
-                                            : lightenColor(plan.accent, 20),
-                                    }}
-                                    onMouseEnter={() => setHover(true)}
-                                    onMouseLeave={() => setHover(false)}
-                                >
-                                    Get Started
-                                </button>
+                            <div className="px-4 sm:px-6 pb-6 bg-white relative">
+                                <Link href={plan.link}>
+                                    <button
+                                        type="button"
+                                        className="w-full h-10 sm:h-12 cursor-pointer relative overflow-hidden text-white font-semibold text-sm sm:text-base rounded-full group transition-all duration-300 flex items-center justify-center"
+                                        style={{
+                                            backgroundColor: lightenColor(plan.accent, 20),
+                                        }}
+                                        onMouseEnter={() => setHover(true)}
+                                        onMouseLeave={() => setHover(false)}
+                                    >
+                                        <span className="bg-white rounded-full size-0 group-hover:size-80 transition-all duration-700 absolute button-effect" style={{
+                                            backgroundColor: lightenColor(plan.accent, -10)
+                                        }}></span>
+                                        <span className="z-10">Get Started</span>
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     );

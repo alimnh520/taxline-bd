@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffff;
-  --foreground: #172d13;
+  --foreground: #17982f;
 }
 
 @theme inline {
@@ -164,7 +164,7 @@ body {
     conic-gradient(at right var(--s) bottom var(--d),
       #0004 62.5%, #0008 0 75%, #0000 0) 100%/50% 100% no-repeat;
   clip-path: polygon(0 var(--d), var(--s) var(--d), var(--s) 0, calc(100% - var(--s)) 0, calc(100% - var(--s)) var(--d), 100% var(--d), calc(100% - var(--c)) calc(50% + var(--d)/2), 100% 100%, calc(100% - var(--s) - var(--d)) 100%, calc(100% - var(--s) - var(--d)) calc(100% - var(--d)), calc(var(--s) + var(--d)) calc(100% - var(--d)), calc(var(--s) + var(--d)) 100%, 0 100%, var(--c) calc(50% + var(--d)/2));
-  background-color: #172d13;
+  background-color: #17982f;
   /* the main color */
   width: fit-content;
 }
@@ -180,7 +180,7 @@ body {
       calc(100% - var(--r)) 100%,
       -100vw 100%);
 
-  background-color: #172d13;
+  background-color: #17982f;
   /* পুরো div ব্যাকগ্রাউন্ড */
   color: white;
 }

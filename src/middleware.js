@@ -7,7 +7,9 @@ export async function middleware(request) {
 
     const subscriptionRequiredPaths = [
         "/components/tax-act/tax-rate",
-        "/components/tax-act/company-tax"
+        "/components/tax-act/company-tax",
+        "/components/package/basic",
+        "/components/package/standard"
     ];
 
     if (token && (
@@ -67,6 +69,8 @@ export const config = {
         "/components/login",
         "/components/user/dashboard/:path*",
         "/components/tax-act/tax-rate",
-        "/components/tax-act/company-tax"
+        "/components/tax-act/company-tax",
+        "/components/package/basic",
+        "/components/package/standard"
     ],
 };

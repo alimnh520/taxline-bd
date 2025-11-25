@@ -3,8 +3,8 @@ import React from "react";
 
 function ServiceCard({ title, desc, icon }) {
     return (
-        <div className=" p-6 rounded-2xl shadow hover:shadow-2xl transition">
-            <div className="flex items-start gap-4">
+        <div className="p-6 rounded-2xl bg-[#dff3e9] border border-[#17982f] shadow hover:shadow-2xl transition w-full h-full -skew-x-12">
+            <div className="flex items-start gap-4 skew-x-12">
                 <div className="text-3xl">{icon}</div>
                 <div>
                     <h4 className="font-semibold text-gray-800 text-lg">{title}</h4>
@@ -17,7 +17,7 @@ function ServiceCard({ title, desc, icon }) {
 
 export default function BDTaxationPage() {
     return (
-        <div className="mt-5 sm:mt-10 sm:py-8 py-4">
+        <div className="mt-5 sm:mt-8 sm:py-8 py-4">
             <main>
 
                 {/* SERVICES SECTION */}

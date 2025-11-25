@@ -34,14 +34,14 @@ export default function Header() {
 
                 {/* Desktop Menu */}
                 <nav className="hidden md:flex space-x-3 font-semibold text-green-800">
-                    <Link href="/" className={`${path === '/' ? 'bg-[#172d13] text-white' : ''} hover:bg-[#172d13] hover:text-white px-3 py-2 rounded text-[14px]`}>HOME</Link>
-                    <Link href="/components/course" className={`${path.startsWith('/components/course') ? 'bg-[#172d13] text-white' : ''} hover:bg-[#172d13] hover:text-white px-3 py-2 rounded text-[14px]`}>COURSES</Link>
-                    <Link href="/components/services" className={`${path === '/components/services' ? 'bg-[#172d13] text-white' : ''} hover:bg-[#172d13] hover:text-white px-3 py-2 rounded text-[14px]`}>SERVICES</Link>
-                    <Link href="/components/package" className={`${path === '/components/package' ? 'bg-[#172d13] text-white' : ''} hover:bg-[#172d13] hover:text-white px-3 py-2 rounded text-[14px]`}>PACKAGE</Link>
-                    <Link href="" className={`${path === '/rgre' ? 'bg-[#172d13] text-white' : ''} hover:bg-[#172d13] hover:text-white px-3 py-2 rounded text-[14px]`}>BLOG</Link>
-                    {!userInfo && <Link href="/components/login" className={`${path === '/components/login' ? 'bg-[#172d13] text-white' : ''} hover:underline px-3 py-2 rounded text-[14px]`}>SIGNIN</Link>}
-                    {!userInfo && <Link href="/components/registration" className={`${path === '/components/registration' ? 'bg-[#172d13] text-white' : ''} hover:underline px-3 py-2 rounded text-[14px]`}>REGISTER</Link>}
-                    {userInfo && <Link href="/components/user/dashboard" className={`${path === '/components/user/dashboard' ? 'bg-[#172d13] text-white' : ''} hover:bg-[#172d13] hover:text-white px-3 py-2 rounded text-[14px]`}>DASHBOARD</Link>}
+                    <Link href="/" className={`${path === '/' ? 'bg-[#17982f] text-white' : ''} hover:bg-[#17982f] hover:text-white px-3 py-2 rounded text-[14px]`}>HOME</Link>
+                    <Link href="/components/course" className={`${path.startsWith('/components/course') ? 'bg-[#17982f] text-white' : ''} hover:bg-[#17982f] hover:text-white px-3 py-2 rounded text-[14px]`}>COURSES</Link>
+                    <Link href="/components/services" className={`${path === '/components/services' ? 'bg-[#17982f] text-white' : ''} hover:bg-[#17982f] hover:text-white px-3 py-2 rounded text-[14px]`}>SERVICES</Link>
+                    <Link href="/components/package" className={`${path === '/components/package' ? 'bg-[#17982f] text-white' : ''} hover:bg-[#17982f] hover:text-white px-3 py-2 rounded text-[14px]`}>PACKAGE</Link>
+                    <Link href="" className={`${path === '/rgre' ? 'bg-[#17982f] text-white' : ''} hover:bg-[#17982f] hover:text-white px-3 py-2 rounded text-[14px]`}>BLOG</Link>
+                    {!userInfo && <Link href="/components/login" className={`${path === '/components/login' ? 'bg-[#17982f] text-white' : ''} hover:underline px-3 py-2 rounded text-[14px]`}>SIGNIN</Link>}
+                    {!userInfo && <Link href="/components/registration" className={`${path === '/components/registration' ? 'bg-[#17982f] text-white' : ''} hover:underline px-3 py-2 rounded text-[14px]`}>REGISTER</Link>}
+                    {userInfo && <Link href="/components/user/dashboard" className={`${path === '/components/user/dashboard' ? 'bg-[#17982f] text-white' : ''} hover:bg-[#17982f] hover:text-white px-3 py-2 rounded text-[14px]`}>DASHBOARD</Link>}
                 </nav>
 
                 <div className="md:flex justify-center space-x-3 hidden text-gray-700">
@@ -67,14 +67,14 @@ export default function Header() {
             )} */}
 
             <div className={`flex flex-col ${mobileMenu ? 'h-[350px]' : 'h-0'} ${(mobileMenu && userInfo) ? 'h-[310px]' : 'h-0'} transition-all duration-300 bg-white mt-2 px-2 overflow-y-hidden shadow-lg rounded-md`}>
-                <Link href="/" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#172d13] hover:text-white rounded" onClick={() => setMobileMenu(false)}>HOME</Link>
-                <Link href="/components/course" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#172d13] hover:text-white rounded" onClick={() => setMobileMenu(false)}>COURSES</Link>
-                <Link href="/components/services" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#172d13] hover:text-white rounded" onClick={() => setMobileMenu(false)}>SERVICES</Link>
-                <Link href="/components/package" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#172d13] hover:text-white rounded" onClick={() => setMobileMenu(false)}>PACKAGE</Link>
-                <Link href="" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#172d13] hover:text-white rounded" onClick={() => setMobileMenu(false)}>BLOG</Link>
-                {!userInfo && <Link href="/components/login" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#172d13] hover:text-white rounded" onClick={() => setMobileMenu(false)}>SIGNIN</Link>}
-                {!userInfo && <Link href="/components/registration" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#172d13] hover:text-white rounded" onClick={() => setMobileMenu(false)}>REGISTER</Link>}
-                {userInfo && <Link href="/components/user/dashboard" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#172d13] hover:text-white rounded" onClick={() => setMobileMenu(false)}>DASHBOARD</Link>}
+                <Link href="/" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#17982f] hover:text-white rounded" onClick={() => setMobileMenu(false)}>HOME</Link>
+                <Link href="/components/course" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#17982f] hover:text-white rounded" onClick={() => setMobileMenu(false)}>COURSES</Link>
+                <Link href="/components/services" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#17982f] hover:text-white rounded" onClick={() => setMobileMenu(false)}>SERVICES</Link>
+                <Link href="/components/package" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#17982f] hover:text-white rounded" onClick={() => setMobileMenu(false)}>PACKAGE</Link>
+                <Link href="" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#17982f] hover:text-white rounded" onClick={() => setMobileMenu(false)}>BLOG</Link>
+                {!userInfo && <Link href="/components/login" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#17982f] hover:text-white rounded" onClick={() => setMobileMenu(false)}>SIGNIN</Link>}
+                {!userInfo && <Link href="/components/registration" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#17982f] hover:text-white rounded" onClick={() => setMobileMenu(false)}>REGISTER</Link>}
+                {userInfo && <Link href="/components/user/dashboard" className="block px-3 py-2 text-green-800 font-semibold hover:bg-[#17982f] hover:text-white rounded" onClick={() => setMobileMenu(false)}>DASHBOARD</Link>}
 
                 {/* Social Icons */}
                 <div className="flex justify-center space-x-3 mt-2 text-gray-700 border-t border-t-gray-300 pt-3">
