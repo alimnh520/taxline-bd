@@ -17,6 +17,7 @@ const taxGuidelines = [
     { id: 10, year: '২০১৬-২০১৭', link: '/components/tax-act/tax-guideline/10' },
 ];
 
+
 export default function IncomeTaxTable() {
     const router = useRouter();
 

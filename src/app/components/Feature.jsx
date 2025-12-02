@@ -1,13 +1,12 @@
 "use client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export const Feature = () => {
-    const [hoveredIdx, setHoveredIdx] = useState(null);
-    const router = useRouter();
+    const [hover, setHover] = useState(null);
+    const [isRotate, setIsRotate] = useState(true);
 
-    const diamondLinks = [
+    const items = [
         { text: "আইকর আইন ২০২৩", link: "taxLaw" },
         { text: "মূসক ও সম্পূরক শুল্ক আইন ২০১২", link: "sulkoLaw" },
         { text: "কাস্টম আইন ২০২৩", link: "customLaw" },
@@ -21,57 +20,55 @@ export const Feature = () => {
     ];
 
     return (
-        <div className="mx-auto flex mt-10 gap-y-10 flex-col items-center justify-center flex-wrap px-2">
+        <div className="flex flex-col items-center mt-12 px-3 space-y-10">
 
-            <div className="ribbon text-xl md:text-2xl font-bold text-white tracking-wide pb-2 md:pb-5 drop-shadow-2xl">
-                আমাদের জনপ্রিয় ফিচারসমূহ
-            </div>
+            <div className={`relative w-[330px] h-[330px] md:w-[420px] md:h-[420px] flex items-center justify-center`}>
 
-            <div className="w-full flex flex-wrap items-center justify-center gap-5 md:gap-x-5 text-white border-b border-b-gray-200 pb-6 md:pb-8">
+                {/* Center Planet */}
+                <div className="absolute w-32 h-32 md:w-40 md:h-40 rounded-full 
+                    bg-gradient-to-br from-green-500 to-green-800 shadow-xl
+                    flex items-center justify-center text-white font-bold text-center p-3 text-lg">
+                    TaxLine BD
+                </div>
 
-                {diamondLinks.map((item, idx) => {
-                    const scaleClass =
-                        hoveredIdx === null
-                            ? "scale-100"
-                            : hoveredIdx === idx
-                                ? "scale-105"
-                                : "scale-90";
+                {/* Orbit Items */}
+                {items.map((item, idx) => {
+                    const angle = (idx / items.length) * 360;
+                    const isActive = hover === idx;
 
                     return (
                         <Link
-                            href={`/components/tax-act/${item.link}`}
                             key={idx}
-                            onMouseEnter={() => setHoveredIdx(idx)}
-                            onMouseLeave={() => setHoveredIdx(null)}
-                            className={`w-[95px] h-[95px] 
-                               md:w-[105px] md:h-[105px]
-                                border-[6px] md:border-[10px] hover:border-[#ffd0d0] transition-all duration-300
-                                border-[#d4edd5] rotate-45 bg-[#ff0000]
-                                rounded-4xl flex items-center justify-center
-                                transform duration-300 ${scaleClass}
-                                cursor-pointer
-                            `}
+                            href={`/components/tax-act/${item.link}`}
+                            onMouseEnter={() => {
+                                setHover(idx);
+                                setIsRotate(false);
+                            }}
+                            onMouseLeave={() => {
+                                setHover(null);
+                                setIsRotate(true);
+                            }}
+                            className="absolute transition-all duration-300 origin-center z-10"
+                            style={{
+                                transform: `rotate(${angle}deg) translate(160px) rotate(-${angle}deg)`
+                            }}
                         >
-                            <p className="-rotate-45 text-[13px] text-center text-white transition-colors duration-300 hover:text-[#ffe8c4]">
+                            <div
+                                className={`
+                                    w-[85px] h-[85px] md:w-[105px] md:h-[105px]
+                                    rounded-full flex items-center justify-center text-center
+                                    text-[11px] md:text-[13px] px-3 font-semibold
+                                    bg-gradient-to-br from-red-500 to-red-700 text-white
+                                    border-2 border-pink-200 shadow-lg transition-all duration-300 cursor-pointer
+                                    ${isActive ? "scale-125 shadow-[0_0_20px_#ff5b5b]" : "scale-100"}
+                                `}
+                            >
                                 {item.text}
-                            </p>
+                            </div>
                         </Link>
                     );
                 })}
             </div>
-
-            {/* <button
-                onClick={() => {
-                    const link = document.createElement('a');
-                    link.href = 'https://bdtaxation.com/uploads/TDS_Rules,_2023.pdf';
-                    link.download = 'আয়কর নির্দেশিকা ২০১৬-২০১৭.pdf';
-                    link.click();
-                }}
-                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-            >
-                PDF ডাউনলোড করো
-            </button> */}
-
         </div>
     );
 };

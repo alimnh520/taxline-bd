@@ -86,26 +86,36 @@ export const Ereturn = () => {
                 </div>
 
                 {/* Right side cards */}
+
                 <div className="flex-1 h-auto">
 
-                    <div className="ribbon2 text-center py-2 text-[#17982f] text-lg font-semibold rounded-md shadow-sm">
+                    {/* Header Ribbon */}
+                    <div className="ribbon2 text-center py-3 text-[#0f6f3f] text-lg font-extrabold rounded-xl shadow-md tracking-wide bg-[#e8f7ed]">
                         <p>ব্যক্তি করদাতার জন্য প্রযোজ্য</p>
                     </div>
 
-                    <div className="w-full mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 px-2 md:px-6">
+                    {/* Card Grid */}
+                    <div className="w-full mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 px-4 md:px-6">
                         {personalTaxLinks.map((item, i) => (
                             <Link
                                 key={i}
                                 href={item.link}
-                                className="bg-[#dff3e9] h-32 sm:h-36 w-full rounded-t-xl rounded-b-[20px] hover:scale-105 hover:shadow-xl border border-blue-100 transition-all duration-300 flex flex-col items-center justify-between overflow-hidden"
+                                className="relative bg-gradient-to-br from-[#dff3e9] to-[#b0e8c9] h-44 sm:h-40 w-full rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-400 border border-[#a8e0c3] flex flex-col items-center justify-start pt-5 gap-y-5 overflow-hidden group"
                             >
-                                <div className="flex-1 px-1 text-center flex flex-col gap-y-4 items-center justify-center">
-                                    <img src="/logo/green-check.png" className="w-6 opacity-80" alt="" />
-                                    <p className="text-[#ff0000] text-sm font-medium">{item.title}</p>
+                                {/* Top Decorative Icon Circle */}
+                                <div className="z-10 bg-white w-12 h-12 p-1 rounded-full border flex items-center justify-center border-[#0f6f3f33] shadow-lg group-hover:animate-bounce transition-transform duration-300">
+                                    <img src="/logo/green-check.png" className="w-10 opacity-100" alt="" />
                                 </div>
-                                <p className="text-[11px] bg-[#17982f] py-0.5 text-white w-full text-center font-semibold">
-                                    TaxLine BD
+
+                                {/* Card Content */}
+                                <p className="text-[#0f3f2f] text-sm font-semibold leading-snug">
+                                    {item.title}
                                 </p>
+
+                                {/* Floating Footer Badge */}
+                                <span className="absolute w-full bottom-0 bg-[#0f6f3f] text-white text-[11px] font-semibold px-3 py-1 text-center shadow-md">
+                                    TaxLine BD
+                                </span>
                             </Link>
                         ))}
                     </div>

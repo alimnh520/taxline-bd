@@ -26,7 +26,7 @@
   font-style: normal;
 }
 
-.my-font{
+.my-font {
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -183,4 +183,31 @@ body {
   background-color: #17982f;
   /* পুরো div ব্যাকগ্রাউন্ড */
   color: white;
+}
+
+/* Chrome, Safari, Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.animate-feature{
+  animation: feature 1s linear infinite
+}
+@keyframes feature {
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(-15px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+  
 }

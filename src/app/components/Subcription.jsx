@@ -129,20 +129,40 @@ export function Subscription() {
         <div className="sm:w-10/12 w-full mx-auto px-4 sm:px-6 lg:px-8 md:space-y-16 space-y-10 py-6 md:py-16">
 
             {/* Grid Links */}
-            <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4 sm:gap-6">
-                {gridLinks.map((item, idx) => (
-                    <Link
-                        key={idx}
-                        href={`/components/tax-act/${item.link}`}
-                        className="bg-[#32b44a] rounded-lg flex items-center text-center p-3 justify-center 
-                        shadow-xl transition-all relative duration-300 group overflow-hidden hover:scale-105"
-                    >
-                        <span className="bg-[#17982f] rounded-full size-0 group-hover:size-80 transition-all duration-700 absolute button-effect" ></span>
-                        <span className="text-white font-semibold text-sm z-10 sm:text-base">
-                            {item.text}
-                        </span>
-                    </Link>
-                ))}
+            <div className="w-full space-y-8">
+
+                <div className="w-full flex justify-center">
+                    <div className="ribbon text-xl md:text-2xl font-bold text-white tracking-wide pb-2 md:pb-5 drop-shadow-2xl">ট্যাক্স সম্পর্কিত গুরুত্বপূর্ণ টপিকসমূহ</div>
+                </div>
+
+                {/* Two Column List Layout */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+
+                    {gridLinks.map((item, idx) => (
+                        <Link
+                            key={idx}
+                            href={`/components/tax-act/${item.link}`}
+                            className="
+        relative 
+        bg-[#32b44a]  overflow-hidden group cursor-pointer hover:shadow-[0_0_30px_#4dff6a80] hover:-translate-y-1 flex items-center gap-4 p-2 rounded-xl border border-[#32b44a]/40 shadow-sm hover:shadow-lg text-white  transition-all duration-300"
+                        >
+
+                            {/* Left Solid Icon Box */}
+                            <div className="z-10 bg-white w-10 h-10 rounded-full border flex items-center justify-center border-[#0f6f3f33] shadow-lg ">
+                                    <img src="/logo/green-check.png" className="w-8 opacity-100" alt="" />
+                                </div>
+
+                            {/* Text */}
+                            <span className="font-semibold text-base z-10">
+                                {item.text}
+                            </span>
+
+                            <span className="bg-[#2c9d41] rounded-full left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 size-0 group-hover:size-80 transition-all duration-700 absolute button-effect"></span>
+
+                        </Link>
+                    ))}
+
+                </div>
             </div>
 
             <div className="w-full flex justify-center">
@@ -174,8 +194,8 @@ export function Subscription() {
                                         <p>{plan.price}</p>
                                     </div>
                                     {index === 2 && <p className="mt-2 sm:mt-4 ml-1 px-2 rounded-full sm:ml-2 sm:text-base" style={{
-                                            backgroundColor: lightenColor(plan.accent, -10)
-                                        }}>Starting from</p>}
+                                        backgroundColor: lightenColor(plan.accent, -10)
+                                    }}>Starting from</p>}
                                 </div>
 
                                 <div
@@ -257,6 +277,6 @@ export function Subscription() {
                 })}
             </div>
 
-        </div>
+        </div >
     );
 }

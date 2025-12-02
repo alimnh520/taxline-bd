@@ -14,8 +14,8 @@ const page = () => {
       <Feature />
       <Subscription />
       <Ereturn />
-      <Update />
       <BusinessCalculator />
+      <Update />
       <Question />
       <BDTaxationPage />
     </div>
