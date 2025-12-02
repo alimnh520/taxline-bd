@@ -24,15 +24,14 @@ export default function Header() {
     }, []);
 
     return (
-        <header className="md:w-[87%] w-full mx-auto flex flex-col sm:mt-5 my-font">
+        <header className="md:w-[87%] w-full mx-auto flex flex-col sm:mt-5 my-font ">
+
             <div className="w-full flex justify-between items-center px-4 shadow md:shadow-none ">
 
-                {/* Logo */}
-                <div className="flex items-center">
-                    <img src="/logo.jpg" alt="BDTaxation Logo" className="md:h-28 h-[70px] object-contain" />
+                <div className="flex items-center py-1 sm:py-0">
+                    <img src="/TaxLine_BD-PNG.png" alt="BDTaxation Logo" className="md:h-24 h-[70px] object-contain" />
                 </div>
 
-                {/* Desktop Menu */}
                 <nav className="hidden md:flex space-x-3 font-semibold text-green-800">
                     <Link href="/" className={`${path === '/' ? 'bg-[#17982f] text-white' : ''} hover:bg-[#17982f] hover:text-white px-3 py-2 rounded text-[14px]`}>HOME</Link>
                     <Link href="/components/course" className={`${path.startsWith('/components/course') ? 'bg-[#17982f] text-white' : ''} hover:bg-[#17982f] hover:text-white px-3 py-2 rounded text-[14px]`}>COURSES</Link>

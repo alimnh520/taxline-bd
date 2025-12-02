@@ -7,7 +7,7 @@ import { Navigation } from 'swiper/modules'
 
 export const Animations = () => {
     return (
-        <div className='flex flex-col md:flex-row items-center px-2 md:px-5 justify-between w-full h-auto md:h-56 gap-y-3 md:gap-x-2'>
+        <div className='flex flex-col md:flex-row items-center px-2 mt-2 md:px-5 justify-between w-full h-auto md:h-56 gap-y-3 md:gap-x-2'>
 
             <Swiper
                 navigation={true}
