@@ -1,12 +1,13 @@
 'use client';
 
+import GovernmentLinks from "../../GovtLink";
 import { PersonalFeature } from "../../personal-link/PersonalFeature";
 import TaxAccordions from "../../personal-link/PersonalTax";
 
 export default function TaxLaw() {
 
     return (
-        <div className="flex flex-col justify-start gap-y-8 w-10/12 mx-auto border-t border-t-gray-200">
+        <div className="flex flex-col justify-start gap-y-8 items-center mx-auto border-t border-t-gray-200">
 
             <PersonalFeature />
 
@@ -124,6 +125,7 @@ export default function TaxLaw() {
 
                 </div>
             </div>
+            <GovernmentLinks/>
         </div>
 
     );

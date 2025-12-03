@@ -132,7 +132,7 @@ export function Subscription() {
             <div className="w-full space-y-8">
 
                 <div className="w-full flex justify-center">
-                    <div className="ribbon text-xl md:text-2xl font-bold text-white tracking-wide pb-2 md:pb-5 drop-shadow-2xl">ট্যাক্স সম্পর্কিত গুরুত্বপূর্ণ টপিকসমূহ</div>
+                    <div className="ribbon text-[16px] md:text-2xl font-bold text-white tracking-wide pb-2 md:pb-5 drop-shadow-2xl">ট্যাক্স সম্পর্কিত গুরুত্বপূর্ণ টপিকসমূহ</div>
                 </div>
 
                 {/* Two Column List Layout */}

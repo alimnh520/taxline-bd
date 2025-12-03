@@ -5,6 +5,7 @@ import { PersonalFeature } from "../PersonalFeature";
 import TaxAccordions from "../PersonalTax";
 
 import { useState } from "react";
+import GovernmentLinks from "../../GovtLink";
 
 const surchargeSlabs = [
     { label: "(ক) নিট পরিসম্পদের মূল্যমান ৪ কোটি পর্যন্ত", rate: "শূন্য" },
@@ -28,11 +29,11 @@ export default function page() {
 
 
     return (
-        <div className="flex flex-col justify-start gap-y-8 w-10/12 mx-auto border-t border-t-gray-200">
+        <div className="flex flex-col justify-start items-center gap-y-8 mx-auto border-t border-t-gray-200">
 
             <PersonalFeature />
 
-            <div className="flex flex-col md:flex-row items-start justify-center gap-x-5 w-full">
+            <div className="flex flex-col md:flex-row items-start justify-center gap-x-5 w-10/12">
 
                 <div className="w-full md:w-1/3">
                     <TaxAccordions />
@@ -894,7 +895,7 @@ export default function page() {
 
                 </div>
             </div>
-            <h1>Null page</h1>
+            <GovernmentLinks />
         </div>
     );
 }

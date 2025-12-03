@@ -124,7 +124,7 @@ function Accordion({ title, links, defaultOpenPath, height }) {
 export default function TaxAccordions() {
     return (
         <div className="px-2 mt-5">
-            <Accordion title="ব্যক্তি করদাতার জন্য প্রযোজ্য" links={personalLinks} height={520} defaultOpenPath={["/components/personal-link/salary","/components/tax-act/tax-rate", "/components/tax-act/tax-guideline", "/components/personal-link/final-tax", "/components/personal-link/surcharge"]} />
+            <Accordion title="ব্যক্তি করদাতার জন্য প্রযোজ্য" links={personalLinks} height={520} defaultOpenPath={["/components/personal-link/salary","/components/tax-act/tax-rate", "/components/tax-act/tax-guideline", "/components/personal-link/final-tax", "/components/personal-link/surcharge", "/components/personal-link/tax-rebate", "/components/personal-link/tax-info", "/components/personal-link/commercial-car-tax", "/components/personal-link/private-car-tax", "/components/personal-link/env-surcharge", "/components/personal-link/regional-min-tax"]} />
             <Accordion title="কোম্পানির জন্য প্রযোজ্য" links={corporateLinks} height={500} defaultOpenPath={["/components/corporate-link",]} />
             <Accordion title=" ব্যবসায়ে খরচ সম্পর্কিত " links={aecLinks} height={260} defaultOpenPath={["/components/corporate-link",]} />
             <Accordion title=" কর অফিস সম্পর্কিত " links={appealLinks} height={230} defaultOpenPath={["/components/corporate-link",]} />

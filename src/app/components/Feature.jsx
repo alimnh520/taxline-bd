@@ -1,10 +1,26 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Feature = () => {
     const [hover, setHover] = useState(null);
     const [isRotate, setIsRotate] = useState(true);
+    const [translateValue, setTranslateValue] = useState(160);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 768) { // md breakpoint এর নিচে
+                setTranslateValue(120);
+            } else {
+                setTranslateValue(160);
+            }
+        };
+
+        handleResize(); // প্রথম render এ call
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
 
     const items = [
         { text: "আইকর আইন ২০২৩", link: "taxLaw" },
@@ -20,9 +36,14 @@ export const Feature = () => {
     ];
 
     return (
-        <div className="flex flex-col items-center mt-12 px-3 space-y-10">
+        <div className="flex items-center relative justify-center mt-6 sm:mt-12 px-3">
 
-            <div className={`relative w-[330px] h-[330px] md:w-[420px] md:h-[420px] flex items-center justify-center`}>
+            <div className="w-full hidden h-96 px-5 absolute sm:flex items-center justify-center ">
+                <div className="w-full h-96 bg-blue-700 shadow-[2px_2px_10px_rgba(0,0,0,0.5)]"></div>
+            </div>
+            <div className="w-[480px] h-[480px] hidden sm:block bg-white rounded-full absolute"></div>
+
+            <div className={`relative w-[330px] h-[330px] z-10 md:w-[420px] md:h-[420px] flex items-center justify-center`}>
 
                 {/* Center Planet */}
                 <div className="absolute w-32 h-32 md:w-40 md:h-40 rounded-full 
@@ -50,7 +71,7 @@ export const Feature = () => {
                             }}
                             className="absolute transition-all duration-300 origin-center z-10"
                             style={{
-                                transform: `rotate(${angle}deg) translate(160px) rotate(-${angle}deg)`
+                                transform: `rotate(${angle}deg) translate(${translateValue}px) rotate(-${angle}deg)`
                             }}
                         >
                             <div
@@ -69,6 +90,7 @@ export const Feature = () => {
                     );
                 })}
             </div>
+
         </div>
     );
 };

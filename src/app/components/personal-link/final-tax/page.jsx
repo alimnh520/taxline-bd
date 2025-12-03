@@ -3,6 +3,7 @@ import React from "react";
 import TaxAccordions from "../PersonalTax";
 import { PersonalFeature } from "../PersonalFeature";
 import { useRouter } from "next/navigation";
+import GovernmentLinks from "../../GovtLink";
 
 const finalTaxHeads = [
     { id: 1, title: "সম্পত্তি অধিগ্রহণ এর ক্ষতিপূরণ হতে অর্জিত আয়" },
@@ -21,11 +22,11 @@ const FinalTaxTable = () => {
     };
 
     return (
-        <div className="flex flex-col justify-start gap-y-8 w-10/12 mx-auto border-t border-t-gray-200">
+        <div className="flex flex-col justify-start gap-y-8 items-center mx-auto border-t border-t-gray-200">
 
             <PersonalFeature />
 
-            <div className="flex flex-col md:flex-row items-start justify-between gap-x-10 w-full">
+            <div className="flex flex-col md:flex-row items-start justify-between gap-x-10 w-10/12">
 
                 <div className="w-full md:w-1/3">
                     <TaxAccordions />
@@ -58,6 +59,7 @@ const FinalTaxTable = () => {
                 </div>
 
             </div>
+            <GovernmentLinks />
         </div>
     );
 };
