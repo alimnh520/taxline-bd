@@ -14,6 +14,18 @@ const finalTaxHeads = [
     { id: 6, title: "বাণিজ্যিকভাবে পরিচালিত মোটরযান হতে কর সংগ্রহ" },
 ];
 
+function englishToBanglaNumber(number) {
+    const eng = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    const bang = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+
+    return number.toString().split('').map(char => {
+        const index = eng.indexOf(char);
+        return index !== -1 ? bang[index] : char;
+    }).join('');
+}
+
+
+
 const FinalTaxTable = () => {
     const router = useRouter();
 
@@ -49,7 +61,7 @@ const FinalTaxTable = () => {
                                         className="hover:bg-gray-100 cursor-pointer"
                                         onClick={() => handleRowClick(head.id)}
                                     >
-                                        <td className="text-center border px-4 py-2">{idx + 1}</td>
+                                        <td className="text-center border px-4 py-2">{englishToBanglaNumber(idx + 1)}</td>
                                         <td className="border px-4 py-2">{head.title}</td>
                                     </tr>
                                 ))}

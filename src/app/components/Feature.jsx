@@ -38,7 +38,7 @@ export const Feature = () => {
     return (
         <div className="flex items-center relative justify-center mt-6 sm:mt-12 px-3">
 
-            <div className="w-full hidden h-96 px-5 absolute sm:flex items-center justify-center ">
+            <div className="w-full hidden h-96 px-5 absolute sm:flex items-center justify-center overflow-hidden">
                 <div className="w-full h-96 bg-blue-700 shadow-[2px_2px_10px_rgba(0,0,0,0.5)]"></div>
             </div>
             <div className="w-[480px] h-[480px] hidden sm:block bg-white rounded-full absolute"></div>

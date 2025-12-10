@@ -7,18 +7,18 @@ import { FaArrowRight } from "react-icons/fa";
 
 // ব্যক্তিগত কর লিঙ্ক
 const personalLinks = [
-    { name: "বেতন হতে কর কর্তন", href: "https://bdtaxation.com/calculator/tax-deduction-against-salary" },
-    { name: "ব্যক্তি করহার", href: "https://bdtaxation.com/tax-rate" },
-    { name: "চূড়ান্ত করের খাতসমূহ", href: "https://bdtaxation.com/final-tax-heads" },
-    { name: "সারচার্জ", href: "https://bdtaxation.com/surcharge" },
-    { name: "কর রেয়াত ক্যালকুলেটর", href: "https://bdtaxation.com/calculator/tax-rebate-calculator" },
-    { name: "কর রেয়াত তথ্য", href: "https://bdtaxation.com/tax-rebate-info" },
-    { name: "ব্যক্তিগত গাড়ির কর", href: "https://bdtaxation.com/personal-car-tax" },
-    { name: "বাণিজ্যিক গাড়ি কর", href: "https://bdtaxation.com/company-car-tax" },
-    { name: "পরিবেশ সারচার্জের হার", href: "https://bdtaxation.com/environmental-surcharge" },
-    { name: "আঞ্চলিক ন্যূনতম কর", href: "https://bdtaxation.com/area-minimum-tax" },
-    { name: "হ্রাসকৃত আয় ও কর", href: "https://bdtaxation.com/reduced-rate-incomes" },
-    { name: "ব্যক্তি ফর্ম", href: "https://bdtaxation.com/forms?type=individual" },
+    { name: "বেতন হতে কর কর্তন", href: "/components/personal-link/salary" },
+    { name: "ব্যক্তি করহার", href: "/components/tax-act/tax-rate" },
+    { name: "চূড়ান্ত করের খাতসমূহ", href: "/components/personal-link/final-tax" },
+    { name: "সারচার্জ", href: "/components/personal-link/surcharge" },
+    { name: "কর রেয়াত ক্যালকুলেটর", href: "/components/personal-link/tax-rebate" },
+    { name: "কর রেয়াত তথ্য", href: "/components/personal-link/tax-info" },
+    { name: "ব্যক্তিগত গাড়ির কর", href: "/components/personal-link/private-car-tax" },
+    { name: "বাণিজ্যিক গাড়ি কর", href: "/components/personal-link/commercial-car-tax" },
+    { name: "পরিবেশ সারচার্জের হার", href: "/components/personal-link/env-surcharge" },
+    { name: "আঞ্চলিক ন্যূনতম কর", href: "/components/personal-link/regional-min-tax" },
+    { name: "হ্রাসকৃত আয় ও কর", href: "/components/personal-link/reduced-income-tax" },
+    { name: "ব্যক্তি ফর্ম", href: "/components/personal-link/personal-form" },
 ];
 
 // প্রতিষ্ঠান কর লিঙ্ক
@@ -90,7 +90,7 @@ function Accordion({ title, links, defaultOpenPath, height }) {
         <div className="border-0 shadow p-2 rounded mb-3 w-72">
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-full relative text-left font-bold text-gray-800 flex justify-between items-center"
+                className="w-full relative text-left cursor-pointer font-bold text-gray-800 flex justify-between items-center"
             >
                 {title}
                 <span className={`transform transition-transform absolute right-1 text-xl ${isOpen ? "rotate-90" : "rotate-0"}`}>
@@ -124,8 +124,8 @@ function Accordion({ title, links, defaultOpenPath, height }) {
 export default function TaxAccordions() {
     return (
         <div className="px-2 mt-5">
-            <Accordion title="ব্যক্তি করদাতার জন্য প্রযোজ্য" links={personalLinks} height={520} defaultOpenPath={["/components/personal-link/salary","/components/tax-act/tax-rate", "/components/tax-act/tax-guideline", "/components/personal-link/final-tax", "/components/personal-link/surcharge", "/components/personal-link/tax-rebate", "/components/personal-link/tax-info", "/components/personal-link/commercial-car-tax", "/components/personal-link/private-car-tax", "/components/personal-link/env-surcharge", "/components/personal-link/regional-min-tax"]} />
-            <Accordion title="কোম্পানির জন্য প্রযোজ্য" links={corporateLinks} height={500} defaultOpenPath={["/components/corporate-link",]} />
+            <Accordion title="ব্যক্তি করদাতার জন্য প্রযোজ্য" links={personalLinks} height={520} defaultOpenPath={["/components/personal-link/salary","/components/tax-act/tax-rate", "/components/tax-act/tax-guideline", "/components/personal-link/final-tax", "/components/personal-link/surcharge", "/components/personal-link/tax-rebate", "/components/personal-link/tax-info", "/components/personal-link/commercial-car-tax", "/components/personal-link/private-car-tax", "/components/personal-link/env-surcharge", "/components/personal-link/regional-min-tax", "/components/personal-link/personal-form"]} />
+            <Accordion title="কোম্পানির জন্য প্রযোজ্য" links={corporateLinks} height={500} defaultOpenPath={["/components/company-link/company-tax","/components/company-link/minimum-tax", "/components/company-link/final-tax"]} />
             <Accordion title=" ব্যবসায়ে খরচ সম্পর্কিত " links={aecLinks} height={260} defaultOpenPath={["/components/corporate-link",]} />
             <Accordion title=" কর অফিস সম্পর্কিত " links={appealLinks} height={230} defaultOpenPath={["/components/corporate-link",]} />
             <Accordion title=" বিশেষ আইটেম " links={resourcesLinks} height={230} defaultOpenPath={["/components/corporate-link",]} />

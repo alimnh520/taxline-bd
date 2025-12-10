@@ -8,18 +8,18 @@ import { Pagination } from 'swiper/modules';
 export const BusinessCalculator = () => {
 
     const companyTaxLinks = [
-        { title: "কোম্পানি কর হার", link: "" },
-        { title: "নূন্যতম করের পরিমাণ", link: "" },
-        { title: "কর কর্তনের খাতসমূহ", link: "" },
-        { title: "উৎসে কর সংগ্রহের খাতসমূহ", link: "" },
-        { title: "চূড়ান্ত করের খাতসমূহ", link: "" },
-        { title: "নূন্যতম করের খাতসমূহ", link: "" },
-        { title: "হ্রাসকৃত আয় ও কর", link: "" },
-        { title: "অব্যাহতি প্রাপ্ত আয়", link: "" },
-        { title: "বাণিজ্যিক গাড়ি কর", link: "" },
-        { title: "পরিবেশ সারচার্জের হার", link: "" },
-        { title: "অবচয় ভাতার হার", link: "" },
-        { title: "প্রতিষ্ঠান ফর্ম", link: "" },
+        { title: "কোম্পানি কর হার", link: "/components/company-link/company-tax" },
+        { title: "নূন্যতম করের পরিমাণ", link: "/components/company-link/minimum-tax" },
+        { title: "কর কর্তনের খাতসমূহ", link: "/components/company-link/final-tax" },
+        { title: "উৎসে কর সংগ্রহের খাতসমূহ", link: "/components/company-link/" },
+        { title: "চূড়ান্ত করের খাতসমূহ", link: "/components/company-link/" },
+        { title: "নূন্যতম করের খাতসমূহ", link: "/components/company-link/" },
+        { title: "হ্রাসকৃত আয় ও কর", link: "/components/company-link/" },
+        { title: "অব্যাহতি প্রাপ্ত আয়", link: "/components/company-link/" },
+        { title: "বাণিজ্যিক গাড়ি কর", link: "/components/company-link/" },
+        { title: "পরিবেশ সারচার্জের হার", link: "/components/company-link/" },
+        { title: "অবচয় ভাতার হার", link: "/components/company-link/" },
+        { title: "প্রতিষ্ঠান ফর্ম", link: "/components/company-link/" },
     ];
 
 
@@ -51,7 +51,7 @@ export const BusinessCalculator = () => {
                             <Link
                                 key={i}
                                 href={item.link}
-                                className="relative bg-gradient-to-br from-[#dff3e9b7] to-[#b0e8c9] h-44 sm:h-[155px] w-full rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 border border-[#a8e0c3] flex flex-col items-center justify-start pt-5 gap-y-5 overflow-hidden group"
+                                className="relative bg-gradient-to-br from-[#dff3e9b7] to-[#b0e8c9] h-36  w-full rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 border border-[#a8e0c3] flex flex-col items-center justify-start pt-2 gap-y-3 overflow-hidden group"
                             >
                                 {/* Top Icon */}
                                 <div className="z-10 bg-white w-12 h-12 p-1 rounded-full border flex items-center justify-center border-[#0f6f3f33] shadow-lg group-hover:animate-bounce transition-transform duration-300">

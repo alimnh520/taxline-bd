@@ -2,12 +2,14 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Animations } from '../../Animations';
-import { Feature } from '../../Feature';
+import { PersonalFeature } from '../../personal-link/PersonalFeature';
+import TaxAccordions from '../../personal-link/PersonalTax';
+import GovernmentLinks from '../../GovtLink';
 
 export default function IncomeVoluntaryDeclaration() {
     const router = useRouter();
     const [selectedYear, setSelectedYear] = useState('');
+    const [showLogo, setShowLogo] = useState(false);
 
     const sections = [
         { id: 48, text: 'ধারা ২৪', link: '/tax-act-section/48' },
@@ -21,51 +23,108 @@ export default function IncomeVoluntaryDeclaration() {
         router.push(link);
     };
 
+    const handlePrint = () => {
+        const printContents = document.getElementById('sectionContent').innerHTML;
+        const originalContents = document.body.innerHTML;
+
+        // মূল body কে print content দিয়ে replace
+        document.body.innerHTML = printContents;
+
+        // Font size set করা
+        document.body.style.fontSize = '12px';
+
+        // Logo এবং watermark inject করা
+        const logo = document.createElement('img');
+        logo.src = '/TaxLine_BD-PNG.png';
+        logo.alt = 'BDTaxation Logo';
+        logo.className = 'md:h-24 h-[70px] object-contain';
+        document.body.prepend(logo);
+
+        const watermark = document.createElement('div');
+        watermark.className = 'watermark';
+        watermark.innerText = `TaxLine_BD`;
+        document.body.prepend(watermark);
+
+        // Custom print style inject
+        const style = document.createElement('style');
+        style.innerHTML = `
+        body { font-size: 12px; font-family: sans-serif; position: relative; min-height: 100vh;}
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            font-size: 5rem;
+            color: rgba(0,0,0,0.05);
+            pointer-events: none;
+            z-index: 0;
+        }
+        #sectionContent { position: relative; z-index: 1; }
+        img { display: block; margin: 0 auto 20px; max-height: 100px; }
+    `;
+        document.head.prepend(style);
+
+        // Print
+        window.print();
+
+        // Original content restore
+        document.body.innerHTML = originalContents;
+        window.location.reload();
+    };
+
     return (
-        <div className="mx-auto flex flex-col items-center gap-y-5 bg-gray-100">
-            <Animations />
-            <Feature />
+        <div className="flex flex-col justify-start items-center gap-y-8 w-full mx-auto border-t border-t-gray-200">
 
-            <div className="max-w-4xl mx-auto p-4" id="sectionContent">
-                {/* Print Button */}
-                <button
-                    className="bg-gray-600 text-white px-4 py-2 rounded mb-4 no-print"
-                    onClick={() => window.print()}
-                >
-                    Print
-                </button>
+            <PersonalFeature />
 
-                {/* Header */}
-                <h1 className="my-1 font-bold text-xl">আয়ের স্বপ্রণোদিত প্রদর্শন</h1>
-                <strong className="italic">ধারা : আয়ের স্বপ্রণোদিত প্রদর্শন</strong>
-                <hr className="my-1 text-gray-200" />
+            <div className="flex flex-col md:flex-row items-start justify-center gap-x-10 w-10/12">
 
-                {/* Year Select */}
-                <div className="mb-3 flex items-center mt-5">
-                    <label htmlFor="yearId" className="w-1/3 font-medium">করবর্ষ</label>
-                    <select
-                        id="yearId"
-                        className="w-80 border border-green-700 outline-none py-2.5 rounded px-2"
-                        onChange={(e) => setSelectedYear(e.target.value)}
-                    >
-                        <option value="3">২০২৫ - ২০২৬</option>
-                        <option value="0">২০২৩ - ২০২৪</option>
-                    </select>
+                {/* Accordion Section */}
+                <div className="w-full md:w-1/3 print:hidden">
+                    <TaxAccordions />
                 </div>
 
-                {/* Content */}
+                <div className="max-w-4xl mx-auto p-4 text-sm" id="sectionContent">
+                    {/* Print Button */}
+                    <button
+                        className="bg-gray-600 text-white px-4 py-2 rounded mb-4 print:hidden"
+                        onClick={() => {
+                            setShowLogo(true);
+                            handlePrint();
+                        }}
+                    >
+                        Print
+                    </button>
 
-                {
-                    selectedYear === '0' ? (
-                        <div className="">
+                    {/* Header */}
+                    <h1 className="my-1 font-bold text-xl">আয়ের স্বপ্রণোদিত প্রদর্শন</h1>
+                    <strong className="italic">ধারা : আয়ের স্বপ্রণোদিত প্রদর্শন</strong>
+                    <hr className="my-1 text-gray-200" />
+
+                    {/* Year Select */}
+                    <div className="mb-3 flex items-center mt-5 print:hidden">
+                        <label htmlFor="yearId" className="w-1/3 font-medium">করবর্ষ</label>
+                        <select
+                            id="yearId"
+                            className="w-80 border border-green-700 outline-none py-2.5 rounded px-2"
+                            onChange={(e) => setSelectedYear(e.target.value)}
+                        >
+                            <option value="3">২০২৫ - ২০২৬</option>
+                            <option value="0">২০২৩ - ২০২৪</option>
+                        </select>
+                    </div>
+
+                    {/* Content */}
+                    {selectedYear === '0' ? (
+                        <div>
                             <p>এই আইনটি ২০২৫-২০২৬ করবর্ষে সংযোজন করা হয়েছে।</p>
-                            {/* Ad placeholder */}
-                            <div className="border no-print w-full h-24 my-4 flex items-center justify-center bg-gray-100">
+                            <div className="border w-full h-24 my-4 flex items-center justify-center bg-gray-100 print:hidden">
                                 Ad Placeholder (Google Ads)
                             </div>
                         </div>
                     ) : (
                         <div className="space-y-2 mt-5 text-justify">
+                            {/* Content here */}
                             <div>
                                 (১){' '}
                                 <span
@@ -160,25 +219,25 @@ export default function IncomeVoluntaryDeclaration() {
                             <div className="text-red-600 mb-2">এই আইনটি ২০২৫-২০২৬ করবর্ষে সংযোজন করা হয়েছে।</div>
 
                             {/* Ad placeholder */}
-                            <div className="border no-print w-full h-24 my-4 flex items-center justify-center bg-gray-100">
+                            <div className="border w-full h-24 my-4 flex items-center justify-center bg-gray-100 print:hidden">
                                 Ad Placeholder (Google Ads)
                             </div>
                         </div>
-                    )
-                }
+                    )}
 
-                <hr className="my-4 text-gray-200" />
+                    <hr className="my-4 text-gray-200" />
 
-                <div className='flex flex-col gap-y-3'>
-                    <strong>মন্তব্য : </strong>
-                    <span className="text-red-600">
-                        আইনটি অর্থ অধ্যাদেশ, ২০২৫ এর সংশোধিত আদেশ দ্বারা সংযোজন করা হয়েছে
-                    </span>
+                    <div className="flex flex-col gap-y-3">
+                        <strong>মন্তব্য : </strong>
+                        <span className="text-red-600">
+                            আইনটি অর্থ অধ্যাদেশ, ২০২৫ এর সংশোধিত আদেশ দ্বারা সংযোজন করা হয়েছে
+                        </span>
+                    </div>
+
+                    <hr className="my-4 text-gray-200" />
                 </div>
-
-                <hr className="my-4 text-gray-200" />
-
             </div>
+            <GovernmentLinks />
         </div>
     );
 }

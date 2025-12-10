@@ -32,7 +32,9 @@
 
 body {
   font-family: "Bornomala", sans-serif;
-  background: white;
+  background: url('/bg/white-bg.jpg');
+  background-position: 0 0;
+  background-size: 200px 200px;
 }
 
 /* swiper buttons white color */

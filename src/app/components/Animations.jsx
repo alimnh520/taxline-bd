@@ -14,14 +14,14 @@ export const Animations = () => {
                 modules={[Navigation]}
                 className="mySwiper h-40 md:h-56 w-full md:flex-1 shadow-[0px_5px_10px_rgba(0,0,0,0.5)]"
             >
-                <SwiperSlide className="bg-contain bg-no-repeat bg-center" style={{ backgroundImage: "url('/animation/img1.png')" }}>
+                <SwiperSlide className="bg-contain bg-no-repeat bg-center bg-[url('/animation/banner-pc.png')] " >
                     {/* Optional overlay content */}
                 </SwiperSlide>
-                <SwiperSlide className="bg-contain bg-no-repeat bg-center" style={{ backgroundImage: "url('/animation/img1.png')" }}></SwiperSlide>
-                <SwiperSlide className="bg-contain bg-no-repeat bg-center" style={{ backgroundImage: "url('/animation/img1.png')" }}></SwiperSlide>
+                <SwiperSlide className="bg-contain bg-no-repeat bg-center bg-[url('/animation/banner-pc.png')] " ></SwiperSlide>
+                <SwiperSlide className="bg-contain bg-no-repeat bg-center bg-[url('/animation/banner-pc.png')] " ></SwiperSlide>
             </Swiper>
 
-            <div className="w-full md:w-[350px] h-40 md:h-full hidden sm:block shadow-[0px_5px_10px_rgba(0,0,0,0.5)] bg-contain bg-no-repeat bg-center" style={{ backgroundImage: "url('/animation/img1.png')" }}></div>
+            <div className="w-full md:w-[350px] h-40 md:h-full hidden sm:block shadow-[0px_5px_10px_rgba(0,0,0,0.5)] bg-cover bg-no-repeat bg-center" style={{ backgroundImage: "url('/animation/banner1.png')" }}></div>
         </div>
     )
 }

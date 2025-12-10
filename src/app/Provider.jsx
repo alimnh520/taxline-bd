@@ -3,7 +3,7 @@ import Header from "./layout/Header";
 
 const Provider = ({ children }) => {
     return (
-        <div className="sm:w-[72%] w-full shadow-2xl mx-auto">
+        <div className="sm:w-[72%] bg-white w-full shadow-2xl mx-auto">
             <Header />
             {children}
             <Footer/>

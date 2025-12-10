@@ -7,14 +7,6 @@ import TaxAccordions from "../PersonalTax";
 import { useState } from "react";
 import GovernmentLinks from "../../GovtLink";
 
-const surchargeSlabs = [
-    { label: "(ক) নিট পরিসম্পদের মূল্যমান ৪ কোটি পর্যন্ত", rate: "শূন্য" },
-    { label: "(খ) মূল্যমান ৪-১০ কোটি / ১+ গাড়ি / ৮০০০+ sq ft বাড়ি", rate: "১০%" },
-    { label: "(গ) মূল্যমান ১০-২০ কোটি", rate: "২০%" },
-    { label: "(ঘ) মূল্যমান ২০-৫০ কোটি", rate: "৩০%" },
-    { label: "(ঙ) মূল্যমান ৫০ কোটি-এর বেশি", rate: "৩৫%" },
-];
-
 
 export default function page() {
 

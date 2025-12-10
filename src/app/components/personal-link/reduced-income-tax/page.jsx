@@ -18,7 +18,18 @@ const reducedIncomeHeads = [
     { id: 10, title: "খুচরা যন্ত্রাংশসহ পূর্ণাঙ্গ ফ্রিজার, রেফ্রিজারেটর, মোটরসাইকেল, এয়ারকন্ডিশন ও কম্প্রেসর তৈরী শিল্পের আয়ের বিপরীতে কর" },
 ];
 
+
 const ReducedIncomePage = () => {
+
+    function englishToBanglaNumber(number) {
+        const eng = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+        const bang = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+
+        return number.toString().split('').map(char => {
+            const index = eng.indexOf(char);
+            return index !== -1 ? bang[index] : char;
+        }).join('');
+    }
 
     const router = useRouter();
 
@@ -31,7 +42,7 @@ const ReducedIncomePage = () => {
 
             <PersonalFeature />
 
-            <div className="flex flex-col md:flex-row items-start justify-between gap-x-10 w-11/12">
+            <div className="flex flex-col md:flex-row items-start justify-between gap-x-10 w-10/12">
 
                 {/* Accordion Section */}
                 <div className="w-full md:w-1/3">
@@ -56,7 +67,7 @@ const ReducedIncomePage = () => {
                                         className="hover:bg-gray-100 cursor-pointer"
                                         onClick={() => handleRowClick(item.id)}
                                     >
-                                        <td className="text-center border px-4 py-2">{idx + 1}</td>
+                                        <td className="text-center border px-4 py-2">{englishToBanglaNumber(idx + 1)}</td>
                                         <td className="border px-4 py-2">{item.title}</td>
                                     </tr>
                                 ))}

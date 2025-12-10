@@ -1,13 +1,13 @@
 import Link from "next/link";
 
 export const govLinks = [
-    { title: "ই-টিডিএস", link: "https://etds.nbr.gov.bd" },
-    { title: "ই-টিআইএন", link: "https://secure.incometax.gov.bd" },
-    { title: "এ-চালান", link: "https://echallan.gov.bd" },
-    { title: "এনবিআর ওয়েবসাইট", link: "https://nbr.gov.bd" },
-    { title: "সোনালী ব্যাংক পেমেন্ট", link: "https://spg.sonalibank.com.bd" },
-    { title: "ই-রিটার্ন ওয়েবসাইট", link: "https://etax.nbr.gov.bd" },
-    { title: "রিটার্ন ভেরিফাই", link: "https://etax.nbr.gov.bd/verify" }
+    { title: "ই-টিডিএস", link: "https://etds.gov.bd/login" },
+    { title: "ই-টিআইএন", link: "https://secure.incometax.gov.bd/TINHome" },
+    { title: "এ-চালান", link: "https://www.achallan.gov.bd/acs/v2/general/home?ReturnUrl=%2Facs%2F" },
+    { title: "এনবিআর ওয়েবসাইট", link: "https://nbr.gov.bd/" },
+    { title: "সোনালী ব্যাংক পেমেন্ট", link: "https://nbr.sblesheba.com/IncomeTax/Payment" },
+    { title: "ই-রিটার্ন ওয়েবসাইট", link: "https://etaxnbr.gov.bd/#/auth/sign-in" },
+    { title: "রিটার্ন ভেরিফাই", link: "https://etaxnbr.gov.bd/#/submission-verification" }
 ];
 
 export const personalTaxLinks = [
@@ -100,7 +100,7 @@ export const Ereturn = () => {
                             <Link
                                 key={i}
                                 href={item.link}
-                                className="relative bg-gradient-to-br from-[#dff3e9] to-[#b0e8c9] h-44 sm:h-40 w-full rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-400 border border-[#a8e0c3] flex flex-col items-center justify-start pt-5 gap-y-5 overflow-hidden group"
+                                className="relative bg-gradient-to-br from-[#dff3e9] to-[#b0e8c9] h-36 w-full rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-400 pt-2 border border-[#a8e0c3] flex flex-col items-center justify-start pt- gap-y-3 overflow-hidden group"
                             >
                                 {/* Top Decorative Icon Circle */}
                                 <div className="z-10 bg-white w-12 h-12 p-1 rounded-full border flex items-center justify-center border-[#0f6f3f33] shadow-lg group-hover:animate-bounce transition-transform duration-300">
@@ -108,7 +108,7 @@ export const Ereturn = () => {
                                 </div>
 
                                 {/* Card Content */}
-                                <p className="text-[#0f3f2f] text-sm font-semibold leading-snug">
+                                <p className="text-[#0f3f2f] text-sm text-center font-semibold leading-snug">
                                     {item.title}
                                 </p>
 
