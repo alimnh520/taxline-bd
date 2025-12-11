@@ -63,7 +63,6 @@ export default function Footer() {
                             যোগাযোগ
                         </h4>
                         <ul className="space-y-2 text-sm text-gray-300 leading-6">
-                            <li><FaHome className="text-base -mt-0.5 inline" /> প্রধান কার্যালয়: ৩৭, শামসুর রহমান রোড (৩য় তলা), খুলনা-৯১০০ </li>
                             <li><FaPhone className="text-base -mt-0.5 inline"/> মোবাইল: +880 1322-887800</li>
                             <li> <GoMail className="text-base -mt-0.5 inline"/> Email: taxlinebd.info@gmail.com</li>
                             <li><FaGlobe className="text-base -mt-0.5 inline"/> Website: taxlinebd.com</li>
@@ -80,57 +79,6 @@ export default function Footer() {
                             <a href="#" className="hover:text-white size-10 bg-red-700 flex items-center justify-center rounded-full group">
                                 <FaYoutube size={18} className="group-hover:scale-125 transition-all duration-300" />
                             </a>
-                        </div>
-                    </div>
-                </div>
-
-                {/* BRANCH LIST */}
-                <div className="mt-10 border-t border-gray-700 pt-6">
-                    <h4 className="text-lg font-semibold text-white mb-4">
-                        আমাদের শাখাসমূহ
-                    </h4>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 text-sm text-gray-300">
-
-                        {/* কর্পোরেট অফিস */}
-                        <div className="bg-gray-800 p-2 rounded-lg border border-gray-700">
-                            <h5 className="font-semibold text-white mb-2 border-b border-b-gray-700">কর্পোরেট অফিস</h5>
-                            <p><FaHome className="text-base -mt-1.5 inline" /> ৩৭, শামসুর রহমান রোড (৩য় তলা), খুলনা-৯১০০ </p>
-                            <p><FaPhone className="text-base -mt-0.5 inline"/>  +৮৮০ ১৬১১-০৬০ ৪৫৪</p>
-                        </div>
-
-                        {/* মিরপুর অফিস */}
-                        <div className="bg-gray-800 p-2 rounded-lg border border-gray-700">
-                            <h5 className="font-semibold text-white mb-2 border-b border-b-gray-700">যশোর অফিস</h5>
-                            <p><FaHome className="text-base -mt-1.5 inline" /> ১১, রেল রোড (৩য় তলা), বাগমারা পাড়া, যশোর</p>
-                            <p><FaPhone className="text-base -mt-0.5 inline"/>  +880 1511-060 454</p>
-                        </div>
-
-                        {/* বনানী অফিস */}
-                        <div className="bg-gray-800 p-2 rounded-lg border border-gray-700">
-                            <h5 className="font-semibold text-white mb-2 border-b border-b-gray-700">রাজশাহী অফিস</h5>
-                            <p><FaHome className="text-base -mt-1.5 inline" /> ৯২/এ, সেক্টর-২ (৩য় তলা), উপশহর হাউজিং এস্টেট বোয়ালিয়া, রাজশাহী</p>
-                            <p><FaPhone className="text-base -mt-0.5 inline"/>  +880 1511-060 454</p>
-                        </div>
-
-                        {/* চট্টগ্রাম অফিস */}
-                        <div className="bg-gray-800 p-2 rounded-lg border border-gray-700">
-                            <h5 className="font-semibold text-white mb-2 border-b border-b-gray-700">চট্টগ্রাম অফিস</h5>
-                            <p><FaHome className="text-base -mt-1.5 inline" /> জাহান বিল্ডিং (৩য় তলা), <br /> ২৩, শেখ মুজিব সড়ক, <br /> আগ্রাবাদ সি/এ, চট্টগ্রাম</p>
-                            <p><FaPhone className="text-base -mt-0.5 inline"/>  +880 1511-060 454</p>
-                        </div>
-
-                        {/* ঢাকায় আরও শাখা */}
-                        <div className="bg-gray-800 p-2 rounded-lg border border-gray-700">
-                            <h5 className="font-semibold text-white mb-2 border-b border-b-gray-700">ঢাকা অফিস (পল্টন)</h5>
-                            <p><FaHome className="text-base -mt-1.5 inline" /> রুপায়ন এফ.পি.এ.বি. টাওয়ার (লেভেল-৬), ০২, বক্স কালভার্ট রোড, নয়া পল্টন, ঢাকা </p>
-                            <p><FaPhone className="text-base -mt-0.5 inline"/>  +880 1511-060 454</p>
-                        </div>
-
-                        <div className="bg-gray-800 p-2 rounded-lg border border-gray-700">
-                            <h5 className="font-semibold text-white mb-2 border-b border-b-gray-700">ঢাকা অফিস (উত্তরা)</h5>
-                            <p><FaHome className="text-base -mt-1.5 inline" /> গৃহলক্ষ্মী (লেভেল-৪) বাড়ি নং ২৯, রোড ২, সেক্টর ৩, উত্তরা, ঢাকা-১২৩০</p>
-                            <p><FaPhone className="text-base -mt-0.5 inline"/>  +880 1511-060 454</p>
                         </div>
                     </div>
                 </div>
