@@ -36,7 +36,7 @@ export const Feature = () => {
     ];
 
     return (
-        <div className="flex items-center relative justify-center mt-6 sm:mt-12 px-3">
+        <div className="flex items-center relative justify-center mt-4 sm:mt-12 px-3">
 
             <div className="w-full hidden h-96 px-5 absolute sm:flex items-center justify-center overflow-hidden">
                 <div className="w-full h-96 bg-blue-700 shadow-[2px_2px_10px_rgba(0,0,0,0.5)]"></div>
@@ -46,10 +46,9 @@ export const Feature = () => {
             <div className={`relative w-[330px] h-[330px] z-10 md:w-[420px] md:h-[420px] flex items-center justify-center`}>
 
                 {/* Center Planet */}
-                <div className="absolute w-32 h-32 md:w-40 md:h-40 rounded-full 
-                    bg-gradient-to-br from-green-500 to-green-800 shadow-xl
+                <div className="absolute w-32 h-32 md:w-40 md:h-40 rounded-full shadow-[2px_2px_20px_rgba(0,0,0,0.2)]
                     flex items-center justify-center text-white font-bold text-center p-3 text-lg">
-                    TaxLine BD
+                    <img src="/TaxLine_BD-PNG.png" alt="BDTaxation Logo" className="md:h-24 h-[70px] object-contain" />
                 </div>
 
                 {/* Orbit Items */}

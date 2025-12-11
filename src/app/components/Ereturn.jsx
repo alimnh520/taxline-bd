@@ -34,7 +34,7 @@ export const Ereturn = () => {
             </div>
 
             {/* Top Grid */}
-            <div className="grid w-full h-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 py-4">
+            <div className="grid w-full h-auto grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 py-4">
                 {[
                     "আইটি খাতের আয় ই-রিটার্ন সিস্টেমে কিভাবে ইনপুট করবেন",
                     "জিপিএফ সুদ বাবদ আয় ই-রিটার্ন সিস্টেমে কিভাবে দেখাতে হবে",
@@ -55,18 +55,18 @@ export const Ereturn = () => {
 
             <Link
                 href=""
-                className="px-3 md:px-4 py-2 md:py-2.5 mt-4 md:mt-6 self-end font-semibold text-sm bg-[#17982f] hover:shadow-2xl rounded-lg shadow text-white transition-all group flex items-center justify-center duration-300 relative overflow-hidden"
+                className="px-3 md:px-4 py-2 md:py-2.5 mt-2 md:mt-6 self-end font-semibold text-sm bg-[#17982f] hover:shadow-2xl rounded-lg shadow text-white transition-all group flex items-center justify-center duration-300 relative overflow-hidden"
             >
                 <span className="bg-[#005a11] rounded-full size-0 group-hover:size-28 transition-all duration-700 absolute button-effect"></span>
                 <span className="z-10">View More</span>
             </Link>
 
-            <div className="w-full h-auto flex flex-col lg:flex-row sm:items-start items-center justify-between gap-6 mt-8">
+            <div className="w-full h-auto flex flex-col lg:flex-row sm:items-start items-center justify-between gap-6 mt-4 sm:mt-8">
 
                 {/* Left side links */}
                 <div className="w-full lg:w-[330px] flex flex-col">
 
-                    <div className="ribbon2 text-center py-2 text-[#17982f] text-lg font-semibold rounded-md shadow-sm">
+                    <div className="ribbon2 text-center py-1 sm:py-2 text-[#17982f] text-lg font-semibold rounded-md shadow-sm">
                         <p>প্রয়োজনীয় সরকারি লিংক</p>
                     </div>
 
@@ -87,15 +87,15 @@ export const Ereturn = () => {
 
                 {/* Right side cards */}
 
-                <div className="flex-1 h-auto">
+                <div className="sm:flex-1 w-full h-auto">
 
                     {/* Header Ribbon */}
-                    <div className="ribbon2 text-center py-3 text-[#0f6f3f] text-lg font-extrabold rounded-xl shadow-md tracking-wide bg-[#e8f7ed]">
+                    <div className="ribbon2 text-center py-1 sm:py-2 text-[#0f6f3f] text-lg font-extrabold rounded-xl shadow-md tracking-wide bg-[#e8f7ed]">
                         <p>ব্যক্তি করদাতার জন্য প্রযোজ্য</p>
                     </div>
 
                     {/* Card Grid */}
-                    <div className="w-full mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 px-4 md:px-6">
+                    <div className="w-full mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 px-4 md:px-6">
                         {personalTaxLinks.map((item, i) => (
                             <Link
                                 key={i}

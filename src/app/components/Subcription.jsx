@@ -126,17 +126,17 @@ export function Subscription() {
     const [expandedIndex, setExpandedIndex] = useState(null);
 
     return (
-        <div className="sm:w-10/12 w-full mx-auto px-4 sm:px-6 lg:px-8 md:space-y-16 space-y-10 py-6 md:py-16">
+        <div className="sm:w-10/12 w-full mx-auto px-4 sm:px-6 lg:px-8 md:space-y-16 space-y-7 py-6 md:py-16">
 
             {/* Grid Links */}
-            <div className="w-full space-y-8">
+            <div className="w-full space-y-4 sm:space-y-8">
 
                 <div className="w-full flex justify-center">
-                    <div className="ribbon text-[16px] md:text-2xl font-bold text-white tracking-wide pb-2 md:pb-5 drop-shadow-2xl">ট্যাক্স সম্পর্কিত গুরুত্বপূর্ণ টপিকসমূহ</div>
+                    <div className="ribbon text-[18px] md:text-2xl font-bold text-white tracking-wide pb-2 md:pb-5 drop-shadow-2xl">ট্যাক্স সম্পর্কিত গুরুত্বপূর্ণ টপিকসমূহ</div>
                 </div>
 
                 {/* Two Column List Layout */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-5">
 
                     {gridLinks.map((item, idx) => (
                         <Link
@@ -144,7 +144,7 @@ export function Subscription() {
                             href={`/components/tax-act/${item.link}`}
                             className="
         relative 
-        bg-[#32b44a]  overflow-hidden group cursor-pointer hover:shadow-[0_0_30px_#4dff6a80] hover:-translate-y-1 flex items-center gap-4 p-2 rounded-xl border border-[#32b44a]/40 shadow-sm hover:shadow-lg text-white  transition-all duration-300"
+        bg-[#32b44a]  overflow-hidden group cursor-pointer hover:shadow-[0_0_30px_#4dff6a80] hover:-translate-y-1 flex items-center gap-4 sm:p-2 p-0.5 rounded-xl border border-[#32b44a]/40 shadow-sm hover:shadow-lg text-white  transition-all duration-300"
                         >
 
                             {/* Left Solid Icon Box */}
@@ -169,7 +169,7 @@ export function Subscription() {
                 <div className="ribbon text-xl md:text-2xl font-bold text-white tracking-wide pb-2 md:pb-5 drop-shadow-2xl">আমাদের প্যাকেজসমূহ</div>
             </div>
 
-            <div className="mt-10 flex flex-col sm:flex-row px-5 sm:px-0 items-start justify-between gap-5 sm:gap-8">
+            <div className="mt-5 sm:mt-10 flex flex-col sm:flex-row px-5 sm:px-0 items-start justify-between gap-5 sm:gap-8">
                 {plans.map((plan, index) => {
                     const [hover, setHover] = useState(false);
 
@@ -183,7 +183,7 @@ export function Subscription() {
                     return (
                         <div
                             key={plan.name}
-                            className={`w-full h-[400px] sm:h-[540px] flex flex-col ${(index === 2 && expandedIndex === 2) && 'h-auto sm:h-auto'} ${index === 1 && 'sm:scale-110 hover:scale-[120%] z-10'} my-font rounded-lg shadow-lg overflow-hidden hover:scale-105 hover:shadow-2xl transition-all duration-300 bg-white`}
+                            className={`w-full h-[400px] sm:h-[540px] flex flex-col transition-all duration-300 ${(index === 2 && expandedIndex === 2) && 'h-[750px] sm:h-[1050px]'} ${index === 1 && 'sm:scale-110 hover:scale-[120%] z-10'} my-font rounded-lg shadow-lg overflow-hidden hover:scale-105 hover:shadow-2xl transition-all duration-300 bg-white`}
                         >
                             <div
                                 className="py-4 sm:py-6 h-32 sm:h-44 text-white relative"
@@ -254,7 +254,7 @@ export function Subscription() {
                                 </ul>
                             </div>
 
-                            <div className="px-4 sm:px-6 pb-6 bg-white relative">
+                            <div className="px-4 sm:px-6 pb-6 bg-white relative -mt-5">
                                 <Link href={plan.link}>
                                     <button
                                         type="button"

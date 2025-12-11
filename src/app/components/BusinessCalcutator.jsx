@@ -41,12 +41,12 @@ export const BusinessCalculator = () => {
                     </div>
 
                 </div>
-                <div className="flex-1 h-auto mt-5 sm:mt-0">
-                    <div className="ribbon2 text-center py-2 text-[#ff0000] text-lg font-semibold rounded-md shadow-sm">
+                <div className="sm:flex-1 w-full h-auto mt-5 sm:mt-0">
+                    <div className="ribbon2 text-center py-1 sm:py-2 text-[#ff0000] text-lg font-semibold rounded-md shadow-sm">
                         <p>কোম্পানির করদাতার জন্য প্রযোজ্য</p>
                     </div>
 
-                    <div className="w-full mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 px-4 md:px-6">
+                    <div className="w-full mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 sm:gap-6 gap-4 px-4 md:px-6">
                         {companyTaxLinks.map((item, i) => (
                             <Link
                                 key={i}
@@ -77,7 +77,7 @@ export const BusinessCalculator = () => {
 
             <div className="w-full grid sm:grid-cols-3 grid-cols-1 sm:gap-x-7 gap-5">
                 <div className="w-full flex flex-col items-start">
-                    <div className="ribbon2 text-center py-2 text-[#ff0000] text-lg font-semibold rounded-md shadow-sm"><p>কর অফিস সম্পর্কিত</p></div>
+                    <div className="ribbon2 text-center py-1 sm:py-2 text-[#ff0000] text-lg font-semibold rounded-md shadow-sm"><p>কর অফিস সম্পর্কিত</p></div>
                     <div className="w-full h-auto flex flex-col gap-y-1.5 mt-4">
                         <Link href="" className="bg-[#dff3e9] text-[#ff0000] border border-[#17982f] px-3 py-2.5 flex items-center gap-x-2 text-[15px] hover:scale-[1.02] hover:shadow-md transition-all duration-300 rounded-full"> <img src="/logo/green-check.png" alt="" className="w-5" /> কর অঞ্চল</Link>
                         <Link href="" className="bg-[#dff3e9] text-[#ff0000] border border-[#17982f] px-3 py-2.5 flex items-center gap-x-2 text-[15px] hover:scale-[1.02] hover:shadow-md transition-all duration-300 rounded-full"> <img src="/logo/green-check.png" alt="" className="w-5" />আপীল</Link>
@@ -87,7 +87,7 @@ export const BusinessCalculator = () => {
                     </div>
                 </div>
                 <div className="w-full flex flex-col items-start">
-                    <div className="ribbon2 text-center py-2 text-[#ff0000] text-lg font-semibold rounded-md shadow-sm"><p>বিশেষ আইটেম</p></div>
+                    <div className="ribbon2 text-center py-1 sm:py-2 text-[#ff0000] text-lg font-semibold rounded-md shadow-sm"><p>বিশেষ আইটেম</p></div>
                     <div className="w-full h-auto flex flex-col gap-y-1.5 mt-4">
                         <Link href="" className="bg-[#dff3e9] text-[#ff0000] border border-[#17982f] px-3 py-2.5 flex items-center gap-x-2 text-[15px] hover:scale-[1.02] hover:shadow-md transition-all duration-300 rounded-full"> <img src="/logo/green-check.png" alt="" className="w-5" /> বাংলাদেশের সকল বাণিজ্যিক ব্যাংকের তালিকা</Link>
                         <Link href="" className="bg-[#dff3e9] text-[#ff0000] border border-[#17982f] px-3 py-2.5 flex items-center gap-x-2 text-[15px] hover:scale-[1.02] hover:shadow-md transition-all duration-300 rounded-full"> <img src="/logo/green-check.png" alt="" className="w-5" />জিপিরেট</Link>
@@ -97,7 +97,7 @@ export const BusinessCalculator = () => {
                     </div>
                 </div>
                 <div className="w-full flex flex-col items-start">
-                    <div className="ribbon2 text-center py-2 text-[#ff0000] text-lg font-semibold rounded-md shadow-sm"><p>বিশেষ ক্যালকুলেটর</p></div>
+                    <div className="ribbon2 text-center py-1 sm:py-2 text-[#ff0000] text-lg font-semibold rounded-md shadow-sm"><p>বিশেষ ক্যালকুলেটর</p></div>
                     <div className="w-full h-auto flex flex-col gap-y-1.5 mt-4">
                         <Link href="" className="bg-[#dff3e9] text-[#ff0000] border border-[#17982f] px-3 py-2.5 flex items-center gap-x-2 text-[15px] hover:scale-[1.02] hover:shadow-md transition-all duration-300 rounded-full"> <img src="/logo/green-check.png" alt="" className="w-5" /> পুনঃউন্মোচন তারিখ ক্যালকুলেটর</Link>
                         <Link href="" className="bg-[#dff3e9] text-[#ff0000] border border-[#17982f] px-3 py-2.5 flex items-center gap-x-2 text-[15px] hover:scale-[1.02] hover:shadow-md transition-all duration-300 rounded-full"> <img src="/logo/green-check.png" alt="" className="w-5" />আয় গোপনের জরিমানা</Link>
@@ -117,7 +117,7 @@ export const BusinessCalculator = () => {
                     1024: { slidesPerView: 4, spaceBetween: 10 }, // ল্যাপটপ
                     1280: { slidesPerView: 5, spaceBetween: 10 }, // বড় স্ক্রিন
                 }}
-                className="mySwiper w-full h-60 gap-6 mt-3"
+                className="mySwiper w-full h-60 gap-6 sm:mt-3"
             >
                 {[
                     "জিপিএফ সুদ বাবদ আয় ই-রিটার্ন সিস্টেমে কিভাবে দেখাতে হবে",
@@ -143,7 +143,7 @@ export const BusinessCalculator = () => {
 
             <Link
                 href=""
-                className="px-4 py-3 self-center font-semibold text-sm bg-[#17982f] hover:shadow-2xl rounded-lg shadow text-white transition-all group flex items-center justify-center duration-300 relative overflow-hidden"
+                className="px-4 py-3 self-center font-semibold text-sm bg-[#17982f] hover:shadow-2xl rounded-lg shadow text-white transition-all group flex items-center justify-center duration-300 relative overflow-hidden -mt-6"
             >
                 <span className="bg-[#005a11] rounded-full size-0 group-hover:size-28 transition-all duration-700 absolute button-effect"></span>
                 <span className="z-10">View More Video</span>

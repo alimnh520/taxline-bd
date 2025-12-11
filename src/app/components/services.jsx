@@ -3,9 +3,9 @@ import React from "react";
 
 function ServiceCard({ title, desc, icon }) {
     return (
-        <div className="p-6 rounded-2xl bg-[#dff3e9] border border-[#17982f] shadow hover:shadow-2xl transition w-full h-full -skew-x-12">
-            <div className="flex items-start gap-4 skew-x-12">
-                <div className="text-3xl">{icon}</div>
+        <div className="p-2 sm:p-6 rounded-2xl bg-[#dff3e9] border border-[#17982f] shadow hover:shadow-2xl transition w-full h-full sm:-skew-x-12">
+            <div className="flex items-start gap-4 sm:skew-x-12">
+                {/* <div className="text-3xl">{icon}</div> */}
                 <div>
                     <h4 className="font-semibold text-gray-800 text-lg">{title}</h4>
                     <p className="text-gray-600 mt-2 text-sm leading-relaxed">{desc}</p>
@@ -27,7 +27,7 @@ export default function BDTaxationPage() {
                         <div className="ribbon text-lg md:text-2xl font-bold text-white tracking-wide pb-2 md:pb-5 drop-shadow-2xl">BDTaxation — এর প্রধান সেবা</div>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
                         <ServiceCard
                             title="Income Tax Calculation"
                             desc="গ্রস বেতন থেকে সব ধরনের ছাড়, রিবেট, ও আইনসম্মত কাটা হিসাব করে সঠিক কর নির্ধারণ।"

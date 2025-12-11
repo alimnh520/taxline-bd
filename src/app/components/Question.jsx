@@ -14,12 +14,12 @@ export const Question = () => {
     const [question8, setQuestion8] = useState(false);
 
     return (
-        <div className="w-full flex flex-col items-center px-5 mt-14 gap-y-5">
+        <div className="w-full flex flex-col items-center px-5 mt-8 sm:mt-14 gap-y-5">
 
             <div className="ribbon text-xl md:text-2xl font-bold text-white tracking-wide pb-2 md:pb-5 drop-shadow-2xl">Frequently Ask Question</div>
 
             <div className="w-full flex flex-col sm:flex-row items-start justify-between gap-x-5">
-                <div className="w-full h-auto mt-5 flex flex-col gap-y-1.5">
+                <div className="w-full h-auto mt-2 sm:mt-5 flex flex-col gap-y-1.5">
                     <div className="w-full flex flex-col border border-[#17982f] overflow-hidden rounded-md ">
                         <button className="bg-white hover:bg-[#dff3e9] text-[#00440c] transition-all duration-300 text-Orange-800 cursor-pointer w-full py-2.5 relative flex items-center justify-start px-3" onClick={() => {
                             setQuestion1(!question1)

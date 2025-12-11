@@ -3,9 +3,9 @@ import Link from "next/link"
 
 export const Update = () => {
     return (
-        <div className="w-full h-auto px-5 mt-8 flex flex-col sm:flex-row items-center sm:items-start sm:justify-start justify-between gap-x-7 gap-y-5 sm:gap-y-0">
+        <div className="w-full h-auto px-4 mt-6 sm:mt-8 flex flex-col sm:flex-row items-center sm:items-start sm:justify-start justify-between gap-x-7 gap-y-5 sm:gap-y-0">
             <div className="sm:w-[400px] w-[95%] h-auto flex flex-col justify-start">
-                <div className="ribbon2 text-center py-2 text-white text-lg font-semibold rounded-md shadow-sm"><p>সর্বশেষ আপডেট</p></div>
+                <div className="ribbon2 text-center py-1 sm:py-2 text-white text-lg font-semibold rounded-md shadow-sm"><p>সর্বশেষ আপডেট</p></div>
                 <div className="w-full h-96 border border-[#17982f] mt-5 overflow-hidden relative group">
                     <div className="marquee-container">
                         <div className="text-sm flex flex-col border-b border-t border-[#17982f] p-2 gap-y-1 hover:bg-[#dff3e9] bg-white group">
@@ -209,8 +209,8 @@ export const Update = () => {
 
             </div>
             <div className="flex-1 h-auto">
-                <div className="ribbon2 text-center py-2 text-black text-lg font-semibold rounded-md shadow-sm"><p>উৎসে কর কর্তন সংক্রান্ত</p></div>
-                <div className="mt-5 sm:mt-9 w-full sm:h-[410px] h-auto grid sm:grid-cols-2 sm:grid-rows-3 gap-x-6 gap-y-3 grid-cols-1">
+                <div className="ribbon2 text-center py-1 sm:py-2 text-black text-lg font-semibold rounded-md shadow-sm"><p>উৎসে কর কর্তন সংক্রান্ত</p></div>
+                <div className="mt-5 w-full sm:h-[410px] h-auto grid sm:grid-cols-2 sm:grid-rows-3 gap-x-6 gap-y-3 grid-cols-1">
                     <Link href="" className="shadow-[0_0_30px_rgba(0,0,0,0.2)] bg-white rounded-md flex items-center justify-start relative overflow-hidden group">
                         <div className="absolute w-full h-full opacity-0 group-hover:opacity-100 transition-all duration-700 bg-black/80 text-white flex flex-col items-start justify-start z-10 gap-y-4 px-4 py-5">
                             <p className="text-xl text-white italic">সরবরাহকারীর কর কর্তন</p>
