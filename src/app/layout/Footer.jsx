@@ -63,14 +63,15 @@ export default function Footer() {
                             যোগাযোগ
                         </h4>
                         <ul className="space-y-2 text-sm text-gray-300 leading-6">
-                            <li><FaPhone className="text-base -mt-0.5 inline"/> মোবাইল: +880 1322-887800</li>
+                            <li><FaHome className="text-base -mt-0.5 inline" /> আমাদের কার্যালয়: গৃহলক্ষ্মী (লেভেল-৪এ), বাড়ি নং-২৯,রোড নং-২,সেক্টর-৩,উত্তরা, ঢাকা ১২৩০ </li>
+                            <li><FaPhone className="text-base -mt-0.5 inline"/> মোবাইল: +880 1911-737585</li>
                             <li> <GoMail className="text-base -mt-0.5 inline"/> Email: taxlinebd.info@gmail.com</li>
                             <li><FaGlobe className="text-base -mt-0.5 inline"/> Website: taxlinebd.com</li>
                         </ul>
 
                         {/* SOCIAL */}
                         <div className="flex space-x-4 mt-4 text-gray-300">
-                            <a href="#" className="hover:text-white size-10 bg-blue-700 flex items-center justify-center rounded-full group">
+                            <a href="https://www.facebook.com/share/1Bf67yNibh/" className="hover:text-white size-10 bg-blue-700 flex items-center justify-center rounded-full group">
                                 <FaFacebookF size={18} className="group-hover:scale-125 transition-all duration-300" />
                             </a>
                             <a href="#" className="hover:text-white size-10 bg-red-500 flex items-center justify-center rounded-full group">
