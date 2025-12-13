@@ -6,6 +6,7 @@ import TaxAccordions from "@/app/components/personal-link/PersonalTax";
 import { useParams } from "next/navigation";
 import { Section86 } from "./Section86";
 import { Section87 } from "./Section87";
+import { Section88 } from "./Section88";
 
 export default function PdfViewer() {
     const { id } = useParams();
@@ -30,6 +31,11 @@ export default function PdfViewer() {
                     {id === "2" && (
                         <div className="w-full md:w-2/3 mx-auto p-4">
                             <Section87 />
+                        </div>
+                    )}
+                    {id === "3" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section88 />
                         </div>
                     )}
                 </div>

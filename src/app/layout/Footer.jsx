@@ -63,10 +63,9 @@ export default function Footer() {
                             যোগাযোগ
                         </h4>
                         <ul className="space-y-2 text-sm text-gray-300 leading-6">
-                            <li><FaHome className="text-base -mt-0.5 inline" /> আমাদের কার্যালয়: গৃহলক্ষ্মী (লেভেল-৪এ), বাড়ি নং-২৯,রোড নং-২,সেক্টর-৩,উত্তরা, ঢাকা ১২৩০ </li>
                             <li><FaPhone className="text-base -mt-0.5 inline"/> মোবাইল: +880 1911-737585</li>
                             <li> <GoMail className="text-base -mt-0.5 inline"/> Email: taxlinebd.info@gmail.com</li>
-                            <li><FaGlobe className="text-base -mt-0.5 inline"/> Website: taxlinebd.com</li>
+                            <li><FaGlobe className="text-base -mt-0.5 inline"/> Website: <a target="_blank" href="http://taxlinebd.com" className="underline text-red-600">taxlinebd.com</a></li>
                         </ul>
 
                         {/* SOCIAL */}
@@ -84,7 +83,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="text-center mt-10 text-gray-400 text-sm">
+                <div className="text-center mt-10 pt-4 text-gray-400 text-sm border-t border-t-gray-800">
                     © {new Date().getFullYear()} TaxLine BD — All Rights Reserved.
                 </div>
             </div>
