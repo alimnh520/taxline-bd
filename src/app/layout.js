@@ -30,7 +30,7 @@ const featureKeywords = [
   "Tax Tribunal BD",
 ];
 
-// ⭐ NEXT.JS 16 PERFECT METADATA
+// ⭐ NEXT.JS METADATA
 export const metadata = {
   title: {
     default:
@@ -52,11 +52,14 @@ export const metadata = {
     ...featureKeywords,
   ],
 
-  robots: "index, follow",
+  robots: {
+    index: true,
+    follow: true,
+  },
 
   icons: {
     icon: "/TaxLine_BD-PNG.png",
-    apple: "/TaxLine_BD-PNG.png", // ⭐ এখানে Logo
+    apple: "/TaxLine_BD-PNG.png",
   },
 
   manifest: "/manifest.json",
@@ -90,8 +93,9 @@ export const metadata = {
     images: ["https://taxlinebd.com/TaxLine_BD-PNG.png"],
   },
 
-  // ⭐ Google Fonts (Next.js 16 way)
+  // ⭐ Extra Meta (IMPORTANT)
   other: {
+    "google-site-verification": "GnjkMYUO03cTmMU6uB7go6PzQr0rMhBXxCGl7enPt04",
     "preconnect-google": "https://fonts.googleapis.com",
     "preconnect-gstatic": "https://fonts.gstatic.com",
     "google-font":
@@ -99,7 +103,7 @@ export const metadata = {
   },
 };
 
-// ⭐ Ready Layout (WITHOUT <head>) → Hydration Safe
+// ⭐ Root Layout
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
