@@ -14,7 +14,7 @@ export default function Footer() {
                     {/* Logo / About */}
                     <article className="float-left space-x-3">
                         <Image
-                            src="/TaxLine_BD-PNG.png"
+                            src="/favicon.ico"
                             alt="TaxLine BD Logo"
                             width={120}
                             height={120}
