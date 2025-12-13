@@ -55,8 +55,8 @@ export const metadata = {
   robots: "index, follow",
 
   icons: {
-    icon: "/logo.jpg",
-    apple: "/logo.jpg", // ⭐ এখানে Logo
+    icon: "/TaxLine_BD-PNG.png",
+    apple: "/TaxLine_BD-PNG.png", // ⭐ এখানে Logo
   },
 
   manifest: "/manifest.json",
@@ -67,13 +67,13 @@ export const metadata = {
     title: "TaxLine BD – Tax, VAT & Legal Consultancy in Bangladesh",
     description:
       "TIN, BIN, VAT Return, RJSC, Company Registration & Business Audit Services.",
-    url: "https://taxline-bd.vercel.app/",
+    url: "https://taxlinebd.com/",
     siteName: "TaxLine BD",
     locale: "en_BD",
     type: "website",
     images: [
       {
-        url: "https://taxline-bd.vercel.app/logo.jpg",
+        url: "https://taxlinebd.com/TaxLine_BD-PNG.png",
         width: 600,
         height: 600,
         alt: "TaxLine BD Logo",
@@ -87,7 +87,7 @@ export const metadata = {
     title: "TaxLine BD – Professional Tax & VAT Service",
     description:
       "TIN, BIN, VAT, RJSC, Company Registration & Accounting Service in Bangladesh.",
-    images: ["https://taxline-bd.vercel.app/logo.jpg"],
+    images: ["https://taxlinebd.com/TaxLine_BD-PNG.png"],
   },
 
   // ⭐ Google Fonts (Next.js 16 way)
@@ -112,8 +112,8 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "TaxLine BD",
-              url: "https://taxline-bd.vercel.app/",
-              logo: "https://taxline-bd.vercel.app/logo.jpg",
+              url: "https://taxlinebd.com/",
+              logo: "https://taxlinebd.com/TaxLine_BD-PNG.png",
               description:
                 "Professional Tax, VAT, RJSC & Company Registration Services in Bangladesh.",
               service: featureKeywords.map((kw) => ({
