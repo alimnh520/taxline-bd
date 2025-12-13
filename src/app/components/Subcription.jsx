@@ -3,6 +3,7 @@ import { IoCheckmarkCircleOutline } from "react-icons/io5";
 
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { usePathname } from "next/navigation";
 
 function lightenColor(hex, percent) {
     hex = hex.replace(/#/g, "");
@@ -124,12 +125,13 @@ const gridLinks = [
 
 export function Subscription() {
     const [expandedIndex, setExpandedIndex] = useState(null);
+    const urlPath = usePathname();
 
     return (
         <div className="sm:w-10/12 w-full mx-auto px-4 sm:px-6 lg:px-8 md:space-y-16 space-y-7 py-6 md:py-16">
 
             {/* Grid Links */}
-            <div className="w-full space-y-4 sm:space-y-8">
+            <div className={`w-full space-y-4 ${urlPath === '/components/package' ? 'hidden' : 'block'} sm:space-y-8`}>
 
                 <div className="w-full flex justify-center">
                     <div className="ribbon text-[16px] md:text-2xl font-bold text-white tracking-wide pb-2 md:pb-5 drop-shadow-2xl">ট্যাক্স সম্পর্কিত গুরুত্বপূর্ণ টপিকসমূহ</div>
@@ -149,8 +151,8 @@ export function Subscription() {
 
                             {/* Left Solid Icon Box */}
                             <div className="z-10 bg-white w-10 h-10 rounded-full border flex items-center justify-center border-[#0f6f3f33] shadow-lg ">
-                                    <img src="/logo/green-check.png" className="w-8 opacity-100" alt="" />
-                                </div>
+                                <img src="/logo/green-check.png" className="w-8 opacity-100" alt="" />
+                            </div>
 
                             {/* Text */}
                             <span className="font-semibold text-base z-10">

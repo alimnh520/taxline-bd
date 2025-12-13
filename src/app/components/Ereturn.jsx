@@ -12,7 +12,7 @@ export const govLinks = [
 
 export const personalTaxLinks = [
     { title: "বেতন হতে কর কর্তন", link: "/components/personal-link/salary" },
-    { title: "ব্যক্তি করহার", link: "/components/tax-act/tax-rate" },
+    { title: "ব্যক্তি করহার", link: "/components/personal-link/tax-rate" },
     { title: "চূড়ান্ত করের খাতসমূহ", link: "/components/personal-link/final-tax" },
     { title: "সারচার্জ", link: "/components/personal-link/surcharge" },
     { title: "কর রেয়াত ক্যালকুলেটর", link: "/components/personal-link/tax-rebate" },

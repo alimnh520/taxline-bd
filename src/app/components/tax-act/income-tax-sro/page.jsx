@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import sroList from './IncomeTaxSro.json';
 import { Animations } from '../../Animations';
-import { Feature } from '../../Feature';
+import { PersonalFeature } from '../../personal-link/PersonalFeature';
 
 export default function IncomeTaxSRO() {
     const router = useRouter();
@@ -37,7 +37,8 @@ export default function IncomeTaxSRO() {
         <div className="mx-auto flex flex-col items-center gap-y-5 bg-gray-100">
 
             <Animations />
-            <Feature />
+            <PersonalFeature />
+
 
             <h1 className="text-2xl md:text-3xl font-bold text-center mb-6 text-gray-800">
                 আয় কর এস আর ও

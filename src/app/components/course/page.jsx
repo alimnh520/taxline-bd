@@ -48,7 +48,7 @@ export default function AllCourses() {
 
                         <div className="flex items-center mt-3">
                             <Image
-                                src="/logo.jpg"
+                                src="/favicon.ico"
                                 alt="Logo"
                                 width={30}
                                 height={30}
@@ -56,7 +56,7 @@ export default function AllCourses() {
                             />
                             <div className="ml-2">
                                 <p className="text-sm font-semibold text-green-700">
-                                    BD Taxation Team
+                                    TaxLine BD
                                 </p>
                                 <p className="text-xs text-gray-500">Expert in tax</p>
                             </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import { Animations } from "@/app/components/Animations";
-import { Feature } from "@/app/components/Feature";
+import { PersonalFeature } from "@/app/components/personal-link/PersonalFeature";
 import { useParams } from "next/navigation";
 
 export default function PdfViewer() {
@@ -31,7 +31,7 @@ export default function PdfViewer() {
         <div className="mx-auto flex flex-col items-center gap-y-5 bg-gray-100">
 
             <Animations />
-            <Feature />
+            <PersonalFeature/>
             
             {currentPdf ? (
                 <div className="w-11/12 md:w-10/12 mx-auto flex flex-col items-center gap-y-5 bg-gray-100 p-4">

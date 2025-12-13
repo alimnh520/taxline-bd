@@ -1,7 +1,7 @@
 'use client';
 
 import { Animations } from "../Animations";
-import { Feature } from "../Feature";
+import { PersonalFeature } from "../personal-link/PersonalFeature";
 import { Subscription } from "../Subcription";
 
 export default function TaxLaw() {
@@ -10,9 +10,10 @@ export default function TaxLaw() {
         <div className="w-full mx-auto flex flex-col items-center justify-start">
 
             <Animations />
-            <Feature />
-
-            <Subscription />
+            <PersonalFeature />
+            <div className="-mt-10 sm:-mt-16 w-full">
+                <Subscription />
+            </div>
 
         </div>
     );

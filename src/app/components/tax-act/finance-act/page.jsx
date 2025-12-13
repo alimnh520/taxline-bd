@@ -3,7 +3,7 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { Animations } from '../../Animations';
-import { Feature } from '../../Feature';
+import { PersonalFeature } from '../../personal-link/PersonalFeature';
 
 // 📄 ডেটা লিস্ট
 const financeActs = [
@@ -29,7 +29,7 @@ export default function FinanceActTable() {
         <div className="mx-auto flex flex-col items-center gap-y-5 bg-gray-100">
 
             <Animations />
-            <Feature /> 
+            <PersonalFeature />
 
             <h1 className="text-2xl md:text-3xl font-bold text-center mb-6 text-gray-800">
                 অর্থবছর অনুযায়ী অর্থ আইন

@@ -10,7 +10,8 @@ export async function middleware(request) {
         "/components/tax-act/company-tax",
         "/components/package/basic",
         "/components/package/standard",
-        '/components/personal-link/salary'
+        '/components/personal-link',
+        '/components/company-link'
     ];
 
     if (token && (
@@ -69,10 +70,9 @@ export const config = {
         "/components/registration",
         "/components/login",
         "/components/user/dashboard/:path*",
-        // "/components/tax-act/tax-rate",
-        "/components/tax-act/company-tax",
         "/components/package/basic",
         "/components/package/standard",
-        // '/components/personal-link/salary'
+        "/components/personal-link/:path*",
+        "/components/company-link/:path*",
     ],
 };

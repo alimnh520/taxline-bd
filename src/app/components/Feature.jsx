@@ -23,16 +23,16 @@ export const Feature = () => {
 
 
     const items = [
-        { text: "আইকর আইন ২০২৩", link: "taxLaw" },
-        { text: "মূসক ও সম্পূরক শুল্ক আইন ২০১২", link: "sulkoLaw" },
-        { text: "কাস্টম আইন ২০২৩", link: "customLaw" },
-        { text: "আইকর নির্দেশিকা", link: "tax-guideline" },
-        { text: "উৎসে কর বিধিমালা", link: "tds-rules" },
-        { text: "আয় কর এস আর ও", link: "income-tax-sro" },
-        { text: "পরিপত্র", link: "paripatra" },
-        { text: "ব্যক্তি করহার", link: "tax-rate" },
-        { text: "কোম্পানি করহার", link: "company-tax" },
-        { text: "অর্থ আইন", link: "finance-act" },
+        { text: "আইকর আইন ২০২৩", link: "/components/tax-act/taxLaw" },
+        { text: "মূসক ও সম্পূরক শুল্ক আইন ২০১২", link: "/components/tax-act/sulkoLaw" },
+        { text: "কাস্টম আইন ২০২৩", link: "/components/tax-act/customLaw" },
+        { text: "আইকর নির্দেশিকা", link: "/components/tax-act/tax-guideline" },
+        { text: "উৎসে কর বিধিমালা", link: "/components/tax-act/tds-rules" },
+        { text: "আয় কর এস আর ও", link: "/components/tax-act/income-tax-sro" },
+        { text: "পরিপত্র", link: "/components/tax-act/paripatra" },
+        { text: "ব্যক্তি করহার", link: "/components/personal-link/tax-rate" },
+        { text: "কোম্পানি করহার", link: "/components/company-link/company-tax" },
+        { text: "অর্থ আইন", link: "/components/tax-act/finance-act" },
     ];
 
     return (
@@ -59,7 +59,7 @@ export const Feature = () => {
                     return (
                         <Link
                             key={idx}
-                            href={`/components/tax-act/${item.link}`}
+                            href={`${item.link}`}
                             onMouseEnter={() => {
                                 setHover(idx);
                                 setIsRotate(false);

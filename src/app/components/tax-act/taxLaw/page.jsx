@@ -1,7 +1,7 @@
 'use client';
 
 import { Animations } from "../../Animations";
-import { Feature } from "../../Feature";
+import { PersonalFeature } from "../../personal-link/PersonalFeature";
 
 export default function TaxLaw() {
 
@@ -9,7 +9,7 @@ export default function TaxLaw() {
         <div className="mx-auto flex flex-col items-center gap-y-5 bg-gray-100">
 
             <Animations />
-            <Feature />
+            <PersonalFeature/>
 
             <h1 className="text-4xl font-semibold">আইকর আইন ২০২৩</h1>
 

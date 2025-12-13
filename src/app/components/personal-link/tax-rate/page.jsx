@@ -1,8 +1,8 @@
 'use client';
 
 import GovernmentLinks from "../../GovtLink";
-import { PersonalFeature } from "../../personal-link/PersonalFeature";
-import TaxAccordions from "../../personal-link/PersonalTax";
+import { PersonalFeature } from "../PersonalFeature";
+import TaxAccordions from "../PersonalTax";
 
 export default function TaxLaw() {
 

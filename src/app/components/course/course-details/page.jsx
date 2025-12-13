@@ -42,11 +42,11 @@ export default function CourseDetails() {
                 {/* Left Section */}
                 <div className="md:col-span-2 bg-white rounded-lg shadow p-4">
                     <Image
-                        src="/logo.jpg"
+                        src="/favicon.ico"
                         alt="Course Banner"
                         width={800}
                         height={400}
-                        className="h-72 rounded-lg mb-4"
+                        className="h-72 object-contain rounded-lg mb-4"
                     />
 
                     {/* Tabs */}
@@ -97,7 +97,7 @@ export default function CourseDetails() {
                         selectTab === "Teachers (1)" && (
                             <div className="mt-3">
                                 <div className="w-60 h-auto p-2 flex border border-gray-200 flex-col items-start gap-y-3 justify-center">
-                                    <img src="/logo.jpg" className="w-full h-40" alt="" />
+                                    <img src="/favicon.ico" className="w-full h-40" alt="" />
                                     <p className="border-b border-b-gray-200 pb-2 text-sm w-full">TaxLine BD</p>
                                     <p className="border-b border-b-gray-200 pb-2 text-sm w-full">Expert in Tax</p>
                                     <p className="border-b border-b-gray-200 pb-2 text-sm w-full">15 years experience</p>

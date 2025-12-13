@@ -75,7 +75,7 @@ export default function LoginPage() {
     return (
         <div className="px-4">
             {/* Breadcrumb Section */}
-            <div className="bg-gray-50 py-6 h-48 flex flex-col gap-y-3 items-center justify-center">
+            <div className="bg-gray-50 py-6 h-32 sm:h-48 flex flex-col gap-y-3 items-center justify-center">
                 <div className="max-w-6xl mx-auto px-4 text-xs text-gray-500">
                     <span className="text-gray-400">HOME</span> <span className="mx-1">›</span>
                     <span className="text-green-600">Login</span>
@@ -164,12 +164,12 @@ export default function LoginPage() {
                 </div>
 
                 {/* Right Banner */}
-                <div className="border h-72 rounded-lg shadow-sm flex items-center justify-between bg-gradient-to-r from-green-700 to-green-600 text-white relative overflow-hidden">
+                <div className="border h-auto sm:h-72 rounded-lg shadow-sm flex flex-col sm:flex-row justify-center items-center sm:justify-between bg-gradient-to-r from-green-700 to-green-600 text-white relative overflow-hidden sm:px-5">
                     <div className="bg-white text-green-700 font-bold text-5xl px-6 py-10 rounded-2xl shadow-lg">
                         NO <br /> ADS
                     </div>
-                    <div className="ml-6 text-right text-gray-900 bg-white/90 rounded-xl p-4">
-                        <img src="/logo.png" alt="BDTaxation" className="w-32 mx-auto mb-2" />
+                    <div className="sm:ml-6 text-right text-gray-900 bg-white/90 rounded-xl p-4">
+                        <img src="/favicon.ico" alt="BDTaxation" className="w-32 mx-auto mb-2" />
                         <p className="text-sm font-semibold mb-2">
                             আটো এস মূলে ওয়েবসাইট ব্রাউজ করতে এখনই সাবস্ক্রাইব করুন
                         </p>
