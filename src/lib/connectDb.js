@@ -6,7 +6,6 @@ if (!MONGODB_URI) {
     throw new Error("❌ MONGODB_URI is missing in .env.local");
 }
 
-// Reuse connection (hot reload এ বারবার connect বন্ধ করবে)
 let cached = global.mongoose;
 
 if (!cached) {
@@ -19,7 +18,7 @@ export async function connectDB() {
     if (!cached.promise) {
         cached.promise = mongoose
             .connect(MONGODB_URI, {
-                dbName: "3f-associates-ltd",
+                dbName: "taxlinebd",
                 bufferCommands: false,
             })
             .then((mongoose) => {

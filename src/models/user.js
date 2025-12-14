@@ -2,22 +2,22 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
     {
-        username: { type: String, required: true },
-        mobile: { type: String, required: true },
-        email: { type: String, required: true, unique: true },
+        username: { type: String, required: false },
+        mobile: { type: String, required: false },
+        email: { type: String, required: false, unique: true },
 
-        gender: { type: String, required: true },
+        gender: { type: String, required: false },
         dob: { type: String },
-        officePhone: { type: String, required: true },
+        officePhone: { type: String, required: false },
         address: { type: String },
         profileImage: { type: String },
         public_url: { type: String },
 
         // Identification Numbers
-        nid: { type: String, required: true },
+        nid: { type: String, required: false },
         tin: { type: String },
-        presentAddress: { type: String, required: true },
-        permanentAddress: { type: String, required: true },
+        presentAddress: { type: String, required: false },
+        permanentAddress: { type: String, required: false },
 
         // Other Information
         fatherName: { type: String },

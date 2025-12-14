@@ -41,7 +41,7 @@ export function ProfilePage({ userInfo }) {
             });
 
             if (res.ok) {
-                alert("✅ Data submitted successfully!");
+                window.location.reload();
                 reset();
             } else {
                 alert("❌ Failed to submit!");
