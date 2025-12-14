@@ -28,7 +28,7 @@ export default function BDTaxationPage() {
                 <section id="services" className="max-w-6xl mx-auto space-y-6 sm:space-y-10 px-6 sm:mt-5">
 
                     <div className="w-full flex justify-center">
-                        <div className="ribbon text-lg md:text-2xl font-bold text-white tracking-wide pb-2 md:pb-5 drop-shadow-2xl">BDTaxation — এর প্রধান সেবা</div>
+                        <div className="ribbon text-lg md:text-2xl font-bold text-white tracking-wide pb-2 md:pb-5 drop-shadow-2xl">TaxLine BD — এর প্রধান সেবা</div>
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
