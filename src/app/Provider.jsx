@@ -28,8 +28,19 @@ const Provider = ({ children }) => {
     return (
         <div
             ref={containerRef}
-            className="sm:w-[72%] bg-white w-full shadow-2xl mx-auto relative overflow-hidden"
+            className="
+    w-full
+    bg-white
+    shadow-2xl
+    mx-auto
+    relative
+    overflow-hidden
+
+    sm:max-w-[72%]
+    sm:w-full
+  "
         >
+
             {/* Cursor Ball */}
             <div
                 ref={ballRef}
