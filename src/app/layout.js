@@ -57,9 +57,10 @@ export const metadata = {
     follow: true,
   },
 
+  // ⭐ Icons
   icons: {
-    icon: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: "/favicon.ico",     // Browser favicon
+    apple: "/logo.png",       // Google / Apple
   },
 
   manifest: "/manifest.json",
@@ -76,24 +77,27 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://taxlinebd.com/favicon.ico",
-        width: 600,
-        height: 600,
+        url: "https://taxlinebd.com/logo.png",
+        width: 512,
+        height: 512,
         alt: "TaxLine BD Logo",
       },
     ],
   },
-  
+
+  // ⭐ Twitter Card
   twitter: {
     card: "summary_large_image",
     title: "TaxLine BD – Professional Tax & VAT Service",
     description:
       "TIN, BIN, VAT, RJSC, Company Registration & Accounting Service in Bangladesh.",
-    images: ["https://taxlinebd.com/favicon.ico"],
+    images: ["https://taxlinebd.com/logo.png"],
   },
 
+  // ⭐ Verification & Fonts
   other: {
-    "google-site-verification": "GnjkMYUO03cTmMU6uB7go6PzQr0rMhBXxCGl7enPt04",
+    "google-site-verification":
+      "GnjkMYUO03cTmMU6uB7go6PzQr0rMhBXxCGl7enPt04",
     "preconnect-google": "https://fonts.googleapis.com",
     "preconnect-gstatic": "https://fonts.gstatic.com",
     "google-font":
@@ -115,9 +119,13 @@ export default function RootLayout({ children }) {
               "@type": "Organization",
               name: "TaxLine BD",
               url: "https://taxlinebd.com/",
-              logo: "https://taxlinebd.com/favicon.ico",
+              logo: "https://taxlinebd.com/logo.png",
               description:
                 "Professional Tax, VAT, RJSC & Company Registration Services in Bangladesh.",
+              sameAs: [
+                "https://www.facebook.com/",
+                "https://www.linkedin.com/",
+              ],
               service: featureKeywords.map((kw) => ({
                 "@type": "Service",
                 name: kw,

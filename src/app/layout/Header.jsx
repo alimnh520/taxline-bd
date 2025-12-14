@@ -29,7 +29,7 @@ export default function Header() {
             <div className="w-full flex justify-between items-center px-4 shadow md:shadow-none ">
 
                 <div className="flex items-center py-1 sm:py-0">
-                    <img src="/favicon.ico" alt="BDTaxation Logo" className="md:h-24 h-[70px] object-contain" />
+                    <img src="/logo.png" alt="BDTaxation Logo" className="md:h-24 h-[70px] object-contain" />
                 </div>
 
                 <nav className="hidden md:flex space-x-3 font-semibold text-green-800">

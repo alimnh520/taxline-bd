@@ -48,7 +48,7 @@ export const Feature = () => {
                 {/* Center Planet */}
                 <div className="absolute w-32 h-32 md:w-40 md:h-40 rounded-full shadow-[2px_2px_20px_rgba(0,0,0,0.2)]
                     flex items-center justify-center text-white font-bold text-center p-3 text-lg">
-                    <img src="/favicon.ico" alt="BDTaxation Logo" className="md:h-24 h-[70px] object-contain" />
+                    <img src="/logo.png" alt="BDTaxation Logo" className="md:h-24 h-[70px] object-contain" />
                 </div>
 
                 {/* Orbit Items */}
