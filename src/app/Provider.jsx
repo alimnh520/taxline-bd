@@ -29,16 +29,13 @@ const Provider = ({ children }) => {
         <div
             ref={containerRef}
             className="
-    w-full
-    bg-white
-    shadow-2xl
-    mx-auto
-    relative
-    overflow-hidden
-
-    sm:max-w-[72%]
-    sm:w-full
-  "
+        w-full
+     bg-white
+        shadow-2xl
+        mx-auto
+        relative
+        overflow-hidden 
+        lg:max-w-[72%]"
         >
 
             {/* Cursor Ball */}

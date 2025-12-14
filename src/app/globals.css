@@ -198,18 +198,32 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
-.animate-feature{
+
+.animate-feature {
   animation: feature 1s linear infinite
 }
+
 @keyframes feature {
-  0%{
+  0% {
     transform: translateY(0px);
   }
-  50%{
+
+  50% {
     transform: translateY(-15px);
   }
-  100%{
+
+  100% {
     transform: translateY(0px);
   }
-  
+
+}
+
+@media (max-width: 1024px) {
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 }
