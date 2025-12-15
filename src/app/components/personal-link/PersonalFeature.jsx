@@ -21,9 +21,8 @@ export const PersonalFeature = () => {
     ];
 
     return (
-        <div className="mx-auto flex mt-10 gap-y-10 flex-col items-center justify-center flex-wrap px-2">
-            <div className="w-full flex flex-wrap items-center justify-center gap-5 md:gap-x-2 text-white pb-6 md:pb-8">
-
+        <div className="w-full mx-auto flex mt-3 gap-y-10 flex-col items-center justify-center flex-wrap px-2">
+            <div className="w-full h-40 flex flex-nowrap overflow-x-auto snap-x snap-mandatory scrollbar-hide items-center justify-start sm:justify-center gap-3 text-white pb-6 relative">
                 {diamondLinks.map((item, idx) => {
                     const scaleClass =
                         hoveredIdx === null
@@ -34,15 +33,26 @@ export const PersonalFeature = () => {
 
                     return (
                         <Link
-                            href={`${item.link}`}
+                            href={item.link}
                             key={idx}
                             onMouseEnter={() => setHoveredIdx(idx)}
                             onMouseLeave={() => setHoveredIdx(null)}
-                            className={`w-[85px] h-[85px] md:w-[105px] md:h-[105px]
-        rounded-full flex items-center justify-center text-center
-        text-[11px] md:text-[13px] px-3 font-semibold
-        bg-gradient-to-br from-red-500 to-red-700 text-white
-        border-2 border-pink-200 transition-all duration-300 cursor-pointer relative ${hoveredIdx === idx && 'animate-feature'} ${scaleClass}`}>
+                            className={`
+    w-[85px] h-[85px] md:w-[105px] md:h-[105px]
+    flex-none
+    rounded-full flex items-center justify-center text-center
+    text-[11px] md:text-[13px]
+    font-semibold
+    bg-gradient-to-br from-red-500 to-red-700 text-white
+    border-2 border-pink-200 px-1
+    transition-transform duration-300 snap-center 
+    will-change-transform
+    cursor-pointer relative
+    ${hoveredIdx === idx && "animate-feature"}
+    ${scaleClass}
+  `}
+                        >
+
 
                             <div
                                 className="absolute top-full w-20 h-3 rounded-full bg-black blur-md opacity-70"

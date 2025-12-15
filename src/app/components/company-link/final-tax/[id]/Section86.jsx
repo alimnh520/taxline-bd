@@ -26,7 +26,7 @@ export function Section86() {
 
         // Logo
         const logo = document.createElement('img');
-        logo.src = '/TaxLine_BD-PNG.png';
+        logo.src = '/logo.png';
         logo.alt = 'BDTaxation Logo';
         logo.className = 'md:h-24 h-[70px] object-contain';
         document.body.prepend(logo);
@@ -205,7 +205,7 @@ export function Section86() {
             </div>
 
             <ins
-                className="adsbygoogle border no-print border-gray-200"
+                className="adsbygoogle border no-print mt-6 border-gray-200"
                 style={{ display: "inline-block", width: "100%", height: "90px" }}
                 data-ad-client="ca-pub-7809188873696785"
                 data-ad-slot="7161102196"

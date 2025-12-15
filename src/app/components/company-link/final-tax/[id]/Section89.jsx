@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export function Section87() {
+export function Section89() {
 
     const printSection = () => {
         const originalContents = document.body.innerHTML;
@@ -61,22 +61,47 @@ export function Section87() {
             </button>
 
             <h1 className="my-1 font-bold text-2xl py-1">
-                সংসদ সদস্যদের সম্মানী হইতে কর কর্তন
+                ঠিকাদার, সরবরাহকারী ইত্যাদিকে প্রদত্ত অর্থ হইতে কর কর্তন
             </h1>
-            <strong className="text-sm">ধারা : ৮৭</strong>
+            <strong className="text-sm">ধারা : ৮৯</strong>
             <hr className="my-1 text-gray-100" />
 
-            <div className="row g-1">
-                <div className="col-md-12 mt-6 text-sm">
-                    <div className="w-full text-justify space-y-4">
-                        <p>
-                            &nbsp;সংসদ সদস্যের সম্মানী হিসাবে কোনো অর্থ পরিশোধের জন্য
-                            দায়িত্বপ্রাপ্ত কোনো ব্যক্তি উক্তরূপ অর্থ প্রদানকালে, প্রদেয়
-                            সম্মানীর উপর, প্রযোজ্য পরিমাণে আয়কর প্রাপকের উক্ত আয়বর্ষের
-                            আনুমানিক মোট সম্মানীর জন্য প্রযোজ্য করের গড় হারে কর্তন করিবেন।
-                        </p>
-                    </div>
-                </div>
+            <div className="col-md-12 text-sm">
+                <p className="text-justify mb-3">
+                    যেইক্ষেত্রে কোনো নির্দিষ্ট ব্যক্তি কর্তৃক কোনো নিবাসীকে নিম্নবর্ণিত কারণে কোনো অর্থ পরিশোধ করা হয়-
+                </p>
+
+                <ul className="list-none space-y-2 pl-4">
+                    <li className="text-justify">
+                        (ক) অংশ ৭ এর অন্য কোনো ধারায় উল্লিখিত পরিষেবা প্রদান বা সরবরাহের জন্য চুক্তি ব্যতীত অন্য কোনো চুক্তি সম্পাদন;
+                    </li>
+                    <li className="text-justify">
+                        (খ) পণ্য সরবরাহ;
+                    </li>
+                    <li className="text-justify">
+                        (গ) উৎপাদন, প্রক্রিয়াকরণ বা রূপান্তর;
+                    </li>
+                    <li className="text-justify">
+                        (ঘ) মুদ্রণ, প্যাকেজিং বা বাঁধাই,
+                    </li>
+                </ul>
+
+                <p className="text-justify mt-4">
+                    সেইক্ষেত্রে উক্ত পরিশোধের জন্য দায়িত্বপ্রাপ্ত ব্যক্তি উক্তরূপ অর্থ প্রদান বা
+                    ক্রেডিটকালে ভিত্তিমূল্যের উপর নির্ধারিত, অনধিক
+                    <span className="font-semibold"> ১০% (দশ শতাংশ) </span>
+                    হারে কর কর্তন করিবেন।
+                </p>
+
+                <p className="mt-4 font-semibold text-red-600">
+                    বিস্তারিত দেখতে{" "}
+                    <a
+                        href="/supplier-tax"
+                        className="text-red-600 underline hover:text-red-700 transition"
+                    >
+                        এই লিংকে
+                    </a>
+                </p>
             </div>
 
             <ins

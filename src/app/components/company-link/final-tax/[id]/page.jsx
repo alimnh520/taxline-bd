@@ -7,6 +7,13 @@ import { useParams } from "next/navigation";
 import { Section86 } from "./Section86";
 import { Section87 } from "./Section87";
 import { Section88 } from "./Section88";
+import { Section89 } from "./Section89";
+import { Section90 } from "./Section90";
+import { Section91 } from "./Section91";
+import { Section92 } from "./Section92";
+import { Section93 } from "./Section93";
+import { Section94 } from "./Section94";
+import { Section95 } from "./Section95";
 
 export default function PdfViewer() {
     const { id } = useParams();
@@ -36,6 +43,41 @@ export default function PdfViewer() {
                     {id === "3" && (
                         <div className="w-full md:w-2/3 mx-auto p-4">
                             <Section88 />
+                        </div>
+                    )}
+                    {id === "4" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section89 />
+                        </div>
+                    )}
+                    {id === "5" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section90 />
+                        </div>
+                    )}
+                    {id === "6" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section91 />
+                        </div>
+                    )}
+                    {id === "7" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section92 />
+                        </div>
+                    )}
+                    {id === "8" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section93 />
+                        </div>
+                    )}
+                    {id === "9" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section94 />
+                        </div>
+                    )}
+                    {id === "10" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section95 />
                         </div>
                     )}
                 </div>
