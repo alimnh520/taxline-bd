@@ -72,7 +72,7 @@ export const config = {
         "/components/user/dashboard/:path*",
         "/components/package/basic",
         "/components/package/standard",
-        // "/components/personal-link/:path*",
-        // "/components/company-link/:path*",
+        "/components/personal-link/:path*",
+        "/components/company-link/:path*",
     ],
 };
