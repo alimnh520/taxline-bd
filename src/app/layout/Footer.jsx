@@ -63,7 +63,7 @@ export default function Footer() {
                             যোগাযোগ
                         </h4>
                         <ul className="space-y-2 text-sm text-gray-300 leading-6">
-                            <li><FaPhone className="text-base -mt-0.5 inline"/> মোবাইল: +880 1911-737585</li>
+                            <li><FaPhone className="text-base -mt-0.5 inline"/> মোবাইল: +880 1737-263347</li>
                             <li> <GoMail className="text-base -mt-0.5 inline"/> Email: taxlinebd.info@gmail.com</li>
                             <li><FaGlobe className="text-base -mt-0.5 inline"/> Website: <a target="_blank" href="http://taxlinebd.com" className="underline text-red-600">taxlinebd.com</a></li>
                         </ul>

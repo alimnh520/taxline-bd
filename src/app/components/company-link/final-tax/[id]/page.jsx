@@ -14,6 +14,15 @@ import { Section92 } from "./Section92";
 import { Section93 } from "./Section93";
 import { Section94 } from "./Section94";
 import { Section95 } from "./Section95";
+import { Section96 } from "./Section96";
+import { Section97 } from "./Section97";
+import { Section98 } from "./Section98";
+import { Section99 } from "./Section99";
+import { Section100 } from "./Section100";
+import { Section101 } from "./Section101";
+import { Section102 } from "./Section102";
+import { Section103 } from "./Section103";
+import { Section104 } from "./Section104";
 
 export default function PdfViewer() {
     const { id } = useParams();
@@ -78,6 +87,56 @@ export default function PdfViewer() {
                     {id === "10" && (
                         <div className="w-full md:w-2/3 mx-auto p-4">
                             <Section95 />
+                        </div>
+                    )}
+                    {id === "11" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section96 />
+                        </div>
+                    )}
+                    {id === "12" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section97 />
+                        </div>
+                    )}
+                    {id === "13" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section98 />
+                        </div>
+                    )}
+                    {id === "14" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section99 />
+                        </div>
+                    )}
+                    {id === "15" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section100 />
+                        </div>
+                    )}
+                    {id === "16" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section101 />
+                        </div>
+                    )}
+                    {id === "17" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section102 />
+                        </div>
+                    )}
+                    {id === "18" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section103 />
+                        </div>
+                    )}
+                    {id === "19" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section104 />
+                        </div>
+                    )}
+                    {id === "20" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section104 />
                         </div>
                     )}
                 </div>

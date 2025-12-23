@@ -128,14 +128,10 @@ export function Subscription() {
     const urlPath = usePathname();
 
     return (
-        <div className="sm:w-10/12 w-full mx-auto px-4 sm:px-6 lg:px-8 md:space-y-16 space-y-7 py-6 md:py-16">
+        <div className="sm:w-10/12 w-full mx-auto px-4 sm:px-6 lg:px-8  space-y-10 py-6 ">
 
             {/* Grid Links */}
-            <div className={`w-full space-y-4 ${urlPath === '/components/package' ? 'hidden' : 'block'} sm:space-y-8`}>
-
-                <div className="w-full flex justify-center">
-                    <div className="ribbon text-[16px] md:text-2xl font-bold text-white tracking-wide pb-2 md:pb-5 drop-shadow-2xl">ট্যাক্স সম্পর্কিত গুরুত্বপূর্ণ টপিকসমূহ</div>
-                </div>
+            <div className={`w-full space-y- ${urlPath === '/components/package' ? 'hidden' : 'block'} sm:space-y-8`}>
 
                 {/* Two Column List Layout */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-5">
@@ -146,11 +142,11 @@ export function Subscription() {
                             href={`/components/tax-act/${item.link}`}
                             className="
         relative 
-        bg-[#32b44a]  overflow-hidden group cursor-pointer hover:shadow-[0_0_30px_#4dff6a80] hover:-translate-y-1 flex items-center gap-4 sm:p-2 p-0.5 rounded-xl border border-[#32b44a]/40 shadow-sm hover:shadow-lg text-white  transition-all duration-300"
+        bg-[#32b44a]  overflow-hidden group cursor-pointer hover:shadow-[0_0_30px_#4dff6a80] hover:-translate-y-1 flex items-center gap-4 sm:p-0.5 rounded-xl border border-[#32b44a]/40 shadow-sm hover:shadow-lg text-white  transition-all duration-300"
                         >
 
                             {/* Left Solid Icon Box */}
-                            <div className="z-10 bg-white w-10 h-10 rounded-full border flex items-center justify-center border-[#0f6f3f33] shadow-lg ">
+                            <div className="z-10 bg-white rounded-full border flex items-center justify-center border-[#0f6f3f33] shadow-lg ">
                                 <img src="/logo/green-check.png" className="w-8 opacity-100" alt="" />
                             </div>
 
@@ -167,11 +163,38 @@ export function Subscription() {
                 </div>
             </div>
 
-            <div className="w-full flex justify-center">
-                <div className="ribbon text-xl md:text-2xl font-bold text-white tracking-wide pb-2 md:pb-5 drop-shadow-2xl">আমাদের প্যাকেজসমূহ</div>
-            </div>
+            <button
+                className="
+        group relative inline-flex items-center justify-center sha
+        px-16 py-3 relative -translate-x-1/2 left-1/2
+        font-semibold text-white
+        bg-gradient-to-r from-emerald-500 to-green-600 
+        overflow-hidden
+        transition-all duration-300
+        rounded-full shadow-[2px_2px_10px_rgba(0,0,0,0.3)]
+      "
+            >
+                <span
+                    className="
+          absolute inset-0
+          bg-gradient-to-r from-transparent via-white/40 to-transparent subscribe
+          transition-transform duration-700
+        "
+                />
 
-            <div className="mt-5 sm:mt-10 flex flex-col sm:flex-row px-5 sm:px-0 items-start justify-between gap-5 sm:gap-8">
+                <span
+                    className="
+          absolute inset-0 rounded-full
+          transition-all duration-300
+        "
+                />
+
+                <span className="relative z-10 text-2xl tracking-wide">
+                    Subscribe Now
+                </span>
+            </button>
+
+            <div className="mt-5 flex flex-col sm:flex-row px-5 sm:px-0 items-start justify-between gap-5 sm:gap-8">
                 {plans.map((plan, index) => {
                     const [hover, setHover] = useState(false);
 

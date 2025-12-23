@@ -27,14 +27,14 @@ export const personalTaxLinks = [
 
 export const Ereturn = () => {
     return (
-        <div className="w-full h-auto px-4 md:px-5 mt-3 sm:mt-8 flex flex-col items-center gap-y-1 sm:gap-y-4">
+        <div className="w-full h-auto px-4 md:px-5 sm:mt-4 flex flex-col items-center gap-y-1 sm:gap-y-4">
 
-            <div className="ribbon text-xl md:text-2xl font-bold text-white tracking-wide pb-4 drop-shadow-2xl">
+            <div className=" text-xl md:text-2xl font-bold tracking-wide pb-4 drop-shadow-2xl">
                 ই-রিটার্ন কর্ণার
             </div>
 
             {/* Top Grid */}
-            <div className="grid w-full h-auto grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 py-4">
+            <div className="grid w-full h-auto grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 {[
                     "আইটি খাতের আয় ই-রিটার্ন সিস্টেমে কিভাবে ইনপুট করবেন",
                     "জিপিএফ সুদ বাবদ আয় ই-রিটার্ন সিস্টেমে কিভাবে দেখাতে হবে",
@@ -66,17 +66,17 @@ export const Ereturn = () => {
                 {/* Left side links */}
                 <div className="w-full lg:w-[330px] flex flex-col">
 
-                    <div className="ribbon2 text-center py-1 sm:py-2 text-[#17982f] text-lg font-semibold rounded-md shadow-sm">
+                    <div className=" text-center bg-[#e8f7ed] border-b-4 border-b-green-[#17982f] text-[#17982f] text-lg font-semibold rounded-full shadow-sm">
                         <p>প্রয়োজনীয় সরকারি লিংক</p>
                     </div>
 
-                    <div className="flex flex-col gap-y-2 mt-4">
+                    <div className="flex flex-col gap-y-2 mt-6">
                         {govLinks.map((item, i) => (
                             <Link
                                 key={i}
                                 href={item.link}
                                 target="_blank"
-                                className="bg-[#dff3e9] text-[#ff0000] border border-[#17982f] px-3 py-2.5 flex items-center gap-x-2 text-[15px] hover:scale-[1.02] hover:shadow-md transition-all duration-300 rounded-full"
+                                className="bg-[#dff3e9] text-[#ff0000] border border-[#17982f] px-3 py-0.5 flex items-center gap-x-2 text-[15px] hover:scale-[1.02] hover:shadow-md transition-all duration-300 rounded-full"
                             >
                                 <img src="/logo/green-check.png" alt="" className="w-5 opacity-80" />
                                 {item.title}
@@ -90,7 +90,7 @@ export const Ereturn = () => {
                 <div className="sm:flex-1 w-full h-auto">
 
                     {/* Header Ribbon */}
-                    <div className="ribbon2 text-center py-1 sm:py-2 text-[#0f6f3f] text-lg font-extrabold rounded-xl shadow-md tracking-wide bg-[#e8f7ed]">
+                    <div className=" text-center border-b-4 border-b-green-[#17982f] text-[#17982f] text-lg font-extrabold rounded-xl shadow-md tracking-wide bg-[#e8f7ed]">
                         <p>ব্যক্তি করদাতার জন্য প্রযোজ্য</p>
                     </div>
 
@@ -100,11 +100,11 @@ export const Ereturn = () => {
                             <Link
                                 key={i}
                                 href={item.link}
-                                className="relative bg-gradient-to-br from-[#dff3e9] to-[#b0e8c9] h-36 w-full rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-400 pt-2 border border-[#a8e0c3] flex flex-col items-center justify-start pt- gap-y-3 overflow-hidden group"
+                                className="relative bg-gradient-to-br from-[#dff3e9] to-[#b0e8c9] h-28 w-full rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-400 pt-2 border border-[#a8e0c3] flex flex-col items-center justify-start pt- gap-y-1 overflow-hidden group"
                             >
                                 {/* Top Decorative Icon Circle */}
-                                <div className="z-10 bg-white w-12 h-12 p-1 rounded-full border flex items-center justify-center border-[#0f6f3f33] shadow-lg group-hover:animate-bounce transition-transform duration-300">
-                                    <img src="/logo/green-check.png" className="w-10 opacity-100" alt="" />
+                                <div className="z-10 bg-white w-8 h-8 p-1 rounded-full border flex items-center justify-center border-[#0f6f3f33] shadow-lg group-hover:animate-bounce transition-transform duration-300">
+                                    <img src="/logo/green-check.png" className="w-6 opacity-100" alt="" />
                                 </div>
 
                                 {/* Card Content */}

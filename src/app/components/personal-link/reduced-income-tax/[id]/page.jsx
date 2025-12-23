@@ -5,17 +5,18 @@ import { PersonalFeature } from "../../PersonalFeature";
 import TaxAccordions from "../../PersonalTax";
 import Link from "next/link";
 import GovernmentLinks from "@/app/components/GovtLink";
+import { Animations } from "@/app/components/Animations";
 
 export default function PdfViewer() {
     const { id } = useParams();
 
     return (
         <div className="flex flex-col w-full items-center">
-            <div className="flex flex-col justify-start gap-y-8 mx-auto border-t border-t-gray-200">
-
+            <div className="flex flex-col w-full justify-start gap-y-8 mx-auto border-t border-t-gray-200">
+                <Animations />
                 <PersonalFeature />
 
-                <div className="flex flex-col md:flex-row items-start justify-center gap-x-10 w-10/12 mx-auto">
+                <div className="flex flex-col md:flex-row items-start justify-center gap-x-10 w-10/12 mx-auto -mt-15">
 
                     <div className="w-full md:w-1/3">
                         <TaxAccordions />

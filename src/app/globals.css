@@ -159,7 +159,6 @@ body {
   /* the cutout part */
 
   padding: 0 calc(var(--s) + .5em) var(--d);
-  line-height: 1.8;
   background:
     conic-gradient(at left var(--s) bottom var(--d),
       #0000 25%, #0008 0 37.5%, #0004 0) 0 /50% 100% no-repeat,
@@ -235,4 +234,17 @@ input[type="number"] {
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.subscribe {
+  animation: subscribe 0.8s 0.5s ease-in infinite;
+}
+
+@keyframes subscribe {
+  0% {
+    translate: -100%;
+  }
+  100% {
+    translate: 100%;
+  }
 }

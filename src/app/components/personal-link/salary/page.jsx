@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import TaxAccordions from "../PersonalTax";
 import { PersonalFeature } from "../PersonalFeature";
 import GovernmentLinks from "../../GovtLink";
+import { Animations } from "../../Animations";
 
 export default function SalaryTaxCalculator() {
     // initial data taken from the provided HTML snapshot
@@ -101,9 +102,10 @@ export default function SalaryTaxCalculator() {
     return (
         <div className="flex flex-col justify-start gap-y-8 items-center mx-auto border-t border-t-gray-200">
 
+            <Animations />
             <PersonalFeature />
 
-            <div className="flex items-start justify-between">
+            <div className="flex items-start justify-between -mt-15">
 
 
                 <TaxAccordions />
@@ -210,7 +212,7 @@ export default function SalaryTaxCalculator() {
                     </div>
                 </div>
             </div>
-            <GovernmentLinks/>
+            <GovernmentLinks />
         </div>
     );
 }

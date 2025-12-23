@@ -4,6 +4,7 @@ import TaxAccordions from "../PersonalTax";
 import { PersonalFeature } from "../PersonalFeature";
 import { useRouter } from "next/navigation";
 import GovernmentLinks from "../../GovtLink";
+import { Animations } from "../../Animations";
 
 const finalTaxHeads = [
     { id: 1, title: "সম্পত্তি অধিগ্রহণ এর ক্ষতিপূরণ হতে অর্জিত আয়" },
@@ -35,10 +36,10 @@ const FinalTaxTable = () => {
 
     return (
         <div className="flex flex-col justify-start gap-y-8 items-center mx-auto border-t border-t-gray-200">
-
+            <Animations />
             <PersonalFeature />
 
-            <div className="flex flex-col md:flex-row items-start justify-between gap-x-10 w-10/12">
+            <div className="flex flex-col md:flex-row items-start justify-between gap-x-10 w-10/12 -mt-15">
 
                 <div className="w-full md:w-1/3">
                     <TaxAccordions />

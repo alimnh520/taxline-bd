@@ -6,6 +6,7 @@ import TaxAccordions from "../PersonalTax";
 
 import { useState } from "react";
 import GovernmentLinks from "../../GovtLink";
+import { Animations } from "../../Animations";
 
 
 export default function page() {
@@ -22,10 +23,10 @@ export default function page() {
 
     return (
         <div className="flex flex-col justify-start items-center gap-y-8 mx-auto border-t border-t-gray-200">
-
+            <Animations />
             <PersonalFeature />
 
-            <div className="flex flex-col md:flex-row items-start justify-center gap-x-5 w-10/12">
+            <div className="flex flex-col md:flex-row items-start justify-center gap-x-5 w-10/12 -mt-15">
 
                 <div className="w-full md:w-1/3">
                     <TaxAccordions />

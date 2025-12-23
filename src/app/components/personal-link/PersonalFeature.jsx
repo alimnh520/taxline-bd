@@ -21,8 +21,8 @@ export const PersonalFeature = () => {
     ];
 
     return (
-        <div className="w-full mx-auto flex mt-3 gap-y-10 flex-col items-center justify-center flex-wrap px-2">
-            <div className="w-full h-40 flex flex-nowrap overflow-x-auto snap-x snap-mandatory scrollbar-hide items-center justify-start sm:justify-center gap-3 text-white pb-6 relative">
+        <div className="w-full mx-auto flex gap-y-10 flex-col items-center justify-center flex-wrap px-2">
+            <div className="w-full h-40 flex flex-nowrap overflow-x-auto snap-x snap-mandatory scrollbar-hide items-center justify-start sm:justify-center gap-4 text-white pb-6 relative">
                 {diamondLinks.map((item, idx) => {
                     const scaleClass =
                         hoveredIdx === null
@@ -38,7 +38,7 @@ export const PersonalFeature = () => {
                             onMouseEnter={() => setHoveredIdx(idx)}
                             onMouseLeave={() => setHoveredIdx(null)}
                             className={`
-    w-[85px] h-[85px] md:w-[105px] md:h-[105px]
+    w-[85px] h-[85px] md:w-[90px] md:h-[90px]
     flex-none
     rounded-full flex items-center justify-center text-center
     text-[11px] md:text-[13px]

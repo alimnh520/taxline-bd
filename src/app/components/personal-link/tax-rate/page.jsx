@@ -1,5 +1,6 @@
 'use client';
 
+import { Animations } from "../../Animations";
 import GovernmentLinks from "../../GovtLink";
 import { PersonalFeature } from "../PersonalFeature";
 import TaxAccordions from "../PersonalTax";
@@ -8,10 +9,10 @@ export default function TaxLaw() {
 
     return (
         <div className="flex flex-col justify-start gap-y-8 items-center mx-auto border-t border-t-gray-200">
-
+            <Animations />
             <PersonalFeature />
 
-            <div className="flex items-start justify-between gap-x-8">
+            <div className="flex items-start justify-between gap-x-8 -mt-15">
 
                 <TaxAccordions />
 
@@ -33,7 +34,7 @@ export default function TaxLaw() {
                                     <label htmlFor="payerCategory" className="block text-sm font-medium text-gray-700 mb-1">
                                         করদাতার শ্রেণী:
                                     </label>
-                                    
+
                                     <select
                                         id="payerCategory"
                                         className="mt-1 block w-full border appearance-none border-green-600 rounded-md py-2 px-2 shadow-sm focus:ring-green-500 focus:border-green-800 outline-none"
@@ -125,7 +126,7 @@ export default function TaxLaw() {
 
                 </div>
             </div>
-            <GovernmentLinks/>
+            <GovernmentLinks />
         </div>
 
     );

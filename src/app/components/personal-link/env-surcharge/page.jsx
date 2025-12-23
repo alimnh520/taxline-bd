@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import TaxAccordions from "../PersonalTax";
 import { PersonalFeature } from "../PersonalFeature";
 import GovernmentLinks from "../../GovtLink";
+import { Animations } from "../../Animations";
 
 export default function page() {
 
@@ -14,10 +15,10 @@ export default function page() {
 
     return (
         <div className="flex flex-col justify-start items-center gap-y-8 w-full mx-auto border-t border-t-gray-200">
-
+            <Animations />
             <PersonalFeature />
 
-            <div className="flex flex-col md:flex-row items-start justify-center w-full">
+            <div className="flex flex-col md:flex-row items-start justify-center w-full -mt-15">
 
                 <div className="w-full md:w-1/3">
                     <TaxAccordions />

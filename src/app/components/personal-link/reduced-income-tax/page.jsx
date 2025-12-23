@@ -4,6 +4,7 @@ import TaxAccordions from "../PersonalTax";
 import { PersonalFeature } from "../PersonalFeature";
 import GovernmentLinks from "../../GovtLink";
 import { useRouter } from "next/navigation";
+import { Animations } from "../../Animations";
 
 const reducedIncomeHeads = [
     { id: 1, title: "হাঁস-মুরগীর খামার, হাঁস-মুরগী, চিংড়ী ও মাছের হ্যাচারী (hatchery) এবং মৎস্য চাষ হতে আয়ের জন্য হ্রাসকৃত কর" },
@@ -39,10 +40,10 @@ const ReducedIncomePage = () => {
 
     return (
         <div className="flex flex-col justify-start items-center gap-y-8 w-full mx-auto border-t border-t-gray-200">
-
+            <Animations />
             <PersonalFeature />
 
-            <div className="flex flex-col md:flex-row items-start justify-between gap-x-10 w-10/12">
+            <div className="flex flex-col md:flex-row items-start justify-between gap-x-10 w-10/12 -mt-15">
 
                 {/* Accordion Section */}
                 <div className="w-full md:w-1/3">

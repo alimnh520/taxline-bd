@@ -86,9 +86,9 @@ export default function IncomeTaxSRO() {
                             currentItems.map((item, index) => (
                                 <tr
                                     key={item.id}
-                                    onClick={() =>
-                                        router.push(`https://bdtaxation.com/income-tax-sro/${item.id}`)
-                                    }
+                                    // onClick={() =>
+                                    //     router.push(`https://bdtaxation.com/income-tax-sro/${item.id}`)
+                                    // }
                                     className="hover:bg-gray-100 cursor-pointer transition"
                                 >
                                     <td className="border border-gray-200 text-center py-2">
