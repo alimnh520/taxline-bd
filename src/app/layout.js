@@ -34,6 +34,7 @@ export const viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
+  themeColor: "#10B981",
 };
 
 
@@ -72,7 +73,6 @@ export const metadata = {
   },
 
   manifest: "/manifest.json",
-  themeColor: "#10B981",
 
   // ⭐ Open Graph
   openGraph: {

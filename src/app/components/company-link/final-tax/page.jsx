@@ -64,7 +64,7 @@ export default function Page() {
                 </div>
 
                 <div className="w-full md:w-2/3 p-4">
-                    <h1 className="text-center text-xl font-semibold mb-3">কর কর্তনের খাতসমূহ</h1>
+                    <h1 className="text-center text-3xl font-semibold mb-3">কর কর্তনের খাতসমূহ</h1>
                     <input
                         type="text"
                         className="form-control my-3 px-3 py-2 border border-green-600 outline-none rounded w-full"
@@ -76,8 +76,8 @@ export default function Page() {
                         <table className="min-w-full border border-black table-auto text-sm">
                             <thead>
                                 <tr className="bg-gray-800 text-white">
-                                    <th className="border border-black w-[10%] py-2">ধারা</th>
-                                    <th className="border border-black w-[70%] py-2 text-center">শিরোনাম</th>
+                                    <th className="border border-black w-[10%] py-2 px-1">ধারা</th>
+                                    <th className="border border-black w-[70%] py-2 px-1 text-center">শিরোনাম</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -89,8 +89,8 @@ export default function Page() {
                                             className="hover:bg-gray-100 cursor-pointer"
                                             onClick={() => handleRowClick(section.id)}
                                         >
-                                            <td className="border border-black text-center py-2">{section.number}</td>
-                                            <td className="border border-black py-2">{section.title}</td>
+                                            <td className="border border-black text-center py-2 px-1">{section.number}</td>
+                                            <td className="border border-black py-2 px-1">{section.title}</td>
                                         </tr>
                                     ))}
                             </tbody>

@@ -6,6 +6,12 @@ const userSchema = new mongoose.Schema(
         mobile: { type: String, required: false },
         email: { type: String, required: false, unique: true },
 
+        role: {
+            type: String,
+            enum: ["admin", "user"],
+            default: "user"
+        },
+
         gender: { type: String, required: false },
         dob: { type: String },
         officePhone: { type: String, required: false },

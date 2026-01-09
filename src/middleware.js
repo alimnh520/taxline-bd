@@ -3,13 +3,11 @@ import { jwtVerify } from "jose";
 
 export async function middleware(request) {
     const pathName = request.nextUrl.pathname;
-    const token = request.cookies.get("3f_associates_login")?.value;
+    const token = request.cookies.get("taxlinebd")?.value;
 
     const subscriptionRequiredPaths = [
         "/components/tax-act/tax-rate",
         "/components/tax-act/company-tax",
-        "/components/package/basic",
-        "/components/package/standard",
         '/components/personal-link',
         '/components/company-link'
     ];
@@ -21,44 +19,54 @@ export async function middleware(request) {
         return NextResponse.redirect(new URL("/components/user/dashboard", request.url));
     }
 
-    if (pathName.startsWith("/components/user/dashboard")) {
+    const protectedPaths = [
+        "/components/user/dashboard",
+        "/components/admin",
+        ...subscriptionRequiredPaths
+    ];
+
+    if (protectedPaths.some(p => pathName.startsWith(p))) {
         if (!token) {
             return NextResponse.redirect(new URL("/components/login", request.url));
         }
 
+        let payload;
+
         try {
             const secret = new TextEncoder().encode(process.env.JWT_SECRET);
-            await jwtVerify(token, secret);
+            const result = await jwtVerify(token, secret);
+            payload = result.payload;
         } catch {
             return NextResponse.redirect(new URL("/components/login", request.url));
         }
 
-        return NextResponse.next();
-    }
+        const role = payload.role;
 
-    if (subscriptionRequiredPaths.some(p => pathName.startsWith(p))) {
-        if (!token) {
-            return NextResponse.redirect(new URL("/components/login", request.url));
+        if (pathName.startsWith("/components/admin")) {
+            if (role !== "admin") {
+                return NextResponse.redirect(new URL("/components/user/dashboard", request.url));
+            }
         }
 
-        try {
-            const secret = new TextEncoder().encode(process.env.JWT_SECRET);
-            await jwtVerify(token, secret);
-        } catch {
-            return NextResponse.redirect(new URL("/components/login", request.url));
+        if (pathName.startsWith("/components/user/dashboard")) {
+            if (role === "admin") {
+                return NextResponse.redirect(new URL("/components/admin", request.url));
+            }
         }
 
-        const verifyURL = new URL("/api/user/subscribe/verify", request.url);
+        if (subscriptionRequiredPaths.some(p => pathName.startsWith(p))) {
+            const verifyURL = new URL("/api/user/subscribe/verify", request.url);
 
-        const userPackage = await fetch(verifyURL, {
-            method: "GET",
-            headers: { "Cookie": request.headers.get("cookie") ?? "" }
-        });
+            const userPackage = await fetch(verifyURL, {
+                method: "GET",
+                headers: { "Cookie": request.headers.get("cookie") ?? "" }
+            });
 
-        const isSubscribe = await userPackage.json();
+            const isSubscribe = await userPackage.json();
 
-        if (!isSubscribe.success) {
-            return NextResponse.redirect(new URL("/components/package", request.url));
+            if (!isSubscribe.success) {
+                return NextResponse.redirect(new URL("/components/package", request.url));
+            }
         }
     }
 
@@ -69,9 +77,9 @@ export const config = {
     matcher: [
         "/components/registration",
         "/components/login",
+        "/components/admin/:path*",
         "/components/user/dashboard/:path*",
-        "/components/package/basic",
-        "/components/package/standard",
+        "/components/tax-act/:path*",
         "/components/personal-link/:path*",
         "/components/company-link/:path*",
     ],

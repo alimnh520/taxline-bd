@@ -1,53 +1,52 @@
 'use client'
-import { useEffect, useRef, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import Footer from "./layout/Footer";
 import Header from "./layout/Header";
+import { usePathname } from "next/navigation";
+
+export const ContextProvider = createContext(null);
 
 const Provider = ({ children }) => {
-    
-    // const ballRef = useRef(null);
-    // const containerRef = useRef(null);
+    const [userInfo, setUserInfo] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const path = usePathname();
 
-    // useEffect(() => {
-    //     const handleMouseMove = (evt) => {
-    //         const container = containerRef.current;
-    //         const rect = container.getBoundingClientRect();
-
-    //         let x = (evt.clientX - 10) - rect.left;
-    //         let y = (evt.clientY - 15) - rect.top;
-
-    //         x = Math.max(0, Math.min(x, rect.width - 21));
-    //         y = Math.max(0, Math.min(y, rect.height - 21));
-
-    //         ballRef.current.style.transform = `translate(${x}px, ${y}px)`;
-    //     };
-
-    //     window.addEventListener("mousemove", handleMouseMove);
-    //     return () => window.removeEventListener("mousemove", handleMouseMove);
-    // }, []);
+    useEffect(() => {
+        async function userInfoData() {
+            try {
+                const res = await fetch("/api/user/user-info", { method: 'GET' });
+                const data = await res.json();
+                if (data.success) {
+                    setUserInfo(data.message);
+                }
+            } catch (error) {
+                console.log(error);
+            } finally {
+                setLoading(false);
+            }
+        }
+        userInfoData();
+    }, []);
 
     return (
-        <div
-            className="
-        w-full
-     bg-white
-        shadow-2xl
-        mx-auto
-        relative
-        overflow-hidden 
-        lg:max-w-[72%]"
-        >
-
-            {/* Cursor Ball */}
-            {/* <div
-                ref={ballRef}
-                className="pointer-events-none absolute left-0 top-0 h-5 w-5 rounded-full bg-green-600 shadow-[0_0_30px_rgba(0,255,0,0.9)] transition-transform duration-200 ease-out z-50"
-            /> */}
-
-            <Header />
-            {children}
-            <Footer />
-        </div>
+        <ContextProvider.Provider value={{ userInfo, setUserInfo, loading }}>
+            <div
+                className={`
+                    w-full
+                    shadow-2xl
+                    mx-auto
+                    relative
+                    overflow-hidden 
+                     
+                    ${path === '/components/admin' ? 'lg:max-w-full' : 'lg:max-w-[72%]'}
+                    bg-gray-300
+                `}
+            >
+                {path !== '/components/admin' && <Header />}
+                {children}
+                {path !== '/components/admin' && <Footer />}
+            </div>
+        </ContextProvider.Provider>
     );
 };
 

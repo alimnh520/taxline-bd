@@ -8,7 +8,6 @@ export async function POST(request) {
     try {
         const { username, phone, email } = await request.json();
 
-        // 🔍 ১️⃣ ইনপুট যাচাই
         if (!username || username.trim().length < 3) {
             return NextResponse.json(
                 { success: false, message: "সঠিক নাম প্রদান করুন (কমপক্ষে ৩ অক্ষর)!" },
@@ -45,10 +44,8 @@ export async function POST(request) {
             );
         }
 
-        // 🔢 ২️⃣ ৬-সংখ্যার OTP তৈরি
         const otp = Math.floor(100000 + Math.random() * 900000);
 
-        // ✉️ ৩️⃣ ইমেইল পাঠানো
         try {
             await sendEmail({ email, otp });
         } catch (mailError) {
@@ -59,24 +56,22 @@ export async function POST(request) {
             );
         }
 
-        // 🔐 ৪️⃣ JWT দিয়ে ইউজার ইনফো + OTP এনকোড করা
         const tokenPayload = { otp, username, phone, email };
         const token = jwt.sign(tokenPayload, process.env.JWT_SECRET, {
-            expiresIn: "5m", // ৫ মিনিটের মধ্যে OTP মেয়াদ শেষ হবে
+            expiresIn: "5m",
         });
 
-        // 🍪 ৫️⃣ রেসপন্স তৈরি ও কুকি সেট করা
         const response = NextResponse.json({
             success: true,
             message: "OTP সফলভাবে পাঠানো হয়েছে! অনুগ্রহ করে যাচাই করুন।",
         });
 
-        response.cookies.set("user_info", token, {
+        response.cookies.set("otp-time", token, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
             sameSite: "strict",
             path: "/",
-            maxAge: 5 * 60, // ৫ মিনিট
+            maxAge: 5 * 60,
         });
 
         return response;

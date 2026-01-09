@@ -280,16 +280,16 @@ export default function page() {
                         </div>
 
                     )}
-                    {['4','5','6','7','8'].includes(selectedYear) && (
+                    {['4', '5', '6', '7', '8'].includes(selectedYear) && (
                         <div className=""><p>০.৬০% (মোট প্রাপ্তির উপরে)</p></div>
                     )}
                     {selectedYear === '12' && (
                         <div className=""><p>০.৩০% (মোট প্রাপ্তির উপর)</p></div>
                     )}
-                    {['13','14','15'].includes(selectedYear) && (
+                    {['13', '14', '15'].includes(selectedYear) && (
                         <div className=""><p>০.৫০% (মোট প্রাপ্তির উপর)</p></div>
                     )}
-                    {['16','17'].includes(selectedYear) && (
+                    {['16', '17'].includes(selectedYear) && (
                         <div className=""><p>৫,০০০ টাকা (লাভ-ক্ষতি নির্বিশেষে)</p></div>
                     )}
                     {selectedYear === '18' && (
@@ -309,6 +309,7 @@ export default function page() {
                     )}
                 </div>
             </div>
+            <GovernmentLinks />
         </div>
     )
 }

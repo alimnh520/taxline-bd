@@ -6,7 +6,7 @@ export async function GET() {
         message: "লগআউট সম্পন্ন হয়েছে!",
     });
 
-    response.cookies.set("3f_associates_login", "", {
+    response.cookies.set("taxlinebd", "", {
         httpOnly: true,
         expires: new Date(0),
         path: "/",

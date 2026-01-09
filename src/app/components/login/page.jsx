@@ -26,7 +26,7 @@ export default function LoginPage() {
             const res = await fetch("/api/user/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email }), // ✅ শুধু email পাঠাচ্ছে
+                body: JSON.stringify({ email }),
             });
 
             const data = await res.json();
@@ -40,7 +40,6 @@ export default function LoginPage() {
         }
     };
 
-    // === OTP Verify ===
     const verifyOtp = async () => {
         try {
             setMessage("");
@@ -63,8 +62,9 @@ export default function LoginPage() {
             setStatus(data.success ? "success" : "error");
 
             if (data.success) {
-                router.push("/components/user/dashboard"); 
+               router.push("/components/user/dashboard"); 
             }
+            
         } catch (error) {
             console.error(error);
             setMessage("সার্ভারে কোনো সমস্যা ঘটেছে! অনুগ্রহ করে আবার চেষ্টা করুন।");

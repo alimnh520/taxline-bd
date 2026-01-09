@@ -1,0 +1,113 @@
+'use client'
+
+import { useEffect, useState } from "react";
+
+export function Section108() {
+
+    const printSection = () => {
+        const originalContents = document.body.innerHTML;
+        const section = document.getElementById('sectionContent');
+        const cloneSection = section.cloneNode(true);
+        document.body.innerHTML = '';
+        document.body.appendChild(cloneSection);
+
+        // Logo
+        const logo = document.createElement('img');
+        logo.src = '/logo.png';
+        logo.alt = 'BDTaxation Logo';
+        logo.className = 'md:h-24 h-[70px] object-contain';
+        document.body.prepend(logo);
+
+        // Watermark
+        const watermark = document.createElement('div');
+        watermark.className = 'watermark';
+        watermark.innerText = 'TaxLine_BD';
+        document.body.prepend(watermark);
+
+        // Styles
+        const style = document.createElement('style');
+        style.innerHTML = `
+        body { font-size: 12px; font-family: sans-serif; position: relative; min-height: 100vh;}
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            font-size: 5rem;
+            color: rgba(0,0,0,0.05);
+            pointer-events: none;
+            z-index: 0;
+        }
+        img { display: block; margin: 0 auto 20px; max-height: 100px; }
+    `;
+        document.head.prepend(style);
+        window.print();
+        document.body.innerHTML = originalContents;
+        window.location.reload();
+    };
+
+
+
+    return (
+        <div className="col-md-6 order-1 order-md-2" id="sectionContent">
+            {/* Print Button */}
+            <button
+                className="btn btn-secondary print:hidden bg-[#ff0000] px-4 py-2 text-white rounded-md"
+                onClick={() =>
+                    printSection('sectionContent', 'সংসদ সদস্যদের সম্মানী হইতে কর কর্তন')
+                }
+            >
+                Print
+            </button>
+
+            <h1 className="my-1 font-bold text-2xl py-1">
+                আন্তর্জাতিক ফোন কলের জন্য প্রাপ্ত অর্থ হইতে কর কর্তন
+            </h1>
+            <strong className="text-sm">ধারা : ১০৮</strong>
+            <hr className="my-1 text-gray-100" />
+
+            <div className="row g-1">
+                <div className="col-md-12 mt-6 text-sm">
+                    <div className="w-full text-justify space-y-4">
+                        <p className="text-justify">
+                            (১) আন্তর্জাতিক ফোন কল সম্পর্কে আন্তর্জাতিক গেটওয়ে সেবা প্রদানের জন্য আন্তর্জাতিক গেটওয়ে (আইজিডব্লিউ) সেবা প্রদানকারীর হিসাবে কোনো ব্যাংকের মাধ্যমে জমাকৃত মোট অর্থের উপর ১.৫% (এক দশমিক পাঁচ শতাংশ) হারে কর কর্তন করিতে হইবে।
+                        </p>
+
+                        <p className="text-justify">
+                            (২) আন্তর্জাতিক গেটওয়ে (আইজিডব্লিউ) সেবা অপারেটর, যাহার মাধ্যমে আন্তর্জাতিক ফোন কল সম্পর্কিত কোনো অর্থ প্রদান করা হয় অথবা ইন্টারকানেকশন এক্সচেঞ্জ (আইসিএক্স), অ্যাক্সেস নেটওয়ার্ক সার্ভিসেস (এএনএস), বাংলাদেশ টেলিকমিউনিকেশন রেগুলেটরী কমিশন (বিটিআরসি) বা অন্য কোনো ব্যক্তির সহিত বাংলাদেশ টেলিকমিউনিকেশন রেগুলেটরী কমিশন (বিটিআরসি) এর সহিত চুক্তির অধীন কোনো হিসাবে অর্থ জমা প্রদান করা হয়, উক্ত চুক্তির আওতায় পরিশোধ বা জমাকৃত মোট অর্থের উপর ৭.৫% (সাত দশমিক পাঁচ শতাংশ) হারে কর কর্তন করিবে।
+                        </p>
+
+                        <p className="text-justify">
+                            (৩) যেইক্ষেত্রে বহির্গামী আন্তর্জাতিক কলের ক্ষেত্রে ইন্টারকানেকশন এক্সচেঞ্জ (আইসিএক্স) পরিষেবাদি বা অ্যাক্সেস নেটওয়ার্ক পরিষেবাদি (এএনএস) প্রদানের বিনিময়ে কোনো পরিমাণ অর্থ প্রদান বা জমা দেওয়া হয়, সেইক্ষেত্রে উক্ত অর্থ পরিশোধিত বা জমাকৃত অর্থের উপর ৭.৫% (সাত দশমিক পাঁচ শতাংশ) হারে কর কর্তন করিতে হইবে।
+                        </p>
+
+                        <p className="text-justify">
+                            (৪) উপ-ধারা (১), (২) বা (৩) এ যাহা কিছুই থাকুক না কেন, যেইক্ষেত্রে বোর্ড কোনো ব্যক্তি কর্তৃক প্রদত্ত আবেদনের পরিপ্রেক্ষিতে, লিখিতভাবে কোনো সনদ প্রদান করে, সেইক্ষেত্রে উক্ত ব্যক্তি আয়কর হইতে মুক্ত হইবে বা এই ধারায় উল্লিখিত হারের নিম্ন হারে কর প্রদানের জন্য দায়বদ্ধ হইবে এবং এই ধরনের অর্থ পরিশোধের জন্য দায়িত্বপ্রাপ্ত ব্যক্তি নিম্নবর্ণিতভাবে অর্থ পরিশোধ করিবেন-
+                        </p>
+
+                        <p>(ক) কর কর্তন ব্যতীত; অথবা</p>
+                        <p>(খ) সনদে উল্লিখিত হারে কর কর্তন সাপেক্ষে।</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <ins
+                className="adsbygoogle border mt-6 no-print border-gray-200"
+                style={{ display: "inline-block", width: "100%", height: "90px" }}
+                data-ad-client="ca-pub-7809188873696785"
+                data-ad-slot="7161102196"
+            ></ins>
+
+            <hr className="mt-6 text-gray-200" />
+
+            <style>
+                {`
+                    #comment p {
+                        color: red;
+                    }
+                `}
+            </style>
+        </div>
+    );
+}

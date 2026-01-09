@@ -2,8 +2,9 @@
 import { IoCheckmarkCircleOutline } from "react-icons/io5";
 
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { usePathname } from "next/navigation";
+import { ContextProvider } from "../Provider";
 
 function lightenColor(hex, percent) {
     hex = hex.replace(/#/g, "");
@@ -93,18 +94,19 @@ const plans = [
         price: '৳১৫০০০',
         features: [
             'COMPANY REGISTRATION',
-            'TRADE LICENSE & TRADEMARK',
             'IRC & ERC SERVICES',
             'BUSINESS AUDIT',
             'FINANCIAL AUDIT',
-            'ACCOUNTING SERVICE & SOFTWARE IMPLEMENTATION',
-            'COMPANY LAW, RJSC REGISTRATION, SHARE TRANSFER',
-            'ACCOUNTING SERVICES & OTHER CONSULTANCY SERVICES',
-            'IMPORT/EXPORT CERTIFICATES',
-            'LEGAL COMPLIANCE',
+            'BUSINESS COMPLIANCE',
             'CUSTOM LAW',
+            'CUSTOM BOND',
             'REFUND ADJUSTMENT',
             'TAX APPEAL & TRIBUNAL',
+            'IMPORT/EXPORT CERTIFICATES',
+            'TRADE LICENSE & TRADEMARK',
+            'COMPANY LAW, RJSC REGISTRATION, SHARE TRANSFER',
+            'ACCOUNTING SERVICES & OTHER CONSULTANCY SERVICES',
+            'ACCOUNTING SERVICE & SOFTWARE IMPLEMENTATION',
         ],
         accent: '#17982f',
         link: '/components/package/premium'
@@ -126,9 +128,10 @@ const gridLinks = [
 export function Subscription() {
     const [expandedIndex, setExpandedIndex] = useState(null);
     const urlPath = usePathname();
+    const { userInfo } = useContext(ContextProvider);
 
     return (
-        <div className="sm:w-10/12 w-full mx-auto px-4 sm:px-6 lg:px-8  space-y-10 py-6 ">
+        <div className="sm:w-10/12 w-full mx-auto px-4 sm:px-6 lg:px-8 mt-10 space-y-10 py-6 ">
 
             {/* Grid Links */}
             <div className={`w-full space-y- ${urlPath === '/components/package' ? 'hidden' : 'block'} sm:space-y-8`}>
@@ -208,7 +211,7 @@ export function Subscription() {
                     return (
                         <div
                             key={plan.name}
-                            className={`w-full h-[400px] sm:h-[540px] flex flex-col transition-all duration-300 ${(index === 2 && expandedIndex === 2) && 'h-[750px] sm:h-[1050px]'} ${index === 1 && 'sm:scale-110 hover:scale-[120%] z-10'} my-font rounded-lg shadow-lg overflow-hidden hover:scale-105 hover:shadow-2xl transition-all duration-300 bg-white`}
+                            className={`w-full h-[400px] sm:h-[540px] flex flex-col transition-all duration-300 ${(index === 2 && expandedIndex === 2) && 'h-[750px] sm:h-[1000px]'} ${index === 1 && 'sm:scale-110 hover:scale-[120%] z-10'} my-font rounded-lg shadow-lg overflow-hidden hover:scale-105 hover:shadow-2xl transition-all duration-300 bg-white`}
                         >
                             <div
                                 className="py-4 sm:py-6 h-32 sm:h-44 text-white relative"
@@ -249,18 +252,9 @@ export function Subscription() {
                                     {visibleFeatures.map((feature, i) => (
                                         <li
                                             key={i}
-                                            className="text-black font-semibold text-sm sm:text-base flex items-center justify-start gap-x-2"
+                                            className="text-black font-semibold text-sm sm:text-base flex items-start justify-start gap-x-2"
                                         >
-                                            <span
-                                                style={{
-                                                    backgroundColor: lightenColor(plan.accent, -10),
-                                                    color: 'white',
-                                                    borderRadius: "100%"
-                                                }}
-                                                className="text-lg sm:text-xl"
-                                            >
-                                                <IoCheckmarkCircleOutline />
-                                            </span>
+                                            <img src="/logo/green-check.png" className="w-5 outline outline-white rounded-full opacity-100" alt="" />
                                             {feature}
                                         </li>
                                     ))}

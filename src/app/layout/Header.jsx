@@ -1,27 +1,16 @@
 'use client'
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram, FaYoutube, FaUser, FaBars, FaX, FaXmark } from "react-icons/fa6";
+import { ContextProvider } from "../Provider";
 
 export default function Header() {
     const [clickUser, setClickUser] = useState(false);
-    const [userInfo, setUserInfo] = useState("");
+    const { userInfo } = useContext(ContextProvider);
     const [mobileMenu, setMobileMenu] = useState(false);
     const path = usePathname();
-
-    useEffect(() => {
-        async function userInfoData() {
-            try {
-                const res = await fetch("/api/user/user-info", { method: 'GET' });
-                const data = await res.json();
-                if (data.success) setUserInfo(data.data);
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        userInfoData();
-    }, []);
+    console.log(userInfo?.role);
 
     return (
         <header className="md:w-[87%] w-full mx-auto flex flex-col sm:mt-5 my-font ">
@@ -40,7 +29,7 @@ export default function Header() {
                     <Link href="" className={`${path === '/rgre' ? 'bg-[#17982f] text-white' : ''} hover:bg-[#17982f] hover:text-white px-3 py-2 rounded text-[14px]`}>BLOG</Link>
                     {!userInfo && <Link href="/components/login" className={`${path === '/components/login' ? 'bg-[#17982f] text-white' : ''} hover:underline px-3 py-2 rounded text-[14px]`}>SIGNIN</Link>}
                     {!userInfo && <Link href="/components/registration" className={`${path === '/components/registration' ? 'bg-[#17982f] text-white' : ''} hover:underline px-3 py-2 rounded text-[14px]`}>REGISTER</Link>}
-                    {userInfo && <Link href="/components/user/dashboard" className={`${path === '/components/user/dashboard' ? 'bg-[#17982f] text-white' : ''} hover:bg-[#17982f] hover:text-white px-3 py-2 rounded text-[14px]`}>DASHBOARD</Link>}
+                    {userInfo && <Link href="/components/user/dashboard" className={`${path === '/components/user/dashboard' ? 'bg-[#17982f] text-white' : ''} hover:bg-[#17982f] hover:text-white px-3 py-2 rounded text-[14px]`}>{userInfo?.role?.includes(userInfo.email) ? 'ADMIN PANEL' : 'DASHBOARD'}</Link>}
                 </nav>
 
                 <div className="md:flex justify-center space-x-3 hidden text-gray-700">
@@ -54,7 +43,7 @@ export default function Header() {
                 {/* Mobile Menu Button */}
                 <div className="md:hidden flex items-center">
                     <button onClick={() => setMobileMenu(!mobileMenu)} className="text-green-800">
-                        {mobileMenu ? <FaXmark size={28}/> : <FaBars size={24} />}
+                        {mobileMenu ? <FaXmark size={28} /> : <FaBars size={24} />}
                     </button>
                 </div>
 

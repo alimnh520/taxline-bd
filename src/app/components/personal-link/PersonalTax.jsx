@@ -23,51 +23,51 @@ const personalLinks = [
 
 // প্রতিষ্ঠান কর লিঙ্ক
 const corporateLinks = [
-    { name: "কোম্পানি কর হার", href: "https://bdtaxation.com/company-tax-minimum-tax" },
-    { name: "ন্যূনতম করের পরিমাণ", href: "https://bdtaxation.com/minimum-tax-amount" },
-    { name: "কর কর্তনের খাতসমূহ", href: "https://bdtaxation.com/tax-deduction-rate" },
-    { name: "উৎসে কর সংগ্রহের খাতসমূহ", href: "https://bdtaxation.com/source-tax-collection" },
-    { name: "চূড়ান্ত করের খাতসমূহ", href: "https://bdtaxation.com/final-tax-heads" },
-    { name: "নূন্যতম করের খাতসমূহ", href: "https://bdtaxation.com/minimum-tax-heads" },
-    { name: "হ্রাসকৃত আয় ও কর", href: "https://bdtaxation.com/reduced-rate-incomes" },
-    { name: "অব্যাহতি প্রাপ্ত আয়", href: "https://bdtaxation.com/exempted-incomes" },
-    { name: "বাণিজ্যিক গাড়ি কর", href: "https://bdtaxation.com/company-car-tax" },
-    { name: "পরিবেশ সারচার্জের হার", href: "https://bdtaxation.com/environmental-surcharge" },
-    { name: "প্রতিষ্ঠান ফর্ম", href: "https://bdtaxation.com/forms?type=company" },
+    { name: "কোম্পানি কর হার", href: "company-tax-minimum-tax" },
+    { name: "ন্যূনতম করের পরিমাণ", href: "minimum-tax-amount" },
+    { name: "কর কর্তনের খাতসমূহ", href: "tax-deduction-rate" },
+    { name: "উৎসে কর সংগ্রহের খাতসমূহ", href: "source-tax-collection" },
+    { name: "চূড়ান্ত করের খাতসমূহ", href: "final-tax-heads" },
+    { name: "নূন্যতম করের খাতসমূহ", href: "minimum-tax-heads" },
+    { name: "হ্রাসকৃত আয় ও কর", href: "reduced-rate-incomes" },
+    { name: "অব্যাহতি প্রাপ্ত আয়", href: "exempted-incomes" },
+    { name: "বাণিজ্যিক গাড়ি কর", href: "company-car-tax" },
+    { name: "পরিবেশ সারচার্জের হার", href: "environmental-surcharge" },
+    { name: "প্রতিষ্ঠান ফর্ম", href: "forms?type=company" },
 ];
 
 const aecLinks = [
-    { name: "আপ্যায়ন ব্যয়", href: "https://bdtaxation.com/calculator/aec/entertainment-cost" },
-    { name: "নমুনা ব্যয়", href: "https://bdtaxation.com/calculator/aec/sample-cost" },
-    { name: "প্রচারণামূলক ব্যয়", href: "https://bdtaxation.com/calculator/aec/promotional-cost" },
-    { name: "বিদেশ ভ্রমণ ব্যয়", href: "https://bdtaxation.com/calculator/aec/foreign-tour-cost" },
-    { name: "রয়্যালিটি ও অন্যান্য ব্যয়", href: "https://bdtaxation.com/calculator/aec/royalties-licence-technical-service" },
-    { name: "হেড অফিস ও অন্যান্য ব্যয়", href: "https://bdtaxation.com/calculator/aec/unregistered-bd-company-intra-group-expensese" },
+    { name: "আপ্যায়ন ব্যয়", href: "calculator/aec/entertainment-cost" },
+    { name: "নমুনা ব্যয়", href: "calculator/aec/sample-cost" },
+    { name: "প্রচারণামূলক ব্যয়", href: "calculator/aec/promotional-cost" },
+    { name: "বিদেশ ভ্রমণ ব্যয়", href: "calculator/aec/foreign-tour-cost" },
+    { name: "রয়্যালিটি ও অন্যান্য ব্যয়", href: "calculator/aec/royalties-licence-technical-service" },
+    { name: "হেড অফিস ও অন্যান্য ব্যয়", href: "calculator/aec/unregistered-bd-company-intra-group-expensese" },
 ];
 
 const appealLinks = [
-    { name: "কর অঞ্চল", href: "https://bdtaxation.com/range-zone-circle" },
+    { name: "কর অঞ্চল", href: "range-zone-circle" },
     { name: "আপীল", href: "" },
     { name: "আয়কর আইনে আপিল ট্রাইব্যুনাল", href: "" },
     { name: "ট্যাক্স হাইকোর্ট", href: "" },
-    { name: "এডিআর", href: "https://bdtaxation.com/income-tax-sro/137" },
+    { name: "এডিআর", href: "income-tax-sro/137" },
 ];
 const resourcesLinks = [
-    { name: "বাংলাদেশের সকল বাণিজ্যিক ব্যাংকের তালিকা", href: "https://bdtaxation.com/bank-list" },
-    { name: "জিপি রেট", href: "https://bdtaxation.com/gp-rate" },
-    { name: "পিডব্লিউডি হার", href: "https://bdtaxation.com/pwd-rate" },
-    { name: "এরিয়া কনভার্টার", href: "https://bdtaxation.com/area-converter" },
-    { name: "নোটিশ", href: "https://bdtaxation.com/notice-file" },
+    { name: "বাংলাদেশের সকল বাণিজ্যিক ব্যাংকের তালিকা", href: "bank-list" },
+    { name: "জিপি রেট", href: "gp-rate" },
+    { name: "পিডব্লিউডি হার", href: "pwd-rate" },
+    { name: "এরিয়া কনভার্টার", href: "area-converter" },
+    { name: "নোটিশ", href: "notice-file" },
 ];
 const penaltiesLinks = [
-    { name: "পুনঃউন্মোচন তারিখ ক্যালকুলেটর", href: "https://bdtaxation.com/calculator/reopen-date-calculator" },
-    { name: "আয় গোপনের জরিমানা", href: "https://bdtaxation.com/calculator/concealment-penalty" },
+    { name: "পুনঃউন্মোচন তারিখ ক্যালকুলেটর", href: "calculator/reopen-date-calculator" },
+    { name: "আয় গোপনের জরিমানা", href: "calculator/concealment-penalty" },
 ];
 
 const nbrLinks = [
-    { name: "এনবিআর স্পষ্টীকরণ", href: "https://bdtaxation.com/nbr-clarifications" },
-    { name: "জরুরী পাবলিকেশন্স", href: "https://bdtaxation.com/nbr-publications" },
-    { name: "কর অফিসিয়াল", href: "https://bdtaxation.com/tax-officials" },
+    { name: "এনবিআর স্পষ্টীকরণ", href: "nbr-clarifications" },
+    { name: "জরুরী পাবলিকেশন্স", href: "nbr-publications" },
+    { name: "কর অফিসিয়াল", href: "tax-officials" },
 ];
 
 
@@ -124,8 +124,8 @@ function Accordion({ title, links, defaultOpenPath, height }) {
 export default function TaxAccordions() {
     return (
         <div className="px-2 mt-5">
-            <Accordion title="ব্যক্তি করদাতার জন্য প্রযোজ্য" links={personalLinks} height={520} defaultOpenPath={["/components/personal-link/salary","/components/tax-act/tax-rate", "/components/tax-act/tax-guideline", "/components/personal-link/final-tax", "/components/personal-link/surcharge", "/components/personal-link/tax-rebate", "/components/personal-link/tax-info", "/components/personal-link/commercial-car-tax", "/components/personal-link/private-car-tax", "/components/personal-link/env-surcharge", "/components/personal-link/regional-min-tax", "/components/personal-link/personal-form"]} />
-            <Accordion title="কোম্পানির জন্য প্রযোজ্য" links={corporateLinks} height={500} defaultOpenPath={["/components/company-link/company-tax","/components/company-link/minimum-tax", "/components/company-link/final-tax"]} />
+            <Accordion title="ব্যক্তি করদাতার জন্য প্রযোজ্য" links={personalLinks} height={520} defaultOpenPath={["/components/personal-link/salary", "/components/tax-act/tax-rate", "/components/tax-act/tax-guideline", "/components/personal-link/final-tax", "/components/personal-link/surcharge", "/components/personal-link/tax-rebate", "/components/personal-link/tax-info", "/components/personal-link/commercial-car-tax", "/components/personal-link/private-car-tax", "/components/personal-link/env-surcharge", "/components/personal-link/regional-min-tax", "/components/personal-link/personal-form"]} />
+            <Accordion title="কোম্পানির জন্য প্রযোজ্য" links={corporateLinks} height={500} defaultOpenPath={["/components/company-link/company-tax", "/components/company-link/minimum-tax", "/components/company-link/final-tax", "/components/company-link/source-tax-collection", "/components/company-link/final-tax-heads", "/components/company-link/minimum-tax-heads", "/components/company-link/company-car-tax", "/components/company-link/environmental-surcharge", "/components/company-link/depreciation-allowance"]} />
             <Accordion title=" ব্যবসায়ে খরচ সম্পর্কিত " links={aecLinks} height={260} defaultOpenPath={["/components/corporate-link",]} />
             <Accordion title=" কর অফিস সম্পর্কিত " links={appealLinks} height={230} defaultOpenPath={["/components/corporate-link",]} />
             <Accordion title=" বিশেষ আইটেম " links={resourcesLinks} height={230} defaultOpenPath={["/components/corporate-link",]} />

@@ -13,7 +13,7 @@ export async function POST(request) {
             );
         }
 
-        const token = request.cookies.get("user_info")?.value;
+        const token = request.cookies.get("otp-time")?.value;
         if (!token) {
             return NextResponse.json(
                 { success: false, message: "OTP সেশন পাওয়া যায়নি!" },
@@ -43,18 +43,26 @@ export async function POST(request) {
 
         await connectDB();
 
+        const ADMIN_EMAILS = [
+            "taizulislam.tajj@gmail.com",
+            "admin@example.com"
+        ];
+
+        const role = ADMIN_EMAILS.includes(email) ? "admin" : "user";
+
         const newUser = new UserInfo({
             username,
             mobile: phone,
             email,
+            role,
         });
 
         await newUser.save();
 
         const loginToken = jwt.sign(
-            { user_id: newUser._id },
+            { user_id: newUser._id, role: newUser.role },
             process.env.JWT_SECRET,
-            { expiresIn: "7d" } // ৭ দিন মেয়াদ
+            { expiresIn: "1d" }
         );
 
         const response = NextResponse.json({
@@ -62,21 +70,22 @@ export async function POST(request) {
             message: "রেজিস্ট্রেশন সফলভাবে সম্পন্ন হয়েছে!",
         });
 
-        response.cookies.set("user_info", "", {
+        response.cookies.set("otp-time", "", {
             httpOnly: true,
             expires: new Date(0),
             path: "/",
         });
 
-        response.cookies.set("3f_associates_login", loginToken, {
+        response.cookies.set("taxlinebd", loginToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
             sameSite: "strict",
             path: "/",
-            maxAge: 7 * 24 * 60 * 60, // ৭ দিন
+            maxAge: 1 * 24 * 60 * 60,
         });
 
         return response;
+
     } catch (error) {
         console.error("❌ Verification error:", error);
         return NextResponse.json(

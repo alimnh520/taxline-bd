@@ -5,7 +5,6 @@ import UserInfo from "@/models/user";
 
 export async function POST(request) {
     try {
-        // 🧩 ১️⃣ ফ্রন্টএন্ড থেকে OTP নেওয়া
         const { otp } = await request.json();
         if (!otp) {
             return NextResponse.json(
@@ -14,8 +13,7 @@ export async function POST(request) {
             );
         }
 
-        // 🍪 ২️⃣ কুকি থেকে টোকেন বের করা (OTP টোকেন)
-        const token = request.cookies.get("user_info")?.value;
+        const token = request.cookies.get("otp-time")?.value;
         if (!token) {
             return NextResponse.json(
                 { success: false, message: "OTP সেশন পাওয়া যায়নি!" },
@@ -23,7 +21,6 @@ export async function POST(request) {
             );
         }
 
-        // 🔐 ৩️⃣ টোকেন ডিকোড করা
         let decoded;
         try {
             decoded = jwt.verify(token, process.env.JWT_SECRET);
@@ -37,7 +34,6 @@ export async function POST(request) {
 
         const { email, otp: storedOtp } = decoded;
 
-        // 🔢 ৪️⃣ OTP মিলানো
         if (parseInt(otp) !== parseInt(storedOtp)) {
             return NextResponse.json(
                 { success: false, message: "OTP সঠিক নয়! আবার চেষ্টা করুন।" },
@@ -45,10 +41,8 @@ export async function POST(request) {
             );
         }
 
-        // 🧠 ৫️⃣ ডাটাবেজ কানেক্ট করা
         await connectDB();
 
-        // 🔍 ইউজার খোঁজা
         const user_info = await UserInfo.findOne({ email });
         if (!user_info) {
             return NextResponse.json(
@@ -57,33 +51,33 @@ export async function POST(request) {
             );
         }
 
-        // 🪪 ৬️⃣ লগইন টোকেন তৈরি
+        // ✅ TOKEN WITH ROLE
         const loginToken = jwt.sign(
-            { user_id: user_info._id },
+            {
+                user_id: user_info._id,
+                role: user_info.role
+            },
             process.env.JWT_SECRET,
-            { expiresIn: "7d" } // ৭ দিন মেয়াদ
+            { expiresIn: "1d" }
         );
 
-        // ✅ ৭️⃣ রেসপন্স তৈরি
         const response = NextResponse.json({
             success: true,
             message: "OTP যাচাই সফল হয়েছে! আপনি এখন লগইন আছেন।",
         });
 
-        // 🧹 OTP টোকেন ক্লিয়ার করা
-        response.cookies.set("user_info", "", {
+        response.cookies.set("otp-time", "", {
             httpOnly: true,
             expires: new Date(0),
             path: "/",
         });
 
-        // 🔐 নতুন লগইন কুকি সেট
-        response.cookies.set("3f_associates_login", loginToken, {
+        response.cookies.set("taxlinebd", loginToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
             sameSite: "strict",
             path: "/",
-            maxAge: 7 * 24 * 60 * 60, // ৭ দিন
+            maxAge: 1 * 24 * 60 * 60,
         });
 
         return response;

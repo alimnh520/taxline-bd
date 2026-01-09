@@ -23,6 +23,20 @@ import { Section101 } from "./Section101";
 import { Section102 } from "./Section102";
 import { Section103 } from "./Section103";
 import { Section104 } from "./Section104";
+import { Section105 } from "./Section105";
+import { Section106 } from "./Section106";
+import { Section107 } from "./Section107";
+import { Section108 } from "./Section108";
+import { Section109 } from "./Section109";
+import { Section110 } from "./Section110";
+import { Section111 } from "./Section111";
+import { Section112 } from "./Section112";
+import { Section113 } from "./Section113";
+import { Section114 } from "./Section114";
+import { Section115 } from "./Section115";
+import { Section116 } from "./Section116";
+import { Section117 } from "./Section117";
+import { Section118 } from "./Section118";
 
 export default function PdfViewer() {
     const { id } = useParams();
@@ -136,7 +150,72 @@ export default function PdfViewer() {
                     )}
                     {id === "20" && (
                         <div className="w-full md:w-2/3 mx-auto p-4">
-                            <Section104 />
+                            <Section105 />
+                        </div>
+                    )}
+                    {id === "21" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section106 />
+                        </div>
+                    )}
+                    {id === "22" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section107 />
+                        </div>
+                    )}
+                    {id === "23" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section108 />
+                        </div>
+                    )}
+                    {id === "24" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section109 />
+                        </div>
+                    )}
+                    {id === "25" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section110 />
+                        </div>
+                    )}
+                    {id === "26" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section111 />
+                        </div>
+                    )}
+                    {id === "27" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section112 />
+                        </div>
+                    )}
+                    {id === "28" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section113 />
+                        </div>
+                    )}
+                    {id === "29" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section114 />
+                        </div>
+                    )}
+                    {id === "30" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section115 />
+                        </div>
+                    )}
+                    {id === "31" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section116 />
+                        </div>
+                    )}
+                    {id === "32" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section117 />
+                        </div>
+                    )}
+                    {id === "33" && (
+                        <div className="w-full md:w-2/3 mx-auto p-4">
+                            <Section118 />
                         </div>
                     )}
                 </div>

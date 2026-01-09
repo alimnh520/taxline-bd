@@ -5,7 +5,7 @@ import UserInfo from "@/models/user";
 
 export async function GET(request) {
     try {
-        const token = request.cookies.get("3f_associates_login")?.value;
+        const token = request.cookies.get("taxlinebd")?.value;
         if (!token) {
             return NextResponse.json(
                 { success: false, message: "লগইন টোকেন পাওয়া যায়নি!" },
@@ -25,7 +25,6 @@ export async function GET(request) {
         }
 
         const { user_id } = decoded;
-        console.log("🔍 Decoded Token:", decoded);
 
         if (!user_id) {
             return NextResponse.json(
@@ -35,7 +34,6 @@ export async function GET(request) {
         }
 
         await connectDB();
-        console.log("✅ Database connected");
 
         const userInfo = await UserInfo.findById(user_id).lean();
 
@@ -48,9 +46,9 @@ export async function GET(request) {
 
         return NextResponse.json({
             success: true,
-            message: "ইউজারের তথ্য সফলভাবে পাওয়া গেছে।",
-            data: userInfo,
+            message: userInfo,
         });
+
     } catch (error) {
         console.error("⚠️ Server error:", error);
         return NextResponse.json(

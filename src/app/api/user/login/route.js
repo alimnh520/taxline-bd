@@ -8,7 +8,6 @@ export async function POST(request) {
     try {
         const { email } = await request.json();
 
-        // 🔍 ১️⃣ ইমেইল আছে কিনা চেক
         if (!email) {
             return NextResponse.json(
                 { success: false, message: "ইমেইল প্রদান করা হয়নি!" },
@@ -16,10 +15,8 @@ export async function POST(request) {
             );
         }
 
-        // 🧩 ২️⃣ ডাটাবেজে কানেক্ট
         await connectDB();
 
-        // 🧠 ৩️⃣ ইমেইল রেজিস্টার্ড কিনা দেখো
         const existingUser = await UserInfo.findOne({ email });
         if (!existingUser) {
             return NextResponse.json(
@@ -28,10 +25,8 @@ export async function POST(request) {
             );
         }
 
-        // 🔢 ৪️⃣ OTP তৈরি
         const otp = Math.floor(100000 + Math.random() * 900000);
 
-        // ✉️ ৫️⃣ ইমেইল পাঠানো
         try {
             await sendEmail({ email, otp });
         } catch (mailError) {
@@ -42,24 +37,23 @@ export async function POST(request) {
             );
         }
 
-        // 🔐 ৬️⃣ JWT টোকেন বানানো
         const tokenPayload = { otp, email };
+
         const token = jwt.sign(tokenPayload, process.env.JWT_SECRET, {
-            expiresIn: "5m", // ৫ মিনিট মেয়াদ
+            expiresIn: "5m",
         });
 
-        // ✅ ৭️⃣ কুকি সেট ও রেসপন্স পাঠানো
         const response = NextResponse.json({
             success: true,
             message: "OTP সফলভাবে পাঠানো হয়েছে! অনুগ্রহ করে যাচাই করুন।",
         });
 
-        response.cookies.set("user_info", token, {
+        response.cookies.set("otp-time", token, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
             sameSite: "strict",
             path: "/",
-            maxAge: 5 * 60, // ৫ মিনিট
+            maxAge: 5 * 60,
         });
 
         return response;

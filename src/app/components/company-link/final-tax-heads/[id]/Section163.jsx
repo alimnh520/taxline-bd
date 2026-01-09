@@ -1,0 +1,116 @@
+'use client'
+
+import { useEffect, useState } from "react";
+
+export function Section163() {
+
+    const printSection = () => {
+        const originalContents = document.body.innerHTML;
+        const section = document.getElementById('sectionContent');
+        const cloneSection = section.cloneNode(true);
+        document.body.innerHTML = '';
+        document.body.appendChild(cloneSection);
+
+        // Logo
+        const logo = document.createElement('img');
+        logo.src = '/logo.png';
+        logo.alt = 'BDTaxation Logo';
+        logo.className = 'md:h-24 h-[70px] object-contain';
+        document.body.prepend(logo);
+
+        // Watermark
+        const watermark = document.createElement('div');
+        watermark.className = 'watermark';
+        watermark.innerText = 'TaxLine_BD';
+        document.body.prepend(watermark);
+
+        // Styles
+        const style = document.createElement('style');
+        style.innerHTML = `
+        body { font-size: 12px; font-family: sans-serif; position: relative; min-height: 100vh;}
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            font-size: 5rem;
+            color: rgba(0,0,0,0.05);
+            pointer-events: none;
+            z-index: 0;
+        }
+        img { display: block; margin: 0 auto 20px; max-height: 100px; }
+    `;
+        document.head.prepend(style);
+        window.print();
+        document.body.innerHTML = originalContents;
+        window.location.reload();
+    };
+
+
+
+    return (
+        <div className="col-md-6 order-1 order-md-2" id="sectionContent">
+            {/* Print Button */}
+            <button
+                className="btn btn-secondary print:hidden bg-[#ff0000] px-4 py-2 text-white rounded-md"
+                onClick={() =>
+                    printSection('sectionContent', 'সংসদ সদস্যদের সম্মানী হইতে কর কর্তন')
+                }
+            >
+                Print
+            </button>
+
+            <h1 className="my-1 font-bold text-2xl py-1">
+                সম্পত্তি অধিগ্রহণ এর ক্ষতিপূরণ হতে অর্জিত আয়
+            </h1>
+            <strong className="text-sm">যেকোনো স্বাভাবিক ব্যক্তি করদাতার সম্পত্তির অধিগ্রহণ এর ক্ষতিপূরণ হতে অর্জিত মূলধনি আয়ের বিপরীতে কর্তিত কর চূড়ান্ত করদায় হিসেবে বিবেচিত।</strong>
+            <hr className="my-1 text-gray-100" />
+
+            <div className="row g-1">
+                <div className="col-md-12 mt-6 text-sm">
+                    <div className="w-full text-justify space-y-4">
+
+                        <p className="text-justify text-lg"><strong><span >রেফারেন্স: <a className="text-red-500 underline" href="/tax-act-section/208">ধারা-১৬৩(১১)</a></span></strong></p>
+                        <p>
+                            কমিশনার, কাস্টমস বা এতদুদ্দেশ্যে ক্ষমতাপ্রাপ্ত অন্য কোনো কর্মকর্তা পণ্যের আমদানি মূল্যের উপর নির্ধারিত, অনধিক ২০% (বিশ শতাংশ) হারে, উৎসে কর সংগ্রহ করিবেন।
+                        </p>
+                        <br />
+                        <br />
+                        <p className="text-red-600">নোট: </p>
+                        <p className="text-red-600">১। ইতিপূর্বে ২০২৪-২০২৫ করবর্ষ পর্যন্ত এস.আর.ও নং-১৭-আইন/আয়কর-২৪/২০২৪ এর মাধ্যমে চূড়ান্ত করদায় ছিল, যা এস.আর.ও নং ১৫১-আইন/আয়কর-৬/২০২৫ এর মাধ্যমে বাতিল করা হয়েছে। </p>
+                    </div>
+                    <br />
+                    <table className="min-w-full border border-gray-300 table-auto text-sm">
+                        <caption className="caption-top text-lg font-semibold text-blue-600 mb-2">
+                            তথ্যসূত্র
+                        </caption>
+                        <thead>
+                            <tr className="bg-gray-200 text-gray-700">
+                                <th className="border border-gray-300 px-3 py-2 text-center w-[10%]">ক্রমিক</th>
+                                <th className="border border-gray-300 px-3 py-2 text-center w-[60%]">মন্তব্য</th>
+                                <th className="border border-gray-300 px-3 py-2 text-center w-[30%]">আয় কর এস আর ও</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+
+            <ins
+                className="adsbygoogle border no-print mt-6 border-gray-200"
+                style={{ display: "inline-block", width: "100%", height: "90px" }}
+                data-ad-client="ca-pub-7809188873696785"
+                data-ad-slot="7161102196"
+            ></ins>
+
+            <hr className="mt-6 text-gray-200" />
+
+            <style>
+                {`
+                    #comment p {
+                        color: red;
+                    }
+                `}
+            </style>
+        </div>
+    );
+}
