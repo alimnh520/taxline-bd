@@ -12,6 +12,7 @@ export async function middleware(request) {
         '/components/company-link'
     ];
 
+    // Prevent logged-in users from visiting registration/login
     if (token && (
         pathName.startsWith("/components/registration") ||
         pathName.startsWith("/components/login")
@@ -42,19 +43,18 @@ export async function middleware(request) {
 
         const role = payload.role;
 
-        if (pathName.startsWith("/components/admin")) {
-            if (role !== "admin") {
-                return NextResponse.redirect(new URL("/components/user/dashboard", request.url));
-            }
+        // Admin should not access /user/dashboard
+        if (role === "admin" && pathName.startsWith("/components/user/dashboard")) {
+            return NextResponse.redirect(new URL("/components/admin", request.url));
         }
 
-        if (pathName.startsWith("/components/user/dashboard")) {
-            if (role === "admin") {
-                return NextResponse.redirect(new URL("/components/admin", request.url));
-            }
+        // Non-admin cannot access admin routes
+        if (pathName.startsWith("/components/admin") && role !== "admin") {
+            return NextResponse.redirect(new URL("/components/user/dashboard", request.url));
         }
 
-        if (subscriptionRequiredPaths.some(p => pathName.startsWith(p))) {
+        // Subscription check for non-admin users
+        if (subscriptionRequiredPaths.some(p => pathName.startsWith(p)) && role !== "admin") {
             const verifyURL = new URL("/api/user/subscribe/verify", request.url);
 
             const userPackage = await fetch(verifyURL, {

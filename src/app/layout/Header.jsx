@@ -10,7 +10,6 @@ export default function Header() {
     const { userInfo } = useContext(ContextProvider);
     const [mobileMenu, setMobileMenu] = useState(false);
     const path = usePathname();
-    console.log(userInfo?.role);
 
     return (
         <header className="md:w-[87%] w-full mx-auto flex flex-col sm:mt-5 my-font ">
@@ -18,7 +17,7 @@ export default function Header() {
             <div className="w-full flex justify-between items-center px-4 shadow md:shadow-none ">
 
                 <div className="flex items-center py-1 sm:py-0">
-                    <img src="/logo.png" alt="BDTaxation Logo" className="md:h-24 h-[70px] object-contain" />
+                    <img src="/website-logo.png" alt="BDTaxation Logo" className="md:h-24 h-[70px] -mt-3 object-contain" />
                 </div>
 
                 <nav className="hidden md:flex space-x-3 font-semibold text-green-800">
@@ -29,7 +28,7 @@ export default function Header() {
                     <Link href="" className={`${path === '/rgre' ? 'bg-[#17982f] text-white' : ''} hover:bg-[#17982f] hover:text-white px-3 py-2 rounded text-[14px]`}>BLOG</Link>
                     {!userInfo && <Link href="/components/login" className={`${path === '/components/login' ? 'bg-[#17982f] text-white' : ''} hover:underline px-3 py-2 rounded text-[14px]`}>SIGNIN</Link>}
                     {!userInfo && <Link href="/components/registration" className={`${path === '/components/registration' ? 'bg-[#17982f] text-white' : ''} hover:underline px-3 py-2 rounded text-[14px]`}>REGISTER</Link>}
-                    {userInfo && <Link href="/components/user/dashboard" className={`${path === '/components/user/dashboard' ? 'bg-[#17982f] text-white' : ''} hover:bg-[#17982f] hover:text-white px-3 py-2 rounded text-[14px]`}>{userInfo?.role?.includes(userInfo.email) ? 'ADMIN PANEL' : 'DASHBOARD'}</Link>}
+                    {userInfo && <Link href="/components/user/dashboard" className={`${path === '/components/user/dashboard' ? 'bg-[#17982f] text-white' : ''} hover:bg-[#17982f] hover:text-white px-3 py-2 rounded text-[14px]`}>{userInfo?.role === 'admin' ? 'ADMIN PANEL' : 'DASHBOARD'}</Link>}
                 </nav>
 
                 <div className="md:flex justify-center space-x-3 hidden text-gray-700">

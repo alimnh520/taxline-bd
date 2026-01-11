@@ -3,11 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import Bkash from "./Bkash";
 
 export default function CourseDetails() {
     const [openIndex, setOpenIndex] = useState(null);
     const [selectTab, setSelectTab] = useState('Syllabus');
     const [accept, setAccept] = useState(false);
+    const [isPay, setIsPay] = useState(false);
 
     const syllabus = [
         "মডিউল ১: ট্যাক্স",
@@ -28,7 +30,7 @@ export default function CourseDetails() {
     ]
 
     return (
-        <div className="bg-gray-50 min-h-screen px-3 md:px-10">
+        <div className="bg-gray-50 min-h-screen px-3 md:px-10 relative">
             <div className="flex flex-col w-full gap-y-2 h-32 sm:h-40 bg-gray-100 items-center justify-center">
                 <div className="text-xs text-gray-600">
                     <span className="text-green-600 font-semibold">হোম</span> &gt;{" "}
@@ -157,11 +159,12 @@ export default function CourseDetails() {
                         </label>
                     </div>
 
-                    <button className={`w-full ${accept ? "bg-green-800 pointer-events-auto" : "bg-green-200 pointer-events-none"} hover:bg-green-800 text-white py-2 mt-4 rounded`}>
+                    <button className={`w-full ${accept ? "bg-green-800 pointer-events-auto" : "bg-green-200 pointer-events-none"} hover:bg-green-800 text-white py-2 mt-4 rounded`} onClick={() => setIsPay(true)}>
                         কোর্সে ভর্তি হন
                     </button>
                 </div>
             </div>
+            {isPay && <Bkash setIsPay={setIsPay}/>}
         </div>
     );
 }

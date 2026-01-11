@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 import { connectDB } from "@/lib/connectDb";
 import UserInfo from "@/models/user";
-import Order from "@/models/orderModel";
+import Learn from "@/models/learningModel";
 
 export async function POST(request) {
     try {
@@ -52,18 +52,19 @@ export async function POST(request) {
 
         let amount = 0;
 
-        if (packageType === "basic") amount = 2000;
-        if (packageType === "standard") amount = 3000;
-        if (packageType === "premium") amount = 15000;
+        if (packageType === "mini") amount = 150;
+        if (packageType === "max") amount = 200;
+        if (packageType === "ultra") amount = 400;
 
         if (!amount || !type || !packageType) {
             return NextResponse.json(
-                { success: false, message: "Invalid package!" },
+                { success: false, message: "Invalid course!" },
                 { status: 400 }
             );
         }
 
-        const pkgOrder = new Order({
+        const learnOrder = new Learn({
+
             user_id: userData._id,
 
             name: userData.username,
@@ -72,14 +73,15 @@ export async function POST(request) {
 
             mobile: userData.mobile,
 
-            pkg: packageType,
+            course: packageType,
 
             paymentType: type,
 
             amount,
 
         });
-        await pkgOrder.save();
+        
+        await learnOrder.save();
 
         return NextResponse.json(
             {
@@ -102,7 +104,7 @@ export async function GET() {
     try {
         await connectDB();
 
-        const orders = await Order.find({}).sort({ createdAt: -1 });
+        const orders = await Learn.find({}).sort({ createdAt: -1 });
 
         return NextResponse.json({
             success: true,

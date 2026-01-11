@@ -5,7 +5,7 @@ import { GoMail } from "react-icons/go";
 
 export default function Footer() {
     return (
-        <footer className="bg-gray-900 text-gray-200 pt-8 pb-6 mt-10 border-t border-gray-700">
+        <footer className="bg-gray-800 text-gray-200 pt-8 pb-6 mt-10 border-t border-gray-700">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* TOP GRID */}
@@ -14,11 +14,11 @@ export default function Footer() {
                     {/* Logo / About */}
                     <article className="float-left space-x-3">
                         <Image
-                            src="/logo.png"
+                            src="/website-logo.png"
                             alt="TaxLine BD Logo"
-                            width={120}
-                            height={120}
-                            className="rounded-lg"
+                            width={250}
+                            height={250}
+                            className="rounded-lg -ml-5"
                         />
 
                         <p className="mt-4 text-sm leading-6 text-gray-300">

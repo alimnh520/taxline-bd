@@ -45,7 +45,7 @@ export async function POST(request) {
 
         const ADMIN_EMAILS = [
             "taizulislam.tajj@gmail.com",
-            "admin@example.com"
+            "taxlinebd.info@gmail.com"
         ];
 
         const role = ADMIN_EMAILS.includes(email) ? "admin" : "user";
@@ -62,7 +62,7 @@ export async function POST(request) {
         const loginToken = jwt.sign(
             { user_id: newUser._id, role: newUser.role },
             process.env.JWT_SECRET,
-            { expiresIn: "1d" }
+            { expiresIn: "7d" }
         );
 
         const response = NextResponse.json({
@@ -81,7 +81,7 @@ export async function POST(request) {
             secure: process.env.NODE_ENV === "production",
             sameSite: "strict",
             path: "/",
-            maxAge: 1 * 24 * 60 * 60,
+            maxAge: 7 * 24 * 60 * 60,
         });
 
         return response;

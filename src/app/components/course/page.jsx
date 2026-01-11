@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function AllCourses() {
-
     const packages = [
         {
             id: 1,
@@ -13,7 +13,7 @@ export default function AllCourses() {
             oldPrice: '২০০',
             price: '১৫০',
             duration: "6 Months",
-            link: "",
+            link: "/mini",
         },
         {
             id: 2,
@@ -22,7 +22,7 @@ export default function AllCourses() {
             price: '২০০',
             oldPrice: '365',
             duration: "1 Year",
-            link: "",
+            link: "/max",
         },
         {
             id: 7,
@@ -31,12 +31,12 @@ export default function AllCourses() {
             price: '৪০০',
             oldPrice: '৭৩০',
             duration: "2 Years",
-            link: "",
+            link: "/ultra",
         },
     ];
 
     return (
-        <div className="min-h-screen bg-gray-300 flex flex-col items-start">
+        <div className="min-h-screen bg-gray-300 flex flex-col items-start relative">
             {/* Breadcrumb */}
             <div className="flex flex-col w-full gap-y-2 h-32 sm:h-40 bg-gray-100 items-center justify-center">
                 <div className="text-xs text-gray-600">
@@ -106,7 +106,7 @@ export default function AllCourses() {
                     <div
                         key={pkg.id}
                         className="cursor-pointer"
-                        onClick={() => window.location.href = pkg.link}
+                        onClick={() => window.location.href = `/components/course/${pkg.link}`}
                     >
                         <div className=" bg-white shadow p-3 border border-gray-100 hover:shadow-lg transition">
 

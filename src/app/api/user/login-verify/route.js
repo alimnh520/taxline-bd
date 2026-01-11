@@ -51,14 +51,13 @@ export async function POST(request) {
             );
         }
 
-        // ✅ TOKEN WITH ROLE
         const loginToken = jwt.sign(
             {
                 user_id: user_info._id,
                 role: user_info.role
             },
             process.env.JWT_SECRET,
-            { expiresIn: "1d" }
+            { expiresIn: "7d" }
         );
 
         const response = NextResponse.json({
@@ -77,7 +76,7 @@ export async function POST(request) {
             secure: process.env.NODE_ENV === "production",
             sameSite: "strict",
             path: "/",
-            maxAge: 1 * 24 * 60 * 60,
+            maxAge: 7 * 24 * 60 * 60,
         });
 
         return response;

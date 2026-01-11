@@ -14,7 +14,7 @@ export default function TaxLaw() {
         <div className="w-full mx-auto flex flex-col items-center justify-start">
 
             <PersonalFeature />
-            <div className="-mt-10 sm:-mt-20">
+            <div className="">
                 <BDTaxationPage />
             </div>
         </div>

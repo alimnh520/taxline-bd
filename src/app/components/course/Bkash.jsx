@@ -7,7 +7,7 @@ export default function Bkash({ method }) {
 
     const handleSubscribe = async () => {
         try {
-            const res = await fetch('/api/user/subscribe/package', {
+            const res = await fetch('/api/user/subscribe/learning', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ type, packageType })

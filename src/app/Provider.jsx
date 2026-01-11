@@ -39,7 +39,7 @@ const Provider = ({ children }) => {
                     overflow-hidden 
                      
                     ${path === '/components/admin' ? 'lg:max-w-full' : 'lg:max-w-[72%]'}
-                    bg-gray-300
+                    bg-gray-100
                 `}
             >
                 {path !== '/components/admin' && <Header />}

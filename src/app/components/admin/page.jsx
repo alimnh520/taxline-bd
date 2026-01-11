@@ -3,7 +3,9 @@ import { PieChart, Pie, Cell } from "recharts";
 import React, { useState } from "react";
 import {
     LayoutDashboard, Package, Users, FileText, Camera, BarChart3, LogOut,
-    Bell, ChevronDown, Moon, Sun
+    Bell, ChevronDown, Moon, Sun,
+    Video,
+    Book
 } from "lucide-react";
 import { motion } from "framer-motion";
 import {
@@ -11,7 +13,8 @@ import {
     LineChart, Line
 } from "recharts";
 import PackageAnalyticsPage from "./Package";
-import CourseDashboard from "./Course";
+import CourseDashboard from "./VideoCourse";
+import LearnCourse from "./LearnCourse";
 
 const kpi = {
     totalUsers: 2450,
@@ -46,7 +49,8 @@ const monthlyData = [
 const sidebarItems = [
     { key: "dashboard", label: "Dashboard", icon: LayoutDashboard },
     { key: "package", label: "Package", icon: Package },
-    { key: "course", label: "Course", icon: Users },
+    { key: "course", label: "Video Course", icon: Video },
+    { key: "learn", label: "Learning Course", icon: Book },
     { key: "client", label: "Client", icon: FileText },
     { key: "documents", label: "Documents", icon: Camera },
     { key: "report", label: "Report", icon: BarChart3 },
@@ -78,7 +82,7 @@ export default function AdminDashboard() {
 
     return (
         <div className={dark ? "dark" : ""}>
-            <div className="flex h-screen bg-gray-100 dark:bg-gray-950">
+            <div className="flex h-screen overflow-y-auto bg-gray-100 dark:bg-gray-950">
 
                 {/* Sidebar */}
                 <aside className="w-72 bg-white dark:bg-gray-900 border-r dark:border-gray-800 hidden md:flex flex-col fixed h-full">
@@ -111,7 +115,7 @@ export default function AdminDashboard() {
                 </aside>
 
                 {/* Main */}
-                <div className="flex-1 ml-72 flex flex-col h-screen">
+                <div className="flex-1 ml-72 flex flex-col">
 
                     {/* Topbar */}
                     <header className="flex justify-between items-center px-6 py-4 bg-white dark:bg-gray-900 border-b dark:border-gray-800 sticky top-0 z-10">
@@ -233,8 +237,9 @@ export default function AdminDashboard() {
                         </div>
                     )}
 
-                    {active === 'package' && <PackageAnalyticsPage />}
-                    {active === 'course' && <CourseDashboard />}
+                    {active === 'package' && <PackageAnalyticsPage dark={dark} />}
+                    {active === 'course' && <CourseDashboard dark={dark} />}
+                    {active === 'learn' && <LearnCourse dark={dark}/>}
 
                 </div>
             </div>

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 import { connectDB } from "@/lib/connectDb";
 import UserInfo from "@/models/user";
-import Order from "@/models/orderModel";
+import Course from "@/models/courseModel";
 
 export async function POST(request) {
     try {
@@ -48,22 +48,9 @@ export async function POST(request) {
 
         const body = await request.json();
 
-        const { type, packageType } = body;
+        const { type } = body;
 
-        let amount = 0;
-
-        if (packageType === "basic") amount = 2000;
-        if (packageType === "standard") amount = 3000;
-        if (packageType === "premium") amount = 15000;
-
-        if (!amount || !type || !packageType) {
-            return NextResponse.json(
-                { success: false, message: "Invalid package!" },
-                { status: 400 }
-            );
-        }
-
-        const pkgOrder = new Order({
+        const courseOrder = new Course({
             user_id: userData._id,
 
             name: userData.username,
@@ -72,14 +59,10 @@ export async function POST(request) {
 
             mobile: userData.mobile,
 
-            pkg: packageType,
-
             paymentType: type,
 
-            amount,
-
         });
-        await pkgOrder.save();
+        await courseOrder.save();
 
         return NextResponse.json(
             {
@@ -102,11 +85,11 @@ export async function GET() {
     try {
         await connectDB();
 
-        const orders = await Order.find({}).sort({ createdAt: -1 });
+        const course = await Course.find({}).sort({ createdAt: -1 });
 
         return NextResponse.json({
             success: true,
-            data: orders,
+            data: course,
         });
     } catch (error) {
         console.error("❌ Order GET error:", error);

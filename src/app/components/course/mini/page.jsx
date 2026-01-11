@@ -3,42 +3,56 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import { useContext, useState } from "react";
-import Bkash from "../Bkash";
 import { ContextProvider } from "@/app/Provider";
+import Bkash from "../Bkash";
 
-export default function PackageCheckout() {
+export default function page() {
     const { userInfo } = useContext(ContextProvider);
     const [type, setType] = useState('');
+
     const pkg = {
-        name: "বেসিক",
-        price: "৳২০০০",
+        name: "TaxLine BD – Full Access",
+        price: "৳১৫০ / ৬ মাস",
         features: [
-            "টিআইএন রেজিস্ট্রেশন",
-            "ইন্ডিভিজুয়াল ট্যাক্স ফাইলিং",
-            "কর্পোরেট ট্যাক্স",
-            "ট্যাক্স রিটার্ন প্রস্তুতকরণ",
-            "ট্যাক্স পরামর্শ",
+            "আয়কর আইন ২০২৩, মূসক আইন ২০১২, কাস্টম আইন ২০২৩",
+            "অর্থ আইন, এসআরও, পরিপত্র, নির্দেশিকা",
+            "করবর্ষভিত্তিক আইন পরিবর্তন (১৯৮৪–২০২৩)",
+            "ব্যক্তি ও কোম্পানি করহার",
+            "উৎসে কর, ন্যূনতম কর, সারচার্জ, জরিমানা",
+            "রেয়াতযোগ্য বিনিয়োগ ও কর রেয়াত তথ্য",
+            "Tax Planning, কর রেয়াত ও ব্যবসায়িক খরচ ক্যালকুলেটর",
+            "গাড়ি কর, পরিবেশ সারচার্জ, আঞ্চলিক ন্যূনতম কর",
+            "ব্যক্তি ও প্রতিষ্ঠান ফর্ম",
+            "কর অফিস, কর অঞ্চল, আপিল, ট্রাইব্যুনাল, ADR",
+            "e-TIN, e-TDS, e-Challan, e-Return, Verify",
+            "NBR ওয়েবসাইট ও সোনালী ব্যাংক পেমেন্ট লিংক",
+            "বিশেষ ক্যালকুলেটর, নোটিস ও প্রয়োজনীয় সরকারি লিংক",
+        ],
+        shortFeatures: [
+            "আয়কর, ভ্যাট, কাস্টমস সব আইন",
+            "ব্যক্তি + কোম্পানি কর",
+            "স্মার্ট ক্যালকুলেটর",
+            "সরকারি ই-সার্ভিস লিংক",
         ],
     };
 
     return (
         <div className="min-h-screen bg-gray-50 p-6 flex justify-center items-start relative">
-
             <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-3 gap-6">
+
                 {/* Left: Package Details */}
                 <Card className="md:col-span-2 rounded-2xl shadow-lg">
                     <CardContent className="p-6">
-                        <h1 className="text-2xl font-bold mb-2">{pkg.name} প্যাকেজ</h1>
+                        <h1 className="text-2xl font-bold mb-2">{pkg.name}</h1>
                         <p className="text-gray-600 mb-4">
-                            বাংলাদেশে আপনার ট্যাক্স ও কমপ্লায়েন্স সংক্রান্ত সকল কাজের জন্য সম্পূর্ণ সমাধান।
+                            এক পেমেন্টে সকল কর আইন, ক্যালকুলেটর ও সরকারি সার্ভিস আনলক করুন।
                         </p>
 
                         <div className="bg-green-50 border border-green-200 rounded-xl p-4 mb-6">
-                            <p className="text-green-700 font-semibold text-lg">মূল্য: {pkg.price}</p>
+                            <p className="text-green-700 font-semibold text-lg">প্যাকেজ মূল্য: {pkg.price}</p>
                         </div>
 
                         <h2 className="text-xl font-semibold mb-4">এই প্যাকেজে যা যা থাকছে</h2>
-
                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             {pkg.features.map((f) => (
                                 <li key={f} className="flex items-center gap-2 text-gray-700">
@@ -49,12 +63,21 @@ export default function PackageCheckout() {
                         </ul>
 
                         <div className="mt-8">
-                            <h3 className="font-semibold mb-2">বিস্তারিত</h3>
-                            <p className="text-gray-600 text-sm leading-relaxed">
-                                এই প্যাকেজের মাধ্যমে আপনি টিআইএন রেজিস্ট্রেশন, ইন্ডিভিজুয়াল ও কর্পোরেট ট্যাক্স সাপোর্ট,
-                                ট্যাক্স রিটার্ন প্রস্তুতকরণ এবং প্রফেশনাল ট্যাক্স পরামর্শ সেবা পাবেন। আমাদের এক্সপার্ট টিম
-                                আপনার হয়ে সম্পূর্ণ প্রক্রিয়াটি সম্পন্ন করবে এবং বাংলাদেশ ট্যাক্স আইনের সাথে পূর্ণ
-                                সম্মতি নিশ্চিত করবে।
+                            <h3 className="font-semibold mb-3">Ultra-Short (মোবাইল / কার্ড ভিউ)</h3>
+                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                {pkg.shortFeatures.map((f) => (
+                                    <li key={f} className="flex items-center gap-2 text-gray-700">
+                                        <CheckCircle className="text-green-600 w-5 h-5" />
+                                        <span>{f}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className="mt-6">
+                            <img src="/website-logo.png" className="h-12 -ml-3" alt="" />
+                            <p className="text-gray-600 italic text-lg leading-relaxed">
+                                আপনাকে দিচ্ছে পূর্ণাঙ্গ ডিজিটাল ট্যাক্স সল্যুশন – আইন, ফর্ম, হিসাব, পেমেন্ট ও ভেরিফিকেশন সব এক জায়গায়।
                             </p>
                         </div>
                     </CardContent>
@@ -106,7 +129,8 @@ export default function PackageCheckout() {
                     </CardContent>
                 </Card>
             </div>
-            {type === 'bkash' && <Bkash method={{ type, setType, packageType: 'basic' }} />}
+
+            {type === 'bkash' && <Bkash method={{ type, setType, packageType: 'mini' }} />}
         </div>
     );
 }
