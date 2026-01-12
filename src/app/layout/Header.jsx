@@ -32,11 +32,10 @@ export default function Header() {
                 </nav>
 
                 <div className="md:flex justify-center space-x-3 hidden text-gray-700">
-                    <Link href='https://www.facebook.com/share/1GzXZFbCGk/' className="p-2 rounded-full bg-gray-100 hover:bg-blue-700 hover:text-white"><FaFacebookF /></Link>
-                    <Link href='' className="p-2 rounded-full bg-gray-100 hover:bg-black hover:text-white"><FaXTwitter /></Link>
-                    <Link href='' className="p-2 rounded-full bg-gray-100 hover:bg-blue-600 hover:text-white"><FaLinkedinIn /></Link>
-                    <Link href='' className="p-2 rounded-full bg-gray-100 hover:bg-rose-400 hover:text-white"><FaInstagram /></Link>
-                    <Link href='https://www.youtube.com/@TaxLineBD' className="p-2 rounded-full bg-gray-100 hover:bg-red-600 hover:text-white"><FaYoutube /></Link>
+                    <Link target="_blank" href='https://www.facebook.com/share/1GzXZFbCGk/' className="p-2 rounded-full bg-gray-100 hover:bg-blue-700 hover:text-white"><FaFacebookF /></Link>
+                    <Link target="_blank" href='https://www.linkedin.com/in/taxlinebd' className="p-2 rounded-full bg-gray-100 hover:bg-blue-600 hover:text-white"><FaLinkedinIn /></Link>
+                    <Link target="_blank" href='https://x.com/TaxLineBD' className="p-2 rounded-full bg-gray-100 hover:bg-black hover:text-white"><FaXTwitter /></Link>
+                    <Link target="_blank" href='https://www.youtube.com/@TaxLineBD' className="p-2 rounded-full bg-gray-100 hover:bg-red-600 hover:text-white"><FaYoutube /></Link>
                 </div>
 
                 {/* Mobile Menu Button */}

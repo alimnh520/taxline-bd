@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { PersonalFeature } from "../../personal-link/PersonalFeature";
 import TaxAccordions from "../../personal-link/PersonalTax";
 import GovernmentLinks from "../../GovtLink";
+import React from "react";
 
 
 const tableData = [
@@ -77,7 +78,7 @@ export default function page() {
 
         // Logo
         const logo = document.createElement('img');
-        logo.src = '/logo.png';
+        logo.src = '/website-logo.png';
         logo.alt = 'BDTaxation Logo';
         logo.className = 'md:h-24 h-[70px] object-contain';
         document.body.prepend(logo);
@@ -171,54 +172,49 @@ export default function page() {
 
                                         <p className="text-center font-bold font-nirmala">সারণী</p>
 
-                                        <div className="divide-y divide-gray-100">
-                                            {tableData.map((item, index) => (
-                                                <div key={index}>
-                                                    {/* Main Row */}
-                                                    <div className="grid grid-cols-12 hover:bg-blue-50 transition-colors">
-                                                        <div className="col-span-2 md:col-span-1 p-4 text-center border-r border-gray-100">
-                                                            <div className="font-semibold text-gray-700">{item.serial}</div>
-                                                        </div>
+                                        <div className="bg-white border border-gray-300 rounded-lg overflow-hidden">
+                                            <table className="w-full border-collapse">
+                                                <thead>
+                                                    <tr className="bg-blue-600 text-white">
+                                                        <th className="border border-gray-300 p-3 text-center font-bold" style={{ width: '15%' }}>
+                                                            ক্রমিক নং
+                                                        </th>
+                                                        <th className="border border-gray-300 p-3 text-center font-bold" style={{ width: '60%' }}>
+                                                            পরিসম্পদের শ্রেণি
+                                                        </th>
+                                                        <th className="border border-gray-300 p-3 text-center font-bold" style={{ width: '25%' }}>
+                                                            হার (অবলোপিত মূল্যের %)
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {tableData.map((item, index) => (
+                                                        <React.Fragment key={item.serial || index}>
+                                                            <tr>
+                                                                <td className="border border-gray-300 p-3 text-center">{item.serial}</td>
+                                                                <td className="border border-gray-300 p-3">{item.asset}</td>
+                                                                <td className="border border-gray-300 p-3 text-center font-bold">
+                                                                    {item.rate && <span>{item.rate}%</span>}
+                                                                </td>
+                                                            </tr>
 
-                                                        <div className="col-span-7 md:col-span-9 p-4 border-r border-gray-100">
-                                                            <div className="text-gray-800">{item.asset}</div>
-                                                        </div>
-
-                                                        <div className="col-span-3 md:col-span-2 p-4 text-center">
-                                                            {item.rate && (
-                                                                <span className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full font-semibold text-sm">
-                                                                    {item.rate}%
-                                                                </span>
-                                                            )}
-                                                        </div>
-                                                    </div>
-
-                                                    {item.subItems && item.subItems.map((subItem, subIndex) => (
-                                                        <div key={subIndex} className="grid grid-cols-12 hover:bg-gray-50 transition-colors">
-                                                            <div className="col-span-2 md:col-span-1 p-3 text-center border-r border-gray-100">
-                                                                {subIndex === 0 && <span className="text-gray-400">↳</span>}
-                                                            </div>
-
-                                                            <div className={`col-span-7 md:col-span-9 p-3 border-r border-gray-100 ${subIndex === item.subItems.length - 1 ? 'pb-4' : ''}`}>
-                                                                <div className={`ml-4 ${subItem.highlight ? 'text-red-600 font-medium' : 'text-gray-700'}`}>
-                                                                    {subItem.asset}
-                                                                </div>
-                                                            </div>
-
-                                                            <div className="col-span-3 md:col-span-2 p-3 text-center">
-                                                                {subItem.rate && (
-                                                                    <span className={`inline-block px-3 py-1 rounded-full font-semibold text-sm ${subItem.rate === '১০০' ? 'bg-red-100 text-red-800' :
-                                                                        subItem.rate === '২০' || subItem.rate === '৩০' ? 'bg-orange-100 text-orange-800' :
-                                                                            'bg-blue-100 text-blue-800'
-                                                                        }`}>
-                                                                        {subItem.rate}%
-                                                                    </span>
-                                                                )}
-                                                            </div>
-                                                        </div>
+                                                            {/* Sub Items */}
+                                                            {item.subItems && item.subItems.map((subItem, subIndex) => (
+                                                                <tr key={`${item.serial}-${subIndex}`}>
+                                                                    <td className="border border-gray-300 p-3 text-center"></td>
+                                                                    <td className="border border-gray-300 p-3 pl-8">
+                                                                        {subItem.asset}
+                                                                    </td>
+                                                                    <td className="border border-gray-300 p-3 text-center font-bold">
+                                                                        {subItem.rate && <span>{subItem.rate}%</span>}
+                                                                    </td>
+                                                                </tr>
+                                                            ))}
+                                                        </React.Fragment>
                                                     ))}
-                                                </div>
-                                            ))}
+                                                </tbody>
+                                            </table>
+
                                         </div>
 
                                         <p className="mt-5">মন্তব্য : </p>
@@ -229,57 +225,218 @@ export default function page() {
 
                                     <div className={`text-justify ${selectedYear === '2' ? 'block' : 'hidden'} space-y-4`}>
 
-                                        <p className="text-justify mb-4">
-                                            রয়্যালটি, ফ্র্যাঞ্চাইজ বা লাইসেন্স, ট্রেডমার্ক, পেটেন্ট, কপিরাইট,
-                                            শিল্প নকশা, উদ্ভিদের জাত, ভৌগলিক নির্দেশক পণ্য বা মেধাসত্ত্ব সংক্রান্ত
-                                            অন্য কোনো সম্পত্তি অথবা অভৌত বা অমূর্ত বা নিরাকার বিষয়ের জন্য অর্থ
-                                            পরিশোধের জন্য দায়িত্বপ্রাপ্ত ব্যক্তি, উক্ত অর্থ প্রদান বা ক্রেডিটের সময়
-                                            নিম্নবর্ণিত সারণীতে উল্লিখিত হারে কর কর্তন করিবেন, যথা:-
-                                        </p>
+                                        <p className="text-justify font-nirmala">কোনো পরিসম্পদের অবলোপিত মূল্যের উপর নিম্নবর্ণিত সারণীতে উল্লিখিত হারে সাধারণ অবচয় ভাতা পরিগণনা করা হইবে, যথা:-</p>
 
-                                        <p className="font-semibold mb-2">সারণী</p>
+                                        <p className="text-center font-bold font-nirmala">সারণী</p>
 
-                                        {/* Table Wrapper for Mobile Scroll */}
-                                        <div className="overflow-x-auto">
-                                            <table className="w-full border border-gray-300 text-sm">
-                                                <thead className="bg-gray-100">
-                                                    <tr>
-                                                        <th className="border border-gray-300 px-4 py-2 text-left">
-                                                            পরিশোধের বর্ণনা
+                                        <div className="bg-white border border-gray-300 rounded-lg overflow-hidden">
+                                            <table className="w-full border-collapse">
+                                                <thead>
+                                                    <tr className="bg-blue-600 text-white">
+                                                        <th className="border border-gray-300 p-3 text-center font-bold" style={{ width: '15%' }}>
+                                                            ক্রমিক নং
                                                         </th>
-                                                        <th className="border border-gray-300 px-4 py-2 text-left">
-                                                            কর কর্তনের হার
+                                                        <th className="border border-gray-300 p-3 text-center font-bold" style={{ width: '60%' }}>
+                                                            পরিসম্পদের শ্রেণি
+                                                        </th>
+                                                        <th className="border border-gray-300 p-3 text-center font-bold" style={{ width: '25%' }}>
+                                                            হার (অবলোপিত মূল্যের %)
                                                         </th>
                                                     </tr>
                                                 </thead>
-
                                                 <tbody>
+                                                    {/* Row 1 */}
                                                     <tr>
-                                                        <td className="border border-gray-300 px-4 py-2 text-justify">
-                                                            (১)
-                                                        </td>
-                                                        <td className="border border-gray-300 px-4 py-2 text-justify">
-                                                            (২)
-                                                        </td>
+                                                        <td className="border border-gray-300 p-3 text-center">১।</td>
+                                                        <td className="border border-gray-300 p-3">ইমারত (এই সারণীতে অন্য কোনো ভাবে নির্দিষ্ট না থাকিলে)</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">৫</td>
                                                     </tr>
 
+                                                    {/* Row 2 */}
                                                     <tr>
-                                                        <td className="border border-gray-300 px-4 py-2 text-justify">
-                                                            ভিত্তিমূল্যের পরিমাণ ২৫ (পঁচিশ) লক্ষ টাকা অতিক্রম না করিলে
-                                                        </td>
-                                                        <td className="border border-gray-300 px-4 py-2 font-semibold">
-                                                            ১০% (দশ শতাংশ)
-                                                        </td>
+                                                        <td className="border border-gray-300 p-3 text-center">২।</td>
+                                                        <td className="border border-gray-300 p-3">কারখানা ভবন</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">১০</td>
                                                     </tr>
 
+                                                    {/* Row 3 */}
                                                     <tr>
-                                                        <td className="border border-gray-300 px-4 py-2 text-justify">
-                                                            ভিত্তিমূল্যের পরিমাণ ২৫ (পঁচিশ) লক্ষ টাকা অতিক্রম করিলে
-                                                        </td>
-                                                        <td className="border border-gray-300 px-4 py-2 font-semibold">
-                                                            ১২% (বার শতাংশ)
-                                                        </td>
+                                                        <td className="border border-gray-300 p-3 text-center">৩।</td>
+                                                        <td className="border border-gray-300 p-3">আসবাবপত্র ও ফিটিংস</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">১০</td>
                                                     </tr>
+
+                                                    {/* Row 4 */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center">৪।</td>
+                                                        <td className="border border-gray-300 p-3">অফিসের সরঞ্জাম</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">১০</td>
+                                                    </tr>
+
+                                                    {/* Row 5 */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center">৫।</td>
+                                                        <td className="border border-gray-300 p-3">যন্ত্রপাতি, স্থাপনা ও সরঞ্জাম (এই সারণীতে অন্য কোনোভাবে নির্দিষ্ট না থাকিলে)</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">১০</td>
+                                                    </tr>
+
+                                                    {/* Row 6 - সমুদ্রগামী জাহাজ (with sub items) */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center align-top" rowSpan="5">৬।</td>
+                                                        <td className="border border-gray-300 p-3">সমুদ্রগামী জাহাজ</td>
+                                                        <td className="border border-gray-300 p-3 text-center"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 pl-8">(ক) নূতন</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">৫</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 pl-8">(খ) পুরাতন ক্রয়ের সময় যাহার বয়স-</td>
+                                                        <td className="border border-gray-300 p-3 text-center"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 pl-12">(অ) অনধিক ১০ বৎসর</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">১০</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 pl-12">(আ) ১০ বৎসর বা ততোধিক</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">২০</td>
+                                                    </tr>
+
+                                                    {/* Row 7 */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center">৭।</td>
+                                                        <td className="border border-gray-300 p-3">এক্স-রে, ইলেক্ট্রথেরাপিউটিক ও উহার খুচরা যন্ত্রাংশসহ অন্যান্য মেডিক্যাল যন্ত্রপাতি</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">২০</td>
+                                                    </tr>
+
+                                                    {/* Row 8 */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center">৮।</td>
+                                                        <td className="border border-gray-300 p-3">ব্যাটারি চালিত এ্যাপারেটাস ও রিচার্জেবল ব্যটারি</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">৩০</td>
+                                                    </tr>
+
+                                                    {/* Row 9 */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center">৯।</td>
+                                                        <td className="border border-gray-300 p-3">অডিও-ভিজুয়াল পণ্য উৎপাদন ও প্রদর্শনের জন্য ব্যবহৃত যন্ত্রপাতি</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">২০</td>
+                                                    </tr>
+
+                                                    {/* Row 10 */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center">১০।</td>
+                                                        <td className="border border-gray-300 p-3">ভাড়ায় চালিত ব্যতীত সকল প্রকার মোটরযান</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">১০</td>
+                                                    </tr>
+
+                                                    {/* Row 11 */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center">১১।</td>
+                                                        <td className="border border-gray-300 p-3">ভাড়ায় চালিত সকল প্রকার মোটরযান</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">২০</td>
+                                                    </tr>
+
+                                                    {/* Row 12 */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center">১২।</td>
+                                                        <td className="border border-gray-300 p-3">প্রিন্টার, মনিটর ও আনুষঙ্গিক আইটেমসহ কম্পিউটার হার্ডওয়ার</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">২৫</td>
+                                                    </tr>
+
+                                                    {/* Row 13 */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center">১৩।</td>
+                                                        <td className="border border-gray-300 p-3">প্রফেশনাল ও রেফারেন্স বই</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">২৫</td>
+                                                    </tr>
+
+                                                    {/* Row 14 */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center">১৪।</td>
+                                                        <td className="border border-gray-300 p-3">এয়ারক্রাফ্ট, এ্যারোইঞ্জিন ও এরিয়াল ফাটোগ্রাফিক যন্ত্রপাতি</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">৩০</td>
+                                                    </tr>
+
+                                                    {/* Row 15 */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center">১৫।</td>
+                                                        <td className="border border-gray-300 p-3">কাঁচ বা প্লাসটিক পণ্য বা কনক্রিট পাইপ তৈরিতে ব্যবহৃত ছাঁচ</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">৩০</td>
+                                                    </tr>
+
+                                                    {/* Row 16 - খনিজতেল সম্পর্কিত (with sub items) */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center align-top" rowSpan="3">১৬।</td>
+                                                        <td className="border border-gray-300 p-3">খনিজতেল সম্পর্কিত</td>
+                                                        <td className="border border-gray-300 p-3 text-center"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 pl-8">(ক) মাটির নীচে স্থাপিত সরঞ্জামাদি</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold text-red-600">১০০</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 pl-8">(খ) বহনযোগ্য বয়লার, খনন যন্ত্র, ওয়েলহেড ট্যাংক ও রিগসহ মাটির উপরে স্থাপিত অন্যান্য সরঞ্জামাদি</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">২৫</td>
+                                                    </tr>
+
+                                                    {/* Row 17 */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center">১৭।</td>
+                                                        <td className="border border-gray-300 p-3">সেতু</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">২</td>
+                                                    </tr>
+
+                                                    {/* Row 18 */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center">১৮।</td>
+                                                        <td className="border border-gray-300 p-3">রাস্তা</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">২</td>
+                                                    </tr>
+
+                                                    {/* Row 19 */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center">১৯।</td>
+                                                        <td className="border border-gray-300 p-3">ফ্লাইওভার</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">২</td>
+                                                    </tr>
+
+                                                    {/* Row 20 */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center">২০।</td>
+                                                        <td className="border border-gray-300 p-3">পেভমেন্ট রানওয়ে, ট্যাক্সিওয়ে</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">২.৫</td>
+                                                    </tr>
+
+                                                    {/* Row 21 */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center">২১।</td>
+                                                        <td className="border border-gray-300 p-3">এ্যাপ্রোন, টারম্যাক</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">২.৫</td>
+                                                    </tr>
+
+                                                    {/* Row 22 */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center">২২।</td>
+                                                        <td className="border border-gray-300 p-3">বোর্ডিং ব্রিজ</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">১০</td>
+                                                    </tr>
+
+                                                    {/* Row 23 */}
+                                                    <tr>
+                                                        <td className="border border-gray-300 p-3 text-center">২৩।</td>
+                                                        <td className="border border-gray-300 p-3">যোগাযোগ ও অনুসন্ধান সহায়ক এবং অন্যান্য সরঞ্জাম</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">৫</td>
+                                                    </tr>
+
+                                                    {/* Row 24 */}
+                                                    <tr className="bg-gray-50">
+                                                        <td className="border border-gray-300 p-3 text-center">২৪।</td>
+                                                        <td className="border border-gray-300 p-3 font-medium">এই সারণীতে উল্লিখিত হয় নাই এইরূপ সকল ভৌত পরিসম্পদ</td>
+                                                        <td className="border border-gray-300 p-3 text-center font-bold">১০%</td>
+                                                    </tr>
+
                                                 </tbody>
                                             </table>
                                         </div>

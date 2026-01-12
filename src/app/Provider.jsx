@@ -39,12 +39,15 @@ const Provider = ({ children }) => {
                     overflow-hidden 
                      
                     ${path === '/components/admin' ? 'lg:max-w-full' : 'lg:max-w-[72%]'}
-                    bg-gray-100
+                    bg-gray-300
                 `}
             >
-                {path !== '/components/admin' && <Header />}
+                {/* {path !== '/components/admin' && <Header />}
                 {children}
-                {path !== '/components/admin' && <Footer />}
+                {path !== '/components/admin' && <Footer />} */}
+                <div className="w-full h-screen flex items-center justify-center">
+                    <img src="/update/update.png" alt="" />
+                </div>
             </div>
         </ContextProvider.Provider>
     );

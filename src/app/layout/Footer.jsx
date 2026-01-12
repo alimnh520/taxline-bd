@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { FaFacebookF, FaGlobe, FaHome, FaLinkedinIn, FaYoutube } from "react-icons/fa";
-import { FaPhone } from "react-icons/fa6";
+import { FaFacebookF, FaGlobe, FaHome, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaPhone, FaX, FaXTwitter } from "react-icons/fa6";
 import { GoMail } from "react-icons/go";
 
 export default function Footer() {
@@ -73,10 +73,15 @@ export default function Footer() {
                             <a href="https://www.facebook.com/share/1Bf67yNibh/" className="hover:text-white size-10 bg-blue-700 flex items-center justify-center rounded-full group">
                                 <FaFacebookF size={18} className="group-hover:scale-125 transition-all duration-300" />
                             </a>
-                            <a href="#" className="hover:text-white size-10 bg-red-500 flex items-center justify-center rounded-full group">
+                            <a href='https://www.linkedin.com/in/taxlinebd' className="hover:text-white size-10 bg-red-500 flex items-center justify-center rounded-full group">
                                 <FaLinkedinIn size={18} className="group-hover:scale-125 transition-all duration-300" />
                             </a>
-                            <a href="#" className="hover:text-white size-10 bg-red-700 flex items-center justify-center rounded-full group">
+
+                            <a href="https://www.facebook.com/share/1Bf67yNibh/" className="hover:text-white size-10 bg-blue-700 flex items-center justify-center rounded-full group">
+                                <FaXTwitter size={18} className="group-hover:scale-125 transition-all duration-300" />
+                            </a>
+                            
+                            <a href='https://www.youtube.com/@TaxLineBD' className="hover:text-white size-10 bg-red-700 flex items-center justify-center rounded-full group">
                                 <FaYoutube size={18} className="group-hover:scale-125 transition-all duration-300" />
                             </a>
                         </div>

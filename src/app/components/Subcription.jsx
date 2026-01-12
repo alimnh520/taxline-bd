@@ -224,6 +224,12 @@ export function Subscription() {
                                     {index === 2 && <p className="mt-2 sm:mt-4 ml-1 px-2 rounded-full sm:ml-2 sm:text-base" style={{
                                         backgroundColor: lightenColor(plan.accent, -10)
                                     }}>Starting from</p>}
+                                    {index === 0 && <p className="mt-2 sm:mt-4 ml-1 px-2 rounded-full sm:ml-2 sm:text-base" style={{
+                                        backgroundColor: lightenColor(plan.accent, -10)
+                                    }}>One Time</p>}
+                                    {index === 1 && <p className="mt-2 sm:mt-4 ml-1 px-2 rounded-full sm:ml-2 sm:text-base" style={{
+                                        backgroundColor: lightenColor(plan.accent, -10)
+                                    }}>Monthly</p>}
                                 </div>
 
                                 <div
