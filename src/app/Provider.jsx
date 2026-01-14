@@ -42,12 +42,18 @@ const Provider = ({ children }) => {
                     bg-gray-300
                 `}
             >
-                {/* {path !== '/components/admin' && <Header />}
+                {path !== '/components/admin' && <Header />}
                 {children}
-                {path !== '/components/admin' && <Footer />} */}
-                <div className="w-full h-screen flex items-center justify-center">
+                {path !== '/components/admin' && <Footer />}
+                {/* <div className="w-full h-screen flex items-center justify-center">
                     <img src="/update/update.png" alt="" />
+                </div> */}
+
+                <div className="fixed top-1/2 -translate-y-1/2 left-10">
+                    <div className="size-16 bg-red-600 rounded-full flex items-center justify-center relative before:content('') before:absolute before:w-14 before:h-14 before:bg-blue-600 before:rounded-full">
+                    </div>
                 </div>
+
             </div>
         </ContextProvider.Provider>
     );

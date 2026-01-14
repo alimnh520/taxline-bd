@@ -81,6 +81,6 @@ export const config = {
         "/components/user/dashboard/:path*",
         "/components/tax-act/:path*",
         "/components/personal-link/:path*",
-        // "/components/company-link/:path*",
+        "/components/company-link/:path*",
     ],
 };

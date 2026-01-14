@@ -1,5 +1,6 @@
 import { Animations } from "./components/Animations"
 import { BusinessCalculator } from "./components/BusinessCalcutator"
+import Card from "./components/Card"
 import ClientList from "./components/ClientList"
 import { Ereturn } from "./components/Ereturn"
 import { Feature } from "./components/Feature"
@@ -22,6 +23,7 @@ const page = () => {
       <BDTaxationPage />
       <ClientList />
       <Reviews />
+      <Card/>
     </div>
   )
 }
