@@ -23,7 +23,7 @@ const page = () => {
       <BDTaxationPage />
       <ClientList />
       <Reviews />
-      <Card/>
+      {/* <Card/> */}
     </div>
   )
 }
