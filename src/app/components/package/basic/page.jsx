@@ -21,6 +21,46 @@ export default function PackageCheckout() {
         ],
     };
 
+    const handleBkashPayment = async () => {
+        if (!userInfo) return window.location.href = '/components/login';
+
+        try {
+            const data = {
+                transaction_id: "DAQ5HS5O3D"
+            };
+
+            const response = await axios.post(
+                "http://payment.zappay.top/api/payment/verify",
+                data,
+                {
+                    maxBodyLength: Infinity,
+                    headers: {
+                        "Content-Type": "application/json",
+                        "API-KEY": "gnXi7etgWNhFyFGZFrOMYyrmnF4A1eGU5SC2QRmUvILOlNc2Ef",
+                        "SECRET-KEY": "Secret key From API credentials",
+                        "BRAND-KEY": "ic5aA9fryBfcOb2zLYmrtXmag22OpiRelZSWowUa4voYvrBD2k"
+                    }
+                }
+            );
+
+            console.log("✅ Verify Response:", response.data);
+            return response.data;
+
+        } catch (error) {
+            console.error("❌ Verify Error:");
+
+            if (error.response) {
+                console.error("Status:", error.response.status);
+                console.error("Data:", error.response.data);
+            } else {
+                console.error(error.message);
+            }
+
+            return null;
+        }
+    };
+
+
     return (
         <div className="min-h-screen bg-gray-50 p-6 flex justify-center items-start relative">
 
@@ -74,10 +114,7 @@ export default function PackageCheckout() {
                             <p className="text-sm text-gray-600 mb-3">
                                 আপনার বিকাশ একাউন্ট দিয়ে নিরাপদে পেমেন্ট করুন।
                             </p>
-                            <Button className="w-full bg-pink-600 hover:bg-pink-700" onClick={() => {
-                                if (!userInfo) return window.location.href = '/components/login';
-                                setType('bkash')
-                            }}>বিকাশ দিয়ে পেমেন্ট করুন</Button>
+                            <Button className="w-full bg-pink-600 hover:bg-pink-700" onClick={handleBkashPayment}>বিকাশ দিয়ে পেমেন্ট করুন</Button>
                         </div>
 
                         {/* Nagad */}

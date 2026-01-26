@@ -80,7 +80,7 @@ export const config = {
         "/components/admin/:path*",
         "/components/user/dashboard/:path*",
         "/components/tax-act/:path*",
-        "/components/personal-link/:path*",
-        "/components/company-link/:path*",
+        // "/components/personal-link/:path*",
+        // "/components/company-link/:path*",
     ],
 };

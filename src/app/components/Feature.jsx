@@ -38,10 +38,7 @@ export const Feature = () => {
     return (
         <div className="flex items-center relative justify-center mt-4 sm:mt-12 px-3">
 
-            <div className="w-full hidden h-96 px-5 absolute sm:flex items-center justify-center overflow-hidden">
-                <div className="w-full h-96 bg-blue-700 shadow-[2px_2px_10px_rgba(0,0,0,0.5)]"></div>
-            </div>
-            <div className="w-[480px] h-[480px] hidden sm:block bg-white rounded-full absolute"></div>
+            <div className="w-96 h-80 bg-red-600"></div>
 
             <div className={`relative w-[330px] h-[330px] z-10 md:w-[420px] md:h-[420px] flex items-center justify-center`}>
 
@@ -89,6 +86,8 @@ export const Feature = () => {
                     );
                 })}
             </div>
+
+            <div className="w-96 h-80 bg-red-600"></div>
 
         </div>
     );

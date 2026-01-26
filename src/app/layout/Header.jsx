@@ -12,9 +12,9 @@ export default function Header() {
     const path = usePathname();
 
     return (
-        <header className="md:w-[87%] w-full mx-auto flex flex-col sm:mt-5 my-font ">
+        <header className="md:px-5 w-full mx-auto flex flex-col sm:mt-5 my-font mb-5">
 
-            <div className="w-full flex justify-between items-center px-4 shadow md:shadow-none ">
+            <div className="w-full flex justify-between items-center px-4 py-1 shadow md:shadow-[4px_5px_10px_rgba(0,0,0,0.1)),-4px_-5px_10px_rgba(0,0,0,0.05))]">
 
                 <div className="flex items-center py-1 sm:py-0">
                     <img src="/website-logo.png" alt="BDTaxation Logo" className="md:h-24 h-[70px] -mt-3 object-contain" />

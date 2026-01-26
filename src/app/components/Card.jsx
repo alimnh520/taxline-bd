@@ -1,79 +1,91 @@
-'use client';
-import React from "react";
+// components/PricingPlans.jsx
+const plans = [
+    {
+        name: 'bronze',
+        desc: 'the starter plan',
+        cost: 12.99,
+        feat: {
+            users: 2,
+            'gb disk space': 5,
+            'email support': false,
+            '24/7 tech support': false,
+        },
+        cols: ['#fddb6d', '#fecf3b', '#f9ae39', '#e5983c', '#cb8639'],
+    },
+    {
+        name: 'silver',
+        desc: 'the standard plan',
+        cost: 15.99,
+        feat: {
+            users: 5,
+            'gb disk space': 10,
+            'email support': true,
+            '24/7 tech support': false,
+        },
+        cols: ['#d3db25', '#bcd231', '#71b045', '#6da542', '#608e36'],
+    },
+    {
+        name: 'gold',
+        desc: 'the extended plan',
+        cost: 17.99,
+        feat: {
+            users: 10,
+            'gb disk space': 100,
+            'email support': true,
+            '24/7 tech support': true,
+        },
+        cols: ['#4bc5da', '#36adc5', '#2f99b3', '#298ca3', '#247f94'],
+    },
+];
 
-export default function Card() {
+export default function PricingPlans() {
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gray-900 p-4">
-            <div className="flex flex-col lg:flex-row gap-8">
-
-                {/* Card 1 */}
-                <FlipBox
-                    image="https://s25.postimg.cc/frbd9towf/cta-2.png"
-                    title="Custom Domains"
-                    description="A short sentence describing this callout is."
-                />
-
-                {/* Card 2 */}
-                <FlipBox
-                    image="https://s25.postimg.cc/hj4c4qnov/cta-3.png"
-                    title="Never Sleeps"
-                    description="A short sentence describing this callout is."
-                />
-
-                {/* Card 3 */}
-                <FlipBox
-                    image="https://s25.postimg.cc/l2q9ujy4f/cta-4.png"
-                    title="Dedicated"
-                    description="A short sentence describing this callout is."
-                />
-
-            </div>
-        </div>
-    );
-}
-
-// Reusable FlipBox component
-function FlipBox({ image, title, description }) {
-    return (
-        <div className="w-80 h-[475px] perspective">
-            <div className="relative w-full h-full transition-transform duration-700 ease-in-out transform-style preserve-3d hover:rotate-y-180">
-
-                {/* Front Side */}
-                <div
-                    className="absolute w-full h-full rounded-lg bg-cover bg-center backface-hidden flex flex-col justify-center items-center text-white"
-                    style={{ backgroundImage: `url('${image}')` }}
+        <div className="flex flex-wrap justify-center gap-8 p-8 bg-gray-100 min-h-screen">
+            {plans.map((plan, idx) => (
+                <article
+                    key={idx}
+                    className="relative w-72 rounded-xl overflow-hidden border-8"
+                    style={{
+                        borderColor: plan.cols[0],
+                        background: `linear-gradient(135deg, ${plan.cols[1]} 32%, ${plan.cols[2]} 57%, ${plan.cols[3]} 100%)`,
+                    }}
                 >
-                    <div className="text-center p-6">
-                        <h3 className="text-3xl font-bold mb-4">{title}</h3>
-                        <p className="text-lg mb-6">{description}</p>
-                        <img
-                            src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png"
-                            alt="arrow"
-                            className="w-12 h-12 mx-auto"
-                        />
-                    </div>
-                </div>
+                    <header className="text-center p-6">
+                        <h3 className="text-2xl font-bold text-white capitalize">{plan.name}</h3>
+                        <p className="text-sm text-white mt-1">{plan.desc}</p>
+                        <p className="text-xl font-semibold text-white mt-2">${plan.cost}/month</p>
+                    </header>
 
-                {/* Back Side */}
-                <div
-                    className="absolute w-full h-full rounded-lg bg-cover bg-center backface-hidden rotate-y-180 flex flex-col justify-center items-center text-white"
-                    style={{ backgroundImage: `url('${image}')` }}
-                >
-                    <div className="text-center p-6">
-                        <h3 className="text-3xl font-bold mb-4">{title}</h3>
-                        <p className="text-lg mb-6">{description}</p>
-                        <button className="px-6 py-3 border-2 border-white rounded-md font-bold uppercase hover:bg-white hover:text-gray-900 transition">
-                            Learn More
+                    <section className="p-6 bg-white">
+                        <ul className="space-y-2">
+                            {Object.entries(plan.feat).map(([key, val], i) => {
+                                const isBool = typeof val === 'boolean';
+                                return (
+                                    <li
+                                        key={i}
+                                        className={`${isBool && !val ? 'line-through opacity-50' : ''
+                                            } flex justify-between`}
+                                    >
+                                        <span>{isBool ? key : val}</span>
+                                        {!isBool && <span className="text-gray-500">{key}</span>}
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </section>
+
+                    <footer className="text-center p-4 bg-white">
+                        <button
+                            className="mt-4 px-6 py-2 rounded-lg font-semibold text-white"
+                            style={{
+                                background: `linear-gradient(135deg, ${plan.cols[0]}, ${plan.cols[1]}, ${plan.cols[2]})`,
+                            }}
+                        >
+                            View Plans & Prices
                         </button>
-                    </div>
-                </div>
-
-            </div>
-
-            {/* Tailwind Custom Styles for 3D Flip */}
-            <style jsx>{`
-
-      `}</style>
+                    </footer>
+                </article>
+            ))}
         </div>
     );
 }
