@@ -16,8 +16,8 @@ export default function ClientList() {
     ];
 
     return (
-        <div className="w-11/12 mx-auto py-10">
-            <h2 className="text-3xl font-bold ml-5">
+        <div className="w-11/12 mx-auto py-5 sm:py-10">
+            <h2 className="text-3xl font-bold ml-2 sm:ml-5">
                 Our Clients
             </h2>
 
@@ -28,7 +28,6 @@ export default function ClientList() {
                 {/* Swiper */}
                 <Swiper
                     modules={[Autoplay, Mousewheel]}
-                    slidesPerView={5}
                     spaceBetween={10}
                     loop={true}
                     speed={800}
@@ -38,11 +37,23 @@ export default function ClientList() {
                     }}
                     mousewheel={{ invert: false }}
                     grabCursor={true}
-                    className="w-full py-8"
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 2, // মোবাইল
+                        },
+                        640: {
+                            slidesPerView: 3, // ট্যাবলেট (চাইলে)
+                        },
+                        1024: {
+                            slidesPerView: 5, // ল্যাপটপ / পিসি
+                        },
+                    }}
+                    className="w-full py-8 flex justify-center"
                 >
+
                     {company.map((item, index) => (
                         <SwiperSlide key={index} className="flex justify-center">
-                            <div className="h-32 w-48 flex items-center justify-center transition-transform duration-300 hover:scale-105">
+                            <div className="h-32 w-48 justify-self-center flex items-center justify-center transition-transform duration-300 hover:scale-105">
                                 <img
                                     src={item}
                                     alt={`Company ${index + 1}`}

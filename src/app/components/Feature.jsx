@@ -38,7 +38,7 @@ export const Feature = () => {
     return (
         <div className="flex items-center relative justify-center mt-4 sm:mt-12 px-3">
 
-            <div className="w-96 h-80 bg-red-600"></div>
+            <div className="w-96 h-80 bg-red-600 hidden md:block"></div>
 
             <div className={`relative w-[330px] h-[330px] z-10 md:w-[420px] md:h-[420px] flex items-center justify-center`}>
 
@@ -87,7 +87,7 @@ export const Feature = () => {
                 })}
             </div>
 
-            <div className="w-96 h-80 bg-red-600"></div>
+            <div className="w-96 h-80 bg-red-600 hidden md:block"></div>
 
         </div>
     );

@@ -85,7 +85,7 @@ export default function Reviews() {
             <div className="flex items-center justify-between mb-10">
                 {/* Right Title */}
                 <div className="text-right">
-                    <h2 className="text-3xl md:text-4xl font-bold mt-2">
+                    <h2 className="text-xl md:text-4xl font-bold mt-2">
                         Our Clients' Comments
                     </h2>
                 </div>
