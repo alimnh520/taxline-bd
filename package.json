@@ -9,7 +9,6 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
-    "@api/piprapay": "file:.api/apis/piprapay",
     "@heroicons/react": "^2.2.0",
     "@radix-ui/react-slot": "^1.2.4",
     "@radix-ui/react-switch": "^1.2.6",
