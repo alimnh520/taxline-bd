@@ -346,7 +346,7 @@ export function Subscription() {
                             hover:shadow-[0_0_40px_rgba(16,185,129,0.5)]
                             hover:scale-105
                         "
-                        onClick={() => router.push('/components/package/premium')}
+                        onClick={() => router.push('/components/package')}
                     >
                         <span
                             className="
