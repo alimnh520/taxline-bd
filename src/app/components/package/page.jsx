@@ -1,8 +1,8 @@
 'use client';
 
 import { Animations } from "../Animations";
+import { MyPackage } from "../MyPackage";
 import { PersonalFeature } from "../personal-link/PersonalFeature";
-import { Subscription } from "../Subcription";
 
 export default function TaxLaw() {
 
@@ -12,7 +12,7 @@ export default function TaxLaw() {
             <Animations />
             <PersonalFeature />
             <div className="-mt-10 sm:-mt-16 w-full">
-                <Subscription />
+                <MyPackage/>
             </div>
 
         </div>

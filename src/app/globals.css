@@ -439,3 +439,26 @@ input[type="number"] {
   padding: 20px;
   border-radius: 10px;
 }
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #10B981 #F3F4F6;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #F3F4F6;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #10B981;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #059669;
+}
